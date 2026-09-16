@@ -1,0 +1,628 @@
+.made2com-app {
+  --m2-blue: #346287;
+  --m2-teal: #308fa9;
+  --m2-line: #d7dfe2;
+  background: #fff;
+  color: #303d49;
+  font:
+    400 16px/1.5 "Open Sans",
+    sans-serif;
+  min-height: 100vh;
+}
+.made2com-app * {
+  box-sizing: border-box;
+}
+.made2com-app h1,
+.made2com-app h2,
+.made2com-app h3,
+.made2com-app strong,
+.made2com-app button {
+  font-family: Ubuntu, sans-serif;
+}
+.made2com-app h1 {
+  font-size: 34px;
+  line-height: 1.16;
+  color: #182730;
+  margin: 0 0 9px;
+  font-weight: 700;
+}
+.made2com-app h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0;
+}
+.made2com-app h3 {
+  font-size: 17px;
+  margin: 0 0 14px;
+}
+.made2com-app p {
+  margin: 0 0 12px;
+}
+.made2com-app button,
+.made2com-app input,
+.made2com-app select {
+  font: inherit;
+  border: 1px solid #abb8bf;
+  border-radius: 3px;
+  min-height: 42px;
+  background: white;
+  color: #243e50;
+  padding: 8px 12px;
+}
+.made2com-app button {
+  font-family: Ubuntu, sans-serif;
+  cursor: pointer;
+}
+.made2com-app button:hover:not(:disabled) {
+  background: #eef6f8;
+  border-color: var(--m2-teal);
+}
+.made2com-app button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.made2com-app button:focus-visible,
+.made2com-app input:focus-visible,
+.made2com-app select:focus-visible,
+.made2com-app summary:focus-visible,
+.made2com-app [tabindex]:focus-visible {
+  outline: 3px solid #176989;
+  outline-offset: 3px;
+}
+.made2com-app label {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.made2com-app input,
+.made2com-app select {
+  width: 100%;
+  min-width: 0;
+  font-weight: 400;
+}
+.made2com-app small,
+.made2com-app .m2-help {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #566674;
+}
+.made2com-app .m2-primary {
+  background: #237d98;
+  border-color: #237d98;
+  color: #fff;
+}
+.made2com-app .m2-primary:hover:not(:disabled) {
+  background: #1c657b;
+  color: white;
+}
+.made2com-app .m2-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 15px 30px;
+  border-bottom: 1px solid var(--m2-line);
+}
+.made2com-app .m2-header > strong {
+  font-size: 28px;
+  color: #1684a4;
+}
+.made2com-app .m2-header > span {
+  font:
+    400 21px Ubuntu,
+    sans-serif;
+  border-left: 1px solid #bdc8ce;
+  padding-left: 22px;
+}
+.made2com-app .m2-header > .m2-actions {
+  margin-left: auto;
+}
+.made2com-app .m2-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.made2com-app .demo-context {
+  padding: 10px 30px !important;
+  background: #f0f2f3 !important;
+  text-align: center;
+  font-size: 14px !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+.made2com-app main {
+  padding: 26px 30px;
+  max-width: 1600px;
+  margin: auto;
+}
+.made2com-app .m2-heading > p {
+  font-size: 18px;
+}
+.made2com-app .m2-datebar {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 21px 0 7px;
+}
+.made2com-app .m2-datebar > label {
+  width: 230px;
+  flex-shrink: 0;
+}
+.made2com-app .m2-datebar > .m2-help {
+  max-width: 205px;
+  margin: 20px 0 0;
+}
+.made2com-app .m2-timeline {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  margin-top: 20px;
+}
+.made2com-app .m2-timeline button {
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  font-size: 14px;
+  border: 0;
+  position: relative;
+  padding: 19px 0 5px;
+  border-radius: 0;
+}
+.made2com-app .m2-timeline button::before {
+  content: "";
+  height: 1px;
+  background: #c3cbd0;
+  position: absolute;
+  top: 7px;
+  left: 0;
+  right: 0;
+}
+.made2com-app .m2-timeline button span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: calc(50% - 5px);
+  background: #bcc6cb;
+}
+.made2com-app .m2-timeline button[aria-pressed="true"] {
+  font-weight: 700;
+  color: #126883;
+}
+.made2com-app .m2-timeline button[aria-pressed="true"] span {
+  background: #1684a4;
+  width: 14px;
+  height: 14px;
+  top: 0;
+  left: calc(50% - 7px);
+}
+.made2com-app .m2-status {
+  font-size: 14px;
+  color: #2c6847;
+  min-height: 22px;
+  margin: 6px 0 12px;
+}
+.made2com-app .m2-workspace {
+  display: grid;
+  grid-template-columns: 285px minmax(350px, 1fr) 310px;
+  gap: 14px;
+  align-items: start;
+}
+.made2com-app .m2-contacts,
+.made2com-app .m2-ledger,
+.made2com-app .m2-settings,
+.made2com-app .m2-files {
+  border: 1px solid var(--m2-line);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.made2com-app .m2-contacts > h2,
+.made2com-app .m2-ledger > h2,
+.made2com-app .m2-settings > h2,
+.made2com-app .m2-files > h2 {
+  background: #f3f4f5;
+  padding: 12px 15px;
+}
+.made2com-app .m2-search {
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+.made2com-app .m2-contact-list {
+  padding: 0 10px 10px;
+}
+.made2com-app .m2-contact-list > button {
+  display: block;
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #e4e9eb;
+  border-radius: 0;
+  text-align: left;
+  padding: 12px;
+}
+.made2com-app .m2-contact-list > button span {
+  display: block;
+  font-size: 14px;
+}
+.made2com-app .m2-contact-list > button strong {
+  font-size: 16px;
+  margin-left: 12px;
+}
+.made2com-app .m2-contact-list > button small {
+  display: block;
+  margin-top: 3px;
+}
+.made2com-app .m2-contact-list > button[aria-pressed="true"] {
+  background: #e2f1f5;
+  color: #126683;
+}
+.made2com-app .m2-ledger ol {
+  list-style: none;
+  margin: 25px 20px 8px;
+  padding: 0;
+}
+.made2com-app .m2-ledger li {
+  display: grid;
+  grid-template-columns: 133px minmax(0, 1fr);
+  gap: 18px;
+  position: relative;
+  padding: 0 0 23px 15px;
+  font-size: 15px;
+}
+.made2com-app .m2-ledger li::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--m2-teal);
+  position: absolute;
+  left: 0;
+  top: 7px;
+  z-index: 1;
+}
+.made2com-app .m2-ledger li:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  bottom: -10px;
+  width: 1px;
+  background: #ccd5d9;
+}
+.made2com-app .m2-ledger li time {
+  font-size: 14px;
+  padding-top: 2px;
+  font-weight: 600;
+}
+.made2com-app .m2-ledger li p {
+  font-size: 14px;
+  margin: 4px 0;
+  color: #556779;
+}
+.made2com-app .m2-ledger li button {
+  padding: 3px 8px;
+  min-height: 34px;
+  font-size: 14px;
+  margin-top: 4px;
+}
+.made2com-app .m2-ledger li small {
+  display: block;
+}
+.made2com-app .m2-ledger .m2-future {
+  opacity: 0.65;
+}
+.made2com-app .m2-ledger .m2-invalid::before {
+  background: #a74934;
+}
+.made2com-app .m2-ledger-bottom {
+  padding: 4px 20px 20px;
+}
+.made2com-app .m2-contact-edit {
+  margin-top: 15px;
+}
+.made2com-app summary {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+}
+.made2com-app .m2-contact-edit form {
+  display: grid;
+  gap: 10px;
+  padding: 14px 0;
+}
+.made2com-app .m2-event-edit {
+  padding: 20px;
+  background: #f0f7f8;
+  display: grid;
+  gap: 12px;
+  border-top: 1px solid var(--m2-line);
+}
+.made2com-app .m2-decision {
+  border: 1px solid #d6e1df;
+  border-left: 5px solid var(--m2-teal);
+  border-radius: 3px;
+  background: #f5f9f9;
+  padding: 25px 21px;
+}
+.made2com-app .m2-outcome-converted {
+  border-left-color: #5c9535;
+  background: #f5f9f5;
+}
+.made2com-app .m2-outcome-error {
+  border-left-color: #a64d39;
+  background: #fff8f5;
+}
+.made2com-app .m2-decision h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.made2com-app .m2-reason {
+  font-weight: 600;
+  font-size: 16px;
+  padding-bottom: 19px;
+  border-bottom: 1px solid var(--m2-line);
+}
+.made2com-app .m2-decision h3 {
+  margin-top: 20px;
+}
+.made2com-app dl {
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+.made2com-app dl > div {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  padding: 9px 0;
+  border-bottom: 1px solid #dbe3e5;
+}
+.made2com-app dt {
+  font-weight: 600;
+}
+.made2com-app dd {
+  margin: 0;
+  text-align: right;
+}
+.made2com-app .m2-settings {
+  margin-top: 18px;
+}
+.made2com-app .m2-settings-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.made2com-app .m2-settings-body > form {
+  padding: 20px;
+  border-right: 1px solid var(--m2-line);
+}
+.made2com-app .m2-rule-numbers {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.made2com-app .m2-zones {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0 12px;
+}
+.made2com-app .m2-comparison {
+  padding: 20px;
+  min-width: 0;
+}
+.made2com-app .m2-comparison > button {
+  margin-top: 14px;
+}
+.made2com-app table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  text-align: left;
+}
+.made2com-app th,
+.made2com-app td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #dee5e8;
+  vertical-align: top;
+}
+.made2com-app thead {
+  background: #f0f3f4;
+}
+.made2com-app tbody th {
+  font-weight: 600;
+}
+.made2com-app .m2-changed {
+  background: #edf6f8;
+  color: #18546b;
+}
+.made2com-app .m2-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.made2com-app .m2-scroll table {
+  min-width: 470px;
+}
+.made2com-app .m2-files {
+  margin-top: 18px;
+}
+.made2com-app .m2-files-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.made2com-app .m2-files-body > div {
+  padding: 20px;
+  min-width: 0;
+}
+.made2com-app .m2-files-body > div + div {
+  border-left: 1px solid var(--m2-line);
+}
+.made2com-app .demo-file-field {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+.made2com-app input[type="file"] {
+  font-size: 13px;
+  padding: 7px;
+  width: 100%;
+  overflow: hidden;
+}
+.made2com-app .m2-files-body .m2-actions {
+  margin: 14px 0;
+}
+.made2com-app .m2-files-body details {
+  font-size: 14px;
+  margin: 16px 0;
+}
+.made2com-app .m2-files-body details p {
+  margin-top: 12px;
+}
+.made2com-app .m2-reset {
+  font-size: 14px;
+}
+.made2com-app .m2-exceptions {
+  background: #fff8f4;
+  padding: 20px;
+  margin-top: 18px;
+  border: 1px solid #e2c8bb;
+}
+.made2com-app .m2-exceptions h2 {
+  margin-bottom: 12px;
+}
+.made2com-app .m2-empty {
+  padding: 20px;
+}
+.made2com-app .demo-footer {
+  padding: 18px 30px !important;
+  border-top: 1px solid var(--m2-line);
+  font-size: 14px;
+}
+@media (max-width: 1200px) {
+  .made2com-app .m2-workspace {
+    grid-template-columns: 240px minmax(0, 1fr);
+  }
+  .made2com-app .m2-decision {
+    grid-column: 1/-1;
+  }
+  .made2com-app .m2-decision dl {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  .made2com-app .m2-decision dl > div {
+    flex-direction: column;
+  }
+  .made2com-app .m2-decision dd {
+    text-align: left;
+  }
+  .made2com-app .m2-datebar {
+    flex-wrap: wrap;
+  }
+  .made2com-app .m2-timeline {
+    min-width: 450px;
+  }
+}
+@media (max-width: 760px) {
+  .made2com-app .m2-header {
+    padding: 14px 18px;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .made2com-app .m2-header > strong {
+    font-size: 23px;
+  }
+  .made2com-app .m2-header > span {
+    font-size: 16px;
+    padding-left: 14px;
+  }
+  .made2com-app .m2-header > .m2-actions {
+    width: 100%;
+    margin: 0;
+  }
+  .made2com-app .demo-context {
+    padding: 10px 18px !important;
+    text-align: left;
+  }
+  .made2com-app main {
+    padding: 22px 18px;
+  }
+  .made2com-app h1 {
+    font-size: 29px;
+  }
+  .made2com-app .m2-heading > p {
+    font-size: 16px;
+  }
+  .made2com-app .m2-datebar {
+    gap: 12px;
+    padding-top: 14px;
+  }
+  .made2com-app .m2-datebar > label {
+    width: 100%;
+  }
+  .made2com-app .m2-datebar > .m2-help {
+    margin: 0;
+    max-width: 100%;
+  }
+  .made2com-app .m2-timeline {
+    min-width: 0;
+    flex-basis: 100%;
+    overflow-x: auto;
+    margin-top: 5px;
+  }
+  .made2com-app .m2-timeline button {
+    flex: 0 0 52px;
+  }
+  .made2com-app .m2-workspace,
+  .made2com-app .m2-settings-body,
+  .made2com-app .m2-files-body {
+    display: block;
+  }
+  .made2com-app .m2-ledger,
+  .made2com-app .m2-decision {
+    margin-top: 16px;
+  }
+  .made2com-app .m2-contact-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .made2com-app .m2-contact-list > button {
+    padding: 10px 8px;
+  }
+  .made2com-app .m2-contact-list > button strong {
+    margin-left: 5px;
+  }
+  .made2com-app .m2-search {
+    grid-template-columns: 1fr 1fr;
+  }
+  .made2com-app .m2-decision dl {
+    display: block;
+  }
+  .made2com-app .m2-decision dl > div {
+    flex-direction: row;
+  }
+  .made2com-app .m2-ledger li {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+  .made2com-app .m2-rule-numbers {
+    grid-template-columns: 1fr;
+  }
+  .made2com-app .m2-zones {
+    grid-template-columns: 1fr;
+  }
+  .made2com-app .m2-settings-body > form {
+    border-right: 0;
+    border-bottom: 1px solid var(--m2-line);
+  }
+  .made2com-app .m2-files-body > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--m2-line);
+  }
+  .made2com-app .m2-comparison > button {
+    width: 100%;
+  }
+  .made2com-app .demo-footer {
+    padding: 18px !important;
+  }
+}
