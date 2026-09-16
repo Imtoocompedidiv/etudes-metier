@@ -74,6 +74,11 @@ test("preview links cannot navigate while the exported email keeps its destinati
   assert.ok(!/\shref\s*=/i.test(preview));
   assert.equal((preview.match(/aria-disabled="true"/g) || []).length, 4);
   assert.ok(emailHtml(fixed()).includes('href="https://example.com/cour"'));
-  assert.ok(emailHtml(fixed()).includes('href="https://example.com/preferences"'));
-  assert.throws(() => parseEdition(JSON.stringify({ ...seed, edition: "__proto__" })), /inconnue/);
+  assert.ok(
+    emailHtml(fixed()).includes('href="https://example.com/preferences"'),
+  );
+  assert.throws(
+    () => parseEdition(JSON.stringify({ ...seed, edition: "__proto__" })),
+    /inconnue/,
+  );
 });

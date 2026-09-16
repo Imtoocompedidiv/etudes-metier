@@ -159,7 +159,10 @@ export function moveBlock(value, id, direction) {
 export function emailHtml(value, { preview = false } = {}) {
   const theme = editions[value.edition];
   const esc = escapeHtml;
-  const linkAttributes = (url) => preview ? 'role="link" aria-disabled="true"' : `href="${esc(validUrl(url) ? url : "#")}"`;
+  const linkAttributes = (url) =>
+    preview
+      ? 'role="link" aria-disabled="true"'
+      : `href="${esc(validUrl(url) ? url : "#")}"`;
   const rows = value.blocks
     .map((block) => {
       const destination = validUrl(block.url) ? block.url : "#";
