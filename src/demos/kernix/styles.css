@@ -1,0 +1,574 @@
+.kx-app {
+  --kx-blue: #0000b4;
+  --kx-ink: #000048;
+  --kx-border: #d8e1e9;
+  --kx-pale: #f1f5f8;
+  background: #fff;
+  color: var(--kx-ink);
+  font:
+    16px/1.5 "IBM Plex Sans",
+    sans-serif;
+  min-height: 100vh;
+}
+.kx-app * {
+  box-sizing: border-box;
+}
+.kx-app button,
+.kx-app input,
+.kx-app select,
+.kx-app textarea {
+  font: inherit;
+}
+.kx-app button,
+.kx-app .demo-file-import {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  color: var(--kx-blue);
+  border: 1px solid var(--kx-blue);
+  border-radius: 3px;
+  padding: 9px 13px;
+  min-height: 42px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.kx-app button:hover:not(:disabled),
+.kx-app .demo-file-import:hover {
+  background: #efefff;
+}
+.kx-app button:disabled {
+  color: #76818c;
+  border-color: #cdd6dd;
+  background: #f5f7f9;
+  cursor: default;
+}
+.kx-app .kx-primary {
+  color: #fff;
+  background: var(--kx-blue);
+}
+.kx-app .kx-primary:hover:not(:disabled) {
+  background: #000088;
+}
+.kx-app
+  :is(button, a, input, textarea, select, summary, [tabindex]):focus-visible,
+.kx-app .demo-file-import:focus-within {
+  outline: 3px solid #6d92ff;
+  outline-offset: 3px;
+}
+.kx-app .demo-file-import {
+  position: relative;
+  overflow: hidden;
+}
+.kx-app .demo-file-import input {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  cursor: pointer;
+}
+.kx-app .demo-file-field {
+  min-width: 0;
+}
+.kx-top {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 14px 36px;
+  border-bottom: 1px solid var(--kx-border);
+}
+.kx-identity {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.kx-brand {
+  font-family: "IBM Plex Serif", serif;
+  font-size: 32px;
+  color: var(--kx-blue);
+  padding-right: 22px;
+  border-right: 1px solid var(--kx-border);
+}
+.kx-identity strong {
+  font-size: 19px;
+  font-weight: 600;
+}
+.kx-independent {
+  font-size: 14px;
+  color: #545e79;
+}
+.kx-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.kx-top .kx-actions {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.kx-content {
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 36px;
+}
+.kx-intro {
+  padding: 24px 0 20px;
+}
+.kx-app h1 {
+  font-family: "IBM Plex Serif", serif;
+  font-size: clamp(29px, 3.25vw, 46px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -1.4px;
+  margin: 0 0 10px;
+}
+.kx-intro p {
+  color: #4d5676;
+  margin: 0;
+  font-size: 17px;
+}
+.kx-app code {
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.92em;
+}
+.kx-documents {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.kx-document,
+.kx-contract,
+.kx-results {
+  min-width: 0;
+  border: 1px solid var(--kx-border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.kx-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 14px;
+  background: var(--kx-pale);
+  border-bottom: 1px solid var(--kx-border);
+}
+.kx-app h2 {
+  font-size: 18px;
+  line-height: 1.35;
+  margin: 0;
+  font-weight: 600;
+}
+.kx-section-head h2 span {
+  font-weight: 400;
+  font-size: 16px;
+}
+.kx-document textarea {
+  display: block;
+  width: 100%;
+  min-height: 342px;
+  padding: 14px 16px;
+  resize: vertical;
+  border: 0;
+  border-radius: 0;
+  background: #fcfdff;
+  color: #0000a4;
+  font:
+    14px/1.55 Consolas,
+    "Courier New",
+    monospace;
+  white-space: pre;
+  tab-size: 2;
+  overflow: auto;
+}
+.kx-document-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 14px;
+  border-top: 1px solid var(--kx-border);
+}
+.kx-app .kx-text-button {
+  border-color: transparent;
+  font-weight: 400;
+}
+.kx-diff {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+  border: 1px solid var(--kx-blue);
+  background: #f3f3ff;
+  border-radius: 3px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  color: var(--kx-blue);
+}
+.kx-diff strong {
+  flex: 0 0 auto;
+  padding: 2px 28px 2px 0;
+  border-right: 1px solid #9494e8;
+}
+.kx-diff div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 24px;
+  min-width: 0;
+  font-size: 14px;
+  padding-top: 3px;
+}
+.kx-diff p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.kx-diff code {
+  margin-left: 12px;
+}
+.kx-record-path {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+}
+.kx-app input:not([type="checkbox"]):not([type="file"]),
+.kx-app select {
+  border: 1px solid #bdcad7;
+  border-radius: 3px;
+  background: #fff;
+  color: var(--kx-ink);
+  padding: 8px 10px;
+  min-height: 40px;
+  min-width: 0;
+}
+.kx-record-path input {
+  flex: 1;
+  max-width: 550px;
+  font-family: Consolas, "Courier New", monospace !important;
+}
+.kx-app input[type="checkbox"] {
+  accent-color: var(--kx-blue);
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.kx-table-scroll {
+  overflow: auto;
+}
+.kx-app table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 15px;
+}
+.kx-app th {
+  font-weight: 600;
+}
+.kx-app th,
+.kx-app td {
+  border-bottom: 1px solid #e4eaf0;
+  padding: 10px 14px;
+  vertical-align: top;
+}
+.kx-app thead {
+  background: #f8fafb;
+  color: #384667;
+}
+.kx-app tbody tr:last-child td,
+.kx-app tbody tr:last-child th {
+  border-bottom: 0;
+}
+.kx-mapping {
+  min-width: 800px;
+}
+.kx-mapping th:first-child {
+  width: 14%;
+}
+.kx-mapping td:nth-child(2) {
+  width: 34%;
+}
+.kx-mapping input:not([type="checkbox"]) {
+  width: 100%;
+  font:
+    15px/1.5 Consolas,
+    "Courier New",
+    monospace;
+}
+.kx-mapping td {
+  vertical-align: middle;
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+.kx-mapping th {
+  vertical-align: middle;
+}
+.kx-app .kx-row-error {
+  background: #fff1f1;
+  color: #91242b;
+}
+.kx-app .kx-row-error input {
+  border-color: #d698a2 !important;
+}
+.kx-help {
+  border-top: 1px solid var(--kx-border);
+  padding: 11px 14px;
+  font-size: 14px;
+  color: #4d5676;
+}
+.kx-help summary {
+  color: var(--kx-blue);
+  cursor: pointer;
+}
+.kx-help p {
+  max-width: 1000px;
+  margin: 10px 0;
+}
+.kx-results {
+  margin-top: 20px;
+}
+.kx-results table {
+  min-width: 940px;
+}
+.kx-results td:first-child {
+  white-space: nowrap;
+}
+.kx-results td:last-child {
+  width: 28%;
+}
+.kx-filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 14px;
+  border-bottom: 1px solid var(--kx-border);
+  font-size: 14px;
+}
+.kx-filters label:first-child {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.kx-filters input:not([type="checkbox"]) {
+  width: 300px;
+}
+.kx-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.kx-errors {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: #a02a36;
+  font-size: 14px;
+}
+.kx-errors li + li {
+  margin-top: 5px;
+}
+.kx-missing {
+  color: #ad3644;
+  font-size: 14px;
+}
+.kx-valid {
+  color: #226b58;
+}
+.kx-empty {
+  padding: 14px;
+  color: #4d5676;
+}
+.kx-delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 26px;
+  padding: 24px 0;
+}
+.kx-delivery p {
+  color: #4d5676;
+  font-size: 14px;
+  margin: 6px 0 0;
+  max-width: 390px;
+}
+.kx-delivery .kx-actions {
+  justify-content: flex-end;
+}
+.kx-save {
+  padding: 15px 0;
+  border-top: 1px solid var(--kx-border);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.kx-save p {
+  font-size: 14px;
+  color: #59637b;
+  margin: 0 0 0 auto;
+}
+.kx-notice {
+  min-height: 24px;
+  font-size: 15px;
+  color: #226b58;
+  margin: 8px 0;
+}
+.kx-pending {
+  padding: 12px 16px;
+  background: #fff6dd;
+  color: #745413;
+  border-left: 3px solid #b78220;
+  font-size: 15px;
+}
+.kx-app .demo-error {
+  color: #9b2434;
+  padding: 10px 14px;
+  margin: 0;
+  font-size: 15px;
+  background: #fff1f1;
+}
+.kx-app .demo-footer {
+  padding: 20px 0;
+  border-top: 1px solid var(--kx-border);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+  color: #59637b;
+}
+.kx-app .demo-footer a {
+  color: var(--kx-blue);
+}
+.kx-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 1120px) {
+  .kx-independent {
+    display: none;
+  }
+  .kx-top {
+    padding: 14px 24px;
+  }
+  .kx-content {
+    padding: 0 24px;
+  }
+  .kx-delivery {
+    align-items: flex-start;
+  }
+  .kx-document-tools {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 720px) {
+  .kx-top {
+    padding: 14px 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .kx-identity {
+    gap: 14px;
+  }
+  .kx-brand {
+    padding-right: 14px;
+    font-size: 28px;
+  }
+  .kx-identity strong {
+    font-size: 16px;
+  }
+  .kx-top .kx-actions {
+    margin: 0;
+  }
+  .kx-content {
+    padding: 0 16px;
+  }
+  .kx-intro {
+    padding-top: 22px;
+  }
+  .kx-app h1 {
+    letter-spacing: -0.65px;
+  }
+  .kx-intro p {
+    font-size: 16px;
+  }
+  .kx-documents {
+    grid-template-columns: 1fr;
+  }
+  .kx-document textarea {
+    min-height: 330px;
+    font-size: 14px;
+  }
+  .kx-section-head {
+    flex-wrap: wrap;
+    padding: 10px 12px;
+  }
+  .kx-diff {
+    display: block;
+    padding: 12px;
+  }
+  .kx-diff strong {
+    display: block;
+    border: 0;
+    padding: 0 0 7px;
+  }
+  .kx-diff div {
+    display: block;
+  }
+  .kx-diff p + p {
+    margin-top: 7px;
+  }
+  .kx-diff code {
+    display: block;
+    margin: 3px 0 0;
+  }
+  .kx-record-path {
+    flex-wrap: wrap;
+    padding: 12px;
+    gap: 8px;
+  }
+  .kx-record-path label {
+    width: 100%;
+  }
+  .kx-record-path input {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+  .kx-filters {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px;
+  }
+  .kx-filters label:first-child {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+  }
+  .kx-filters input:not([type="checkbox"]) {
+    width: 100%;
+  }
+  .kx-delivery {
+    display: block;
+  }
+  .kx-delivery .kx-actions {
+    margin-top: 16px;
+    justify-content: flex-start;
+  }
+  .kx-save {
+    align-items: flex-start;
+  }
+  .kx-save p {
+    margin: 0;
+  }
+}

@@ -1,0 +1,706 @@
+.alpis-app {
+  --red: #af0b08;
+  --ink: #2c2524;
+  --muted: #6b5d5b;
+  --line: #e2d7d4;
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink);
+  background: #fcf9f7;
+  min-height: 100vh;
+}
+.alpis-app * {
+  box-sizing: border-box;
+}
+.alpis-app button,
+.alpis-app input,
+.alpis-app textarea,
+.alpis-app select {
+  font: inherit;
+}
+.alpis-app button,
+.alpis-app select {
+  cursor: pointer;
+}
+.alpis-app button {
+  min-height: 43px;
+  border: 1px solid #b9a5a0;
+  background: #fff;
+  border-radius: 5px;
+  padding: 9px 14px;
+  color: var(--ink);
+  font-weight: 600;
+}
+.alpis-app button:hover:not(:disabled) {
+  background: #fff0ec;
+  border-color: var(--red);
+}
+.alpis-app button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.alpis-app button.alpis-primary {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+.alpis-app button.alpis-primary:hover:not(:disabled) {
+  background: #850905;
+}
+.alpis-app :focus-visible {
+  outline: 3px solid #ce5b30;
+  outline-offset: 3px;
+}
+.alpis-app input:not([type="checkbox"]),
+.alpis-app textarea,
+.alpis-app select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #bdada8;
+  border-radius: 4px;
+  padding: 9px 10px;
+  color: var(--ink);
+  background: #fff;
+}
+.alpis-app textarea {
+  resize: vertical;
+}
+.alpis-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+.alpis-app input[type="checkbox"] {
+  width: 19px;
+  height: 19px;
+  accent-color: var(--red);
+  margin: 0;
+}
+.alpis-app h1,
+.alpis-app h2 {
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 400;
+  line-height: 1.16;
+  margin: 0;
+}
+.alpis-app h1 {
+  font-size: 40px;
+}
+.alpis-app h2 {
+  font-size: 25px;
+}
+.alpis-app p {
+  margin: 9px 0;
+}
+.alpis-topbar {
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 15px 34px;
+  font-size: 14px;
+  background: white;
+}
+.alpis-topbar strong {
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.alpis-divider {
+  margin: 0 16px;
+  color: #b7a6a1;
+}
+.alpis-app main {
+  max-width: 1600px;
+  margin: auto;
+  padding: 30px 34px 18px;
+}
+.alpis-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 28px;
+  align-items: flex-start;
+}
+.alpis-heading p {
+  color: var(--muted);
+  max-width: 760px;
+}
+.alpis-heading-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 10px;
+  min-width: 328px;
+  margin-top: 5px;
+}
+.alpis-filebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 14px 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.alpis-filebar > div {
+  display: flex;
+  gap: 8px;
+}
+.alpis-filebar button {
+  min-height: 36px;
+  padding: 4px 11px;
+  font-size: 14px;
+}
+.alpis-error {
+  padding: 14px 16px;
+  background: #ffdfd8;
+  border-left: 4px solid var(--red);
+  margin: 14px 0;
+}
+.alpis-feedback {
+  padding: 10px 14px;
+  background: #e9eee5;
+  color: #35513a;
+}
+.alpis-timeline {
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 6px;
+  padding: 18px 22px 8px;
+  margin: 14px 0 20px;
+}
+.alpis-timeline-heading {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.alpis-timeline-heading h2 {
+  font-size: 21px;
+}
+.alpis-timeline-heading span {
+  font-size: 14px;
+  color: var(--muted);
+}
+.alpis-timeline-scroll {
+  overflow-x: auto;
+  padding: 10px 4px 2px;
+}
+.alpis-timeline-inner {
+  min-width: 740px;
+  position: relative;
+  margin: 0 10px;
+}
+.alpis-ruler {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 33px;
+  border-bottom: 1px solid #e8dfdc;
+}
+.alpis-ruler span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--muted);
+  border-left: 1px solid #bdaa9f;
+  padding: 0 0 7px 3px;
+}
+.alpis-ruler span:first-child {
+  transform: none;
+}
+.alpis-ruler span:last-child {
+  transform: translateX(-100%);
+}
+.alpis-app button.alpis-clip {
+  position: absolute;
+  height: 43px;
+  min-height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #efd9d4;
+  border: none;
+  border-radius: 3px;
+  padding: 6px 9px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+}
+.alpis-clip span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.alpis-app button.alpis-clip.overlap {
+  box-shadow: inset 0 -3px var(--red);
+}
+.alpis-app button.alpis-clip.selected {
+  background: var(--red);
+  color: white;
+}
+.alpis-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(350px, 0.9fr);
+  gap: 20px;
+  align-items: start;
+}
+.alpis-passages {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  overflow: hidden;
+}
+.alpis-list-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  gap: 12px;
+}
+.alpis-list-head h2 {
+  font-size: 23px;
+}
+.alpis-filter select {
+  min-height: 39px;
+  font-size: 14px;
+  padding: 6px 26px 6px 9px;
+}
+.alpis-list {
+  max-height: 618px;
+  overflow: auto;
+}
+.alpis-row {
+  display: flex;
+  gap: 12px;
+  padding: 14px 17px;
+  border-bottom: 1px solid #ede5e2;
+}
+.alpis-row.active {
+  background: #fff0ec;
+  box-shadow: inset 4px 0 var(--red);
+}
+.alpis-check {
+  justify-content: center;
+  min-width: 24px;
+  align-items: center;
+}
+.alpis-app .alpis-row-button {
+  border: 0;
+  padding: 0;
+  display: flex;
+  gap: 14px;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border-radius: 0;
+  font-weight: 400;
+  min-height: 68px;
+}
+.alpis-app .alpis-row-button:hover:not(:disabled) {
+  background: none;
+}
+.alpis-cue-number {
+  color: var(--muted);
+  min-width: 18px;
+}
+.alpis-row-main {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.alpis-time {
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  color: var(--muted);
+}
+.alpis-cuetext {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+}
+.alpis-status {
+  font-size: 13px;
+  color: #386142;
+}
+.alpis-status.error {
+  color: var(--red);
+}
+.alpis-status.warning {
+  color: #87551a;
+}
+.alpis-selection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: space-between;
+  padding: 12px 17px;
+  font-size: 14px;
+}
+.alpis-selection button {
+  min-height: 36px;
+  padding: 5px 9px;
+  font-size: 14px;
+}
+.alpis-mobile-link {
+  display: none;
+}
+.alpis-editor {
+  background: #fff1ed;
+  padding: 24px;
+  border: 1px solid #ead8d2;
+  border-radius: 6px;
+  scroll-margin-top: 20px;
+}
+.alpis-accent {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 14px;
+}
+.alpis-editor h2 {
+  font-size: 30px;
+  margin: 7px 0 20px;
+}
+.alpis-timefields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.alpis-timefields input {
+  font-variant-numeric: tabular-nums;
+}
+.alpis-small {
+  font-size: 13px;
+  color: var(--muted);
+}
+.alpis-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 18px 0;
+}
+.alpis-metrics > span {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.alpis-metrics strong {
+  background: #f2e5e0;
+  padding: 10px;
+  font-size: 17px;
+  font-weight: 400;
+  font-variant-numeric: tabular-nums;
+}
+.alpis-alert,
+.alpis-notice {
+  font-size: 14px;
+  padding: 10px 12px;
+  margin: 14px 0;
+  background: #ffded6;
+  color: #7e1611;
+  border-left: 3px solid var(--red);
+}
+.alpis-notice {
+  background: #f4e9cb;
+  color: #6e4b16;
+  border-color: #a47324;
+}
+.alpis-alert ul,
+.alpis-notice ul {
+  padding-left: 18px;
+  margin: 0;
+}
+.alpis-alert li + li,
+.alpis-notice li + li {
+  margin-top: 6px;
+}
+.alpis-wide {
+  width: 100%;
+  margin-top: 5px;
+}
+.alpis-waiver {
+  margin-top: 20px;
+  border-top: 1px solid #dfc6be;
+  padding-top: 14px;
+  font-size: 14px;
+}
+.alpis-waiver summary,
+.alpis-rules summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 32px;
+}
+.alpis-waiver button {
+  margin-top: 10px;
+}
+.alpis-shift {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 23px 24px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: white;
+  margin-top: 20px;
+}
+.alpis-shift h2 {
+  font-size: 23px;
+}
+.alpis-shift p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 630px;
+}
+.alpis-shift form {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  min-width: 395px;
+}
+.alpis-shift input {
+  max-width: 165px;
+}
+.alpis-rules {
+  margin-top: 16px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 8px;
+}
+.alpis-rules summary {
+  font-size: 18px;
+}
+.alpis-rules p {
+  font-size: 14px;
+  color: var(--muted);
+  max-width: 990px;
+}
+.alpis-rulegrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 14px;
+  margin: 15px 0;
+}
+.alpis-journal {
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 6px;
+  background: #fff;
+  margin-top: 20px;
+}
+.alpis-journal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+}
+.alpis-journal-head p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.alpis-journal ol {
+  list-style: none;
+  margin: 15px 0;
+  padding: 0;
+  border-top: 1px solid var(--line);
+}
+.alpis-journal li {
+  padding: 11px 10px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 14px;
+}
+.alpis-journal li > span:last-of-type {
+  color: var(--muted);
+}
+.alpis-journal li p {
+  flex-basis: 100%;
+}
+.alpis-empty {
+  padding: 15px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.alpis-savebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.alpis-local {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 20px 0 !important;
+  max-width: 1060px;
+}
+.alpis-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+@media (max-width: 1050px) {
+  .alpis-heading {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .alpis-heading-actions {
+    justify-content: flex-start;
+  }
+  .alpis-workspace {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+  }
+  .alpis-shift {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .alpis-shift form {
+    min-width: 0;
+  }
+  .alpis-rulegrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .alpis-topbar {
+    padding: 12px 18px;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .alpis-topbar > span:last-child {
+    font-size: 12px;
+  }
+  .alpis-app main {
+    padding: 23px 16px 14px;
+  }
+  .alpis-app h1 {
+    font-size: 35px;
+  }
+  .alpis-heading p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+  .alpis-heading-actions {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .alpis-heading-actions button {
+    width: 100%;
+    padding: 9px 10px;
+  }
+  .alpis-filebar {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .alpis-filebar > span {
+    overflow-wrap: anywhere;
+  }
+  .alpis-timeline {
+    padding: 15px 12px 7px;
+  }
+  .alpis-timeline-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .alpis-timeline-heading span {
+    font-size: 13px;
+  }
+  .alpis-workspace {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .alpis-passages,
+  .alpis-editor {
+    width: 100%;
+  }
+  .alpis-list {
+    max-height: 420px;
+  }
+  .alpis-list-head {
+    padding: 14px 13px;
+  }
+  .alpis-row {
+    padding: 12px 13px;
+    gap: 8px;
+  }
+  .alpis-app .alpis-row-button {
+    gap: 8px;
+  }
+  .alpis-time {
+    font-size: 12px;
+  }
+  .alpis-selection {
+    flex-wrap: wrap;
+    padding: 12px 13px;
+  }
+  .alpis-mobile-link {
+    display: block;
+    color: var(--red);
+  }
+  .alpis-editor {
+    padding: 21px 17px;
+  }
+  .alpis-editor h2 {
+    font-size: 29px;
+  }
+  .alpis-timefields {
+    gap: 9px;
+  }
+  .alpis-timefields input {
+    font-size: 14px;
+    padding: 9px 7px;
+  }
+  .alpis-shift {
+    padding: 20px 17px;
+  }
+  .alpis-shift form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .alpis-shift input {
+    max-width: none;
+  }
+  .alpis-rulegrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .alpis-rulegrid label:last-child {
+    grid-column: auto;
+  }
+  .alpis-journal {
+    padding: 20px 17px;
+  }
+  .alpis-journal-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .alpis-savebar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .alpis-savebar button {
+    width: 100%;
+  }
+}
