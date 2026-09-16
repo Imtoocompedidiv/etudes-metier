@@ -1,0 +1,411 @@
+.athorus-app {
+  --ink: #111;
+  --mint: #45d0bd;
+  --line: #d9e0e6;
+  min-height: 100vh;
+  background: #f4f7f9;
+  color: #172334;
+  font:
+    16px/1.5 "Manrope",
+    Arial,
+    sans-serif;
+}
+.athorus-app * {
+  box-sizing: border-box;
+}
+.athorus-app button,
+.athorus-app input,
+.athorus-app select {
+  font: inherit;
+}
+.athorus-app button,
+.athorus-app input,
+.athorus-app select {
+  border: 1px solid #b8c3cd;
+  border-radius: 5px;
+  padding: 10px 12px;
+  min-height: 44px;
+  background: white;
+  color: inherit;
+}
+.athorus-app button {
+  cursor: pointer;
+}
+.athorus-app button:hover:not(:disabled) {
+  border-color: #287d72;
+  background: #ecfaf7;
+}
+.athorus-app button:disabled {
+  cursor: not-allowed;
+  opacity: 0.46;
+}
+.athorus-app :focus-visible {
+  outline: 3px solid #8258c8;
+  outline-offset: 3px;
+}
+.athorus-app h1,
+.athorus-app h2,
+.athorus-app h3,
+.athorus-masthead strong {
+  font-family: "Kanit", Arial, sans-serif;
+  color: var(--ink);
+  line-height: 1.15;
+}
+.athorus-app h1 {
+  font-size: clamp(27px, 2.5vw, 37px);
+  margin: 4px 0 10px;
+}
+.athorus-app h2 {
+  font-size: 21px;
+  margin: 0 0 18px;
+}
+.athorus-app h3 {
+  font-size: 30px;
+  margin: 0 0 7px;
+}
+.athorus-app p {
+  margin: 10px 0;
+}
+.athorus-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.athorus-app input,
+.athorus-app select {
+  width: 100%;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 400;
+}
+.athorus-masthead {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 14px 34px;
+  background: #111;
+  color: #cdd7df;
+}
+.athorus-masthead strong {
+  color: white;
+  font-size: 27px;
+}
+.athorus-masthead strong span {
+  color: var(--mint);
+  font-weight: 400;
+}
+.athorus-masthead p {
+  font-size: 14px;
+}
+.athorus-app main {
+  max-width: 1600px;
+  margin: auto;
+  padding: 24px 28px;
+}
+.athorus-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.46fr);
+  gap: 22px;
+  align-items: start;
+}
+.athorus-intro {
+  font-size: 17px;
+  margin-bottom: 22px !important;
+}
+.athorus-catalogue {
+  min-width: 0;
+}
+.athorus-sheet,
+.athorus-preview {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 16px;
+}
+.athorus-toolbar {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.athorus-toolbar label {
+  display: inline-flex;
+}
+.athorus-toolbar label:has(input[type="file"]) {
+  padding: 11px 13px;
+  min-height: 44px;
+  border: 1px solid #45d0bd;
+  border-radius: 5px;
+  background: #45d0bd;
+  color: #032f2a;
+  cursor: pointer;
+  font-size: 16px;
+}
+.athorus-app .athorus-primary {
+  background: var(--mint);
+  border-color: var(--mint);
+  color: #032f2a;
+  font-weight: 600;
+}
+.athorus-app .athorus-primary:hover:not(:disabled) {
+  background: #70dece;
+}
+.athorus-filter {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin: 18px 0 12px;
+  align-items: center;
+  font-size: 14px;
+}
+.athorus-filter label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.athorus-filter select {
+  font-size: 14px;
+}
+.athorus-table-scroll {
+  overflow: auto;
+}
+.athorus-table-scroll table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%;
+  font-size: 14px;
+  white-space: nowrap;
+}
+.athorus-table-scroll th {
+  background: #f4f7fa;
+  font-weight: 600;
+}
+.athorus-table-scroll td,
+.athorus-table-scroll th {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e5e9ed;
+}
+.athorus-table-scroll .athorus-selected {
+  background: #f1eaff;
+}
+.athorus-app .athorus-row-button {
+  border: 0;
+  background: none;
+  border-radius: 0;
+  min-height: 32px;
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-size: 14px;
+}
+.athorus-invalid {
+  color: #af2338;
+}
+.athorus-valid {
+  color: #087452;
+}
+.athorus-editor {
+  margin-top: 22px;
+  background: #faf7fe;
+  border: 1px solid #d9c6ef;
+  padding: 18px;
+  border-radius: 5px;
+}
+.athorus-fields {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  align-items: end;
+}
+.athorus-fields button {
+  font-size: 14px;
+  min-height: 46px;
+}
+.athorus-hint {
+  color: #59687a;
+  font-size: 14px;
+}
+.athorus-issues {
+  padding-left: 20px;
+  color: #af2338;
+  font-size: 14px;
+}
+.athorus-preview {
+  padding: 20px;
+}
+.athorus-bag {
+  display: block;
+  width: 100%;
+  height: 230px;
+  margin: 16px auto;
+}
+.athorus-price {
+  font-family: "Kanit", Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #111;
+}
+.athorus-preview fieldset {
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 17px 0;
+  padding: 14px 0 0;
+}
+.athorus-preview legend {
+  font-weight: 600;
+  padding-right: 10px;
+}
+.athorus-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+.athorus-swatches button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  padding: 7px;
+}
+.athorus-swatches button[aria-pressed="true"] {
+  border-color: #248378;
+  box-shadow: inset 0 0 0 1px #248378;
+}
+.athorus-swatches i {
+  display: block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 1px solid #0002;
+}
+.athorus-quantity {
+  max-width: 130px;
+}
+.athorus-wide {
+  width: 100%;
+}
+.athorus-delivery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  margin-top: 22px;
+  align-items: center;
+}
+.athorus-delivery h2 {
+  margin: 0;
+}
+.athorus-delivery p {
+  font-size: 14px;
+}
+.athorus-app .athorus-report {
+  color: #613c9e;
+  border-color: #8258c8;
+}
+.athorus-feedback {
+  color: #365849;
+  min-height: 24px;
+  font-size: 14px;
+}
+.athorus-format {
+  font-size: 14px;
+  padding: 12px 0;
+}
+.athorus-format summary {
+  cursor: pointer;
+  padding: 8px 0;
+}
+.athorus-format code {
+  display: block;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  font-size: 14px;
+}
+.athorus-empty {
+  padding: 20px;
+}
+@media (max-width: 1050px) {
+  .athorus-workspace {
+    grid-template-columns: minmax(0, 1fr) 310px;
+  }
+  .athorus-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .athorus-masthead {
+    padding: 14px 20px;
+  }
+  .athorus-app main {
+    padding: 20px;
+  }
+}
+@media (max-width: 780px) {
+  .athorus-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .athorus-masthead {
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
+  }
+  .athorus-app main {
+    padding: 20px 14px;
+  }
+  .athorus-preview {
+    margin-top: 0;
+  }
+  .athorus-bag {
+    height: 210px;
+  }
+  .athorus-filter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .athorus-filter label {
+    width: 100%;
+  }
+  .athorus-delivery .athorus-toolbar {
+    width: 100%;
+  }
+  .athorus-delivery button {
+    width: 100%;
+  }
+}
+@media (max-width: 440px) {
+  .athorus-fields {
+    grid-template-columns: 1fr;
+  }
+  .athorus-sheet {
+    padding: 12px;
+  }
+  .athorus-editor {
+    padding: 13px;
+  }
+  .athorus-toolbar button {
+    flex-grow: 1;
+  }
+}
+
+.athorus-app .athorus-product-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  background-color: white;
+  background-size: 300% 200%;
+  background-repeat: no-repeat;
+  margin: 12px 0;
+}
+.athorus-app .athorus-product-empty {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: #f5f5f5;
+  text-align: center;
+  color: #50565b;
+}

@@ -1,0 +1,874 @@
+.cel-app {
+  --green: #80b526;
+  --slate: #2f3e4f;
+  --line: #d5dce0;
+  --pale: #f2f4f5;
+  color: var(--slate);
+  background: #fff;
+  font-family: "Encode Sans", sans-serif;
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.cel-app h1,
+.cel-app h2,
+.cel-app h3,
+.cel-app p {
+  margin: 0;
+}
+.cel-app h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-weight: 700;
+  color: #172b40;
+}
+.cel-app h2 {
+  font-size: 25px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  font-weight: 650;
+  color: #172b40;
+}
+.cel-app h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+.cel-app button {
+  border: 1px solid #9bafbc;
+  border-radius: 3px;
+  padding: 10px 15px;
+  background: white;
+  color: #223d50;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+.cel-app button:hover:not(:disabled) {
+  background: #f1f7e7;
+  border-color: #789956;
+}
+.cel-app button:disabled {
+  opacity: 0.43;
+  cursor: default;
+}
+.cel-app button.cel-primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: #142d05;
+  font-weight: 650;
+}
+.cel-app button.cel-primary:hover:not(:disabled) {
+  background: #91c93a;
+}
+.cel-app button.cel-text {
+  background: none;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 8px 0;
+  text-align: left;
+}
+.cel-app input,
+.cel-app textarea {
+  font-family: inherit;
+  font-size: 16px;
+  color: var(--slate);
+  border: 1px solid #bccbd6;
+  border-radius: 3px;
+  background: #fff;
+  padding: 9px 11px;
+  min-height: 43px;
+  min-width: 0;
+  width: 100%;
+}
+.cel-app textarea {
+  resize: vertical;
+  line-height: 1.55;
+}
+.cel-app input[type="checkbox"] {
+  width: 22px;
+  height: 22px;
+  min-height: 22px;
+  flex-shrink: 0;
+  accent-color: #699822;
+}
+.cel-app label {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.cel-header {
+  padding: 13px 35px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  min-height: 74px;
+}
+.cel-brand {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-shrink: 0;
+}
+.cel-brand strong {
+  font-size: 39px;
+  font-weight: 650;
+  color: #689e30;
+  line-height: 1.15;
+  letter-spacing: -1.2px;
+}
+.cel-brand > span {
+  border-left: 1px solid #9bafbc;
+  padding-left: 24px;
+  font-size: 15px;
+}
+.cel-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.cel-header .demo-file-import {
+  background: var(--green);
+  border-color: var(--green);
+  color: #142d05;
+  border-radius: 3px;
+  font-weight: 600;
+  font-size: 15px;
+  min-height: 44px;
+}
+.cel-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(330px, 1fr);
+  max-width: 1600px;
+  margin: auto;
+}
+.cel-paper {
+  padding: 29px 30px 22px 35px;
+  min-width: 0;
+}
+.cel-lead {
+  font-size: 21px;
+  line-height: 1.45;
+  margin-top: 6px !important;
+  color: #334d60;
+}
+.cel-meeting {
+  font-size: 16px;
+  color: #5a7285;
+  margin-top: 9px !important;
+  margin-bottom: 15px !important;
+}
+.cel-manifest {
+  border: 1px solid var(--line);
+  overflow: auto;
+  margin-bottom: 20px;
+}
+.cel-manifest table {
+  width: 100%;
+  min-width: 500px;
+  border-collapse: collapse;
+}
+.cel-manifest th {
+  background: #edf0f2;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: left;
+  padding: 11px 18px;
+}
+.cel-manifest td {
+  border-top: 1px solid #dce3e7;
+  font-size: 15px;
+  height: 48px;
+  padding: 1px 18px;
+}
+.cel-manifest tr.selected {
+  background: #fff8d7;
+}
+.cel-manifest td:first-child {
+  width: 42%;
+  padding-left: 8px;
+}
+.cel-manifest td:nth-child(2) {
+  width: 24%;
+}
+.cel-manifest td button {
+  background: transparent;
+  border: 0;
+  padding: 9px 10px;
+  font-weight: 400;
+  text-align: left;
+  min-height: 45px;
+  width: 100%;
+  justify-content: flex-start;
+}
+.cel-manifest tr.selected button {
+  font-weight: 650;
+  color: #172b40;
+}
+.cel-piece-state {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  white-space: nowrap;
+}
+.cel-piece-state i {
+  width: 13px;
+  height: 13px;
+  background: #77959b;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.cel-piece-state.checked i {
+  background: #76a733;
+}
+.cel-piece-state.review i {
+  background: #e79f0c;
+}
+.cel-piece-state.missing i {
+  background: #d84647;
+}
+.cel-detail {
+  padding: 20px;
+  border: 1px solid var(--line);
+  min-width: 0;
+}
+.cel-detail > p {
+  margin-top: 8px;
+  font-size: 16px;
+}
+.cel-version-list {
+  list-style: none;
+  padding: 0 0 0 28px;
+  margin: 23px 0;
+  overflow-wrap: anywhere;
+}
+.cel-version-list li {
+  border-left: 1px solid #a7b5be;
+  margin-left: -10px;
+  padding: 0 0 24px 25px;
+  position: relative;
+  font-size: 15px;
+}
+.cel-version-list li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+.cel-version-list li:before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 2px;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  border: 2px solid #e79f0c;
+  background: white;
+}
+.cel-version-list li.checked:before {
+  background: #76a733;
+  border-color: #76a733;
+}
+.cel-version-list strong {
+  font-weight: 550;
+  color: #233a4c;
+}
+.cel-version-list li p {
+  font-size: 14px;
+  color: #5a7183;
+  margin-top: 3px;
+}
+.cel-version-list li p.cel-version-note {
+  font-size: 15px;
+  color: #3d5667;
+  margin-top: 7px;
+}
+.cel-check-action {
+  margin: 24px 0 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.cel-check-action label {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  width: 100%;
+  font-size: 16px;
+  min-height: 32px;
+}
+.cel-detail > .cel-text {
+  display: block;
+  margin: 10px 0;
+}
+.cel-receive {
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 13px 17px;
+}
+.cel-receive h3,
+.cel-receive > label:has(textarea),
+.cel-receive > p,
+.cel-receive > .cel-actions {
+  grid-column: 1/-1;
+}
+.cel-receive label {
+  display: grid;
+  gap: 7px;
+}
+.cel-hint {
+  font-size: 14px !important;
+  line-height: 1.55;
+  color: #617588;
+}
+.cel-sidebar {
+  border-left: 1px solid var(--line);
+  padding: 29px 34px 24px;
+  min-width: 0;
+}
+.cel-settings {
+  display: grid;
+  gap: 12px;
+}
+.cel-settings h2 {
+  margin-bottom: 0;
+}
+.cel-settings label {
+  display: grid;
+  gap: 5px;
+  font-size: 15px;
+  color: #4b6275;
+}
+.cel-settings button {
+  justify-self: start;
+}
+.cel-draft-note {
+  font-size: 14px;
+  color: #8c5910;
+}
+.cel-projection {
+  border-top: 1px solid var(--line);
+  padding-top: 19px;
+  margin-top: 24px;
+}
+.cel-projection h2 {
+  font-size: 21px;
+}
+.cel-date-route {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  gap: 11px;
+  align-items: center;
+  margin: 13px 0 20px;
+}
+.cel-date-route > div {
+  min-width: 0;
+}
+.cel-date-route span {
+  font-size: 14px;
+  display: block;
+  color: #5d7283;
+}
+.cel-date-route strong {
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 550;
+  display: block;
+  margin-top: 2px;
+}
+.cel-calendar {
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  border: 1px solid #e3e8ec;
+}
+.cel-calendar > div {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.cel-week-head {
+  background: var(--pale);
+  color: #556c7e;
+  text-align: center;
+}
+.cel-week-head span {
+  padding: 6px 2px;
+  font-size: 13px;
+}
+.cel-day {
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cel-day > span {
+  min-width: 27px;
+  min-height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.cel-day.start > span {
+  background: #d8e9b8;
+  font-weight: 650;
+  color: #173815;
+}
+.cel-day.end > span {
+  background: #699822;
+  color: white;
+  font-weight: 650;
+}
+.cel-day.closed {
+  background: #fae1e1;
+  color: #97262c;
+}
+.cel-day.work {
+  background: #f5f9ee;
+}
+.cel-day.weekend,
+.cel-day.outside {
+  color: #788a98;
+  background: #fafbfc;
+}
+.cel-legend {
+  display: flex;
+  gap: 10px 16px;
+  flex-wrap: wrap;
+  margin: 14px 0 16px;
+  font-size: 13px;
+}
+.cel-legend > span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.cel-legend i {
+  display: inline-block;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #d8e9b8;
+  border: 1px solid #aac981;
+}
+.cel-legend i.work {
+  background: #f5f9ee;
+  border-color: #c4d6aa;
+}
+.cel-legend i.closed {
+  background: #fae1e1;
+  border-color: #e8b3b3;
+}
+.cel-projection > p {
+  font-size: 14px;
+  line-height: 1.65;
+  margin-top: 8px;
+}
+.cel-departure {
+  padding: 22px 35px;
+  background: #eef1f3;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+.cel-departure > div:first-child {
+  border-left: 2px solid #d84647;
+  padding-left: 22px;
+  min-width: 0;
+}
+.cel-departure.ready > div:first-child {
+  border-color: #699822;
+}
+.cel-departure h2 {
+  font-size: 20px;
+}
+.cel-departure p {
+  font-size: 15px;
+  margin-top: 3px;
+}
+.cel-departure > .cel-actions {
+  justify-content: flex-end;
+}
+.cel-management {
+  margin-top: 19px;
+  font-size: 15px;
+}
+.cel-management > summary {
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  padding: 7px 0;
+  min-height: 40px;
+}
+.cel-management h3 {
+  margin-top: 20px;
+}
+.cel-add-piece {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  margin: 14px 0;
+}
+.cel-add-piece label {
+  display: grid;
+  gap: 7px;
+  flex: 1;
+}
+.cel-journal {
+  font-size: 14px;
+  line-height: 1.65;
+  padding-left: 22px;
+  max-height: 250px;
+  overflow: auto;
+}
+.cel-journal li {
+  padding: 4px 0;
+}
+.cel-request {
+  margin: 22px 35px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  max-width: 900px;
+}
+.cel-request h2 {
+  font-size: 21px;
+}
+.cel-request pre {
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  margin: 17px 0;
+}
+.cel-feedback {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #436420;
+  padding: 8px 35px;
+  min-height: 20px;
+}
+.cel-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 10px 35px 20px;
+  font-size: 13px;
+  color: #617588;
+}
+.cel-import-review {
+  background: #f2f8e7;
+  border: 1px solid #b4ce89;
+  padding: 16px;
+  margin: 15px 0;
+}
+.cel-import-review h2 {
+  font-size: 20px;
+  overflow-wrap: anywhere;
+}
+.cel-import-review p {
+  margin: 9px 0 12px;
+  font-size: 15px;
+}
+@media (max-width: 1200px) {
+  .cel-header {
+    padding: 15px 25px;
+    align-items: flex-start;
+  }
+  .cel-brand {
+    gap: 13px;
+  }
+  .cel-brand strong {
+    font-size: 32px;
+  }
+  .cel-brand > span {
+    padding-left: 13px;
+  }
+  .cel-header > .cel-actions {
+    justify-content: flex-end;
+    gap: 8px;
+  }
+  .cel-layout {
+    grid-template-columns: minmax(0, 1.7fr) minmax(325px, 1fr);
+  }
+  .cel-paper {
+    padding: 25px;
+  }
+  .cel-app h1 {
+    font-size: 31px;
+  }
+  .cel-lead {
+    font-size: 18px;
+  }
+  .cel-sidebar {
+    padding: 25px 22px;
+  }
+  .cel-date-route {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .cel-date-route > span {
+    display: none;
+  }
+  .cel-manifest td,
+  .cel-manifest th {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .cel-departure {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .cel-departure > .cel-actions {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 900px) {
+  .cel-header {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .cel-header > .cel-actions {
+    justify-content: flex-start;
+  }
+  .cel-layout {
+    grid-template-columns: 1fr;
+  }
+  .cel-paper {
+    padding: 24px;
+  }
+  .cel-sidebar {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    padding: 25px;
+  }
+  .cel-projection {
+    margin: 0;
+    padding: 0 0 0 25px;
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+  .cel-departure {
+    padding: 22px 25px;
+  }
+  .cel-feedback,
+  .cel-footer {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}
+@media (max-width: 580px) {
+  .cel-header {
+    padding: 18px;
+    gap: 17px;
+  }
+  .cel-brand {
+    gap: 16px;
+  }
+  .cel-brand strong {
+    font-size: 34px;
+  }
+  .cel-brand > span {
+    font-size: 13px;
+    padding-left: 16px;
+  }
+  .cel-header .cel-actions {
+    gap: 8px;
+  }
+  .cel-header button,
+  .cel-header .demo-file-import {
+    font-size: 14px;
+    padding: 9px 11px;
+  }
+  .cel-paper {
+    padding: 23px 18px;
+  }
+  .cel-app h1 {
+    font-size: 29px;
+    letter-spacing: -0.7px;
+  }
+  .cel-app h2 {
+    font-size: 23px;
+  }
+  .cel-lead {
+    font-size: 17px;
+    margin-top: 10px !important;
+  }
+  .cel-meeting {
+    font-size: 14px;
+    margin-top: 12px !important;
+  }
+  .cel-manifest {
+    margin-top: 18px;
+  }
+  .cel-manifest table {
+    min-width: 0;
+    table-layout: fixed;
+  }
+  .cel-manifest th,
+  .cel-manifest td {
+    font-size: 14px;
+  }
+  .cel-manifest td button {
+    font-size: 14px;
+  }
+  .cel-manifest td {
+    height: 66px;
+    padding-left: 8px;
+    padding-right: 8px;
+    overflow-wrap: anywhere;
+  }
+  .cel-manifest th:first-child,
+  .cel-manifest td:first-child {
+    width: 39%;
+    padding-left: 3px;
+  }
+  .cel-manifest th:nth-child(2),
+  .cel-manifest td:nth-child(2) {
+    width: 22%;
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+  .cel-manifest th:last-child {
+    width: 39%;
+    padding-left: 8px;
+  }
+  .cel-piece-state {
+    white-space: normal;
+    gap: 7px;
+  }
+  .cel-piece-state i {
+    width: 10px;
+    height: 10px;
+  }
+  .cel-detail {
+    padding: 17px;
+  }
+  .cel-detail > p {
+    font-size: 15px;
+  }
+  .cel-version-list {
+    padding-left: 17px;
+  }
+  .cel-version-list li {
+    padding-left: 22px;
+    padding-bottom: 23px;
+  }
+  .cel-version-list li > div > span {
+    display: block;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  .cel-version-list li > div > strong {
+    font-size: 15px;
+  }
+  .cel-check-action label {
+    font-size: 15px;
+    align-items: flex-start;
+  }
+  .cel-check-action > button,
+  .cel-detail > button:not(.cel-text) {
+    width: 100%;
+  }
+  .cel-receive {
+    grid-template-columns: 1fr;
+  }
+  .cel-receive > label {
+    grid-column: 1/-1;
+  }
+  .cel-receive .cel-actions button {
+    width: 100%;
+  }
+  .cel-sidebar {
+    grid-template-columns: 1fr;
+    padding: 23px 18px;
+    gap: 24px;
+  }
+  .cel-projection {
+    padding: 20px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .cel-settings h2 {
+    margin-bottom: 5px;
+  }
+  .cel-settings {
+    gap: 15px;
+  }
+  .cel-settings > button {
+    width: 100%;
+  }
+  .cel-date-route {
+    grid-template-columns: 1fr 14px 1fr;
+    gap: 9px;
+  }
+  .cel-date-route > span {
+    display: block;
+  }
+  .cel-departure {
+    padding: 21px 18px;
+    gap: 18px;
+  }
+  .cel-departure > div:first-child {
+    padding-left: 15px;
+  }
+  .cel-departure h2 {
+    font-size: 21px;
+  }
+  .cel-departure p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-top: 6px;
+  }
+  .cel-departure .cel-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .cel-add-piece {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .cel-management .cel-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .cel-request {
+    margin: 20px 18px;
+    padding: 18px;
+  }
+  .cel-request h2 {
+    font-size: 21px;
+  }
+  .cel-request pre {
+    font-size: 15px;
+  }
+  .cel-footer,
+  .cel-feedback {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+  .cel-footer {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  .cel-legend {
+    font-size: 13px;
+  }
+  .cel-day {
+    min-height: 40px;
+  }
+}
