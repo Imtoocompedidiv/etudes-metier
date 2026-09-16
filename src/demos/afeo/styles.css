@@ -1,0 +1,567 @@
+.afeo-app {
+  --blue: #1171b8;
+  --navy: #062950;
+  --pale: #e8f3fc;
+  --line: #cbdce9;
+  color: var(--navy);
+  background: #fff;
+  font:
+    400 16px/1.45 "Source Sans 3",
+    sans-serif;
+  min-height: 100vh;
+}
+.afeo-app * {
+  box-sizing: border-box;
+}
+.afeo-app h1,
+.afeo-app h2,
+.afeo-app h3 {
+  font-family: Montserrat, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0 0 12px;
+}
+.afeo-app h1 {
+  font-size: 21px;
+  margin: 0;
+}
+.afeo-app h2 {
+  font-size: 20px;
+}
+.afeo-app h3 {
+  font-size: 17px;
+}
+.afeo-app p {
+  margin: 8px 0 16px;
+}
+.afeo-app button,
+.afeo-app input,
+.afeo-app select,
+.afeo-app .afeo-button {
+  font:
+    600 16px/1.25 "Source Sans 3",
+    sans-serif;
+  border: 1px solid #a9c0d4;
+  border-radius: 4px;
+  background: white;
+  color: var(--navy);
+  min-height: 42px;
+  padding: 9px 13px;
+  max-width: 100%;
+}
+.afeo-app button,
+.afeo-app .afeo-button {
+  cursor: pointer;
+}
+.afeo-app input,
+.afeo-app select {
+  font-weight: 400;
+  width: 100%;
+  margin-top: 5px;
+}
+.afeo-app button:hover,
+.afeo-app .afeo-button:hover {
+  background: #e8f3fc;
+}
+.afeo-app button:disabled {
+  opacity: 0.46;
+  cursor: not-allowed;
+}
+.afeo-app button:focus-visible,
+.afeo-app input:focus-visible,
+.afeo-app select:focus-visible,
+.afeo-app a:focus-visible,
+.afeo-app summary:focus-visible,
+.afeo-app [tabindex]:focus-visible {
+  outline: 3px solid #e89e12;
+  outline-offset: 3px;
+}
+.afeo-app .afeo-primary {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: white;
+}
+.afeo-app .afeo-primary:hover {
+  background: #085a96;
+}
+.afeo-app label {
+  display: block;
+  font-size: 15px;
+}
+.afeo-app small {
+  font-size: 14px;
+  line-height: 1.45;
+  display: block;
+  color: #526980;
+}
+.afeo-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 26px;
+  border-bottom: 1px solid var(--line);
+}
+.afeo-brand {
+  font-family: Montserrat, sans-serif;
+  font-size: 31px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin-right: 12px;
+}
+.afeo-history {
+  display: flex;
+  gap: 6px;
+  margin-left: auto;
+}
+.afeo-header .afeo-button {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  color: var(--blue);
+}
+.afeo-context {
+  padding: 14px 28px;
+  background: #e1f0fc;
+  font-size: 15px;
+}
+.afeo-layout {
+  display: grid;
+  grid-template-columns: 255px minmax(0, 1fr);
+}
+.afeo-sidebar {
+  background: var(--pale);
+  padding: 25px 25px;
+  border-right: 1px solid var(--line);
+}
+.afeo-sidebar nav {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 28px;
+}
+.afeo-sidebar nav button {
+  padding: 15px 2px;
+  border: 0;
+  border-bottom: 1px solid #cbdce9;
+  border-radius: 0;
+  background: none;
+  text-align: left;
+  font-weight: 400;
+}
+.afeo-sidebar nav button[aria-pressed="true"] {
+  border-bottom: 3px solid var(--blue);
+  color: #0762a6;
+  font-weight: 600;
+}
+.afeo-sidebar form {
+  padding: 22px 0;
+  border-top: 1px solid #bfd5e7;
+}
+.afeo-sidebar form label {
+  margin: 10px 0;
+}
+.afeo-sidebar form button {
+  width: 100%;
+  margin-top: 15px;
+}
+.afeo-sidebar .afeo-note {
+  font-size: 14px;
+  color: #4f657a;
+  margin-top: 22px;
+}
+.afeo-main {
+  padding: 22px 26px 28px;
+  min-width: 0;
+}
+.afeo-status:empty {
+  display: none;
+}
+.afeo-status:not(:empty) {
+  background: #eef7ef;
+  border-left: 3px solid #48734b;
+  padding: 10px 14px;
+  margin-bottom: 18px;
+}
+.afeo-section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 15px;
+}
+.afeo-section-heading p {
+  color: #58718b;
+  font-size: 15px;
+  margin: 0;
+}
+.afeo-section-heading label {
+  min-width: 165px;
+}
+.afeo-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+.afeo-app table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: normal;
+  font-size: 16px;
+}
+.afeo-app th,
+.afeo-app td {
+  padding: 12px 13px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid #e0e9f0;
+  vertical-align: middle;
+}
+.afeo-app thead {
+  background: #edf2f7;
+  font-size: 15px;
+}
+.afeo-app th {
+  font-weight: 600;
+}
+.afeo-app tbody tr:last-child th,
+.afeo-app tbody tr:last-child td {
+  border-bottom: 0;
+}
+.afeo-app tbody th button {
+  border: 0;
+  background: none;
+  padding: 2px 0;
+  text-align: left;
+  min-height: 30px;
+}
+.afeo-app tbody th {
+  min-width: 180px;
+}
+.afeo-app td {
+  font-variant-numeric: tabular-nums;
+}
+.afeo-selected {
+  background: #dceeff;
+}
+.afeo-warning-text {
+  color: #8d5311;
+  font-size: 15px;
+}
+.afeo-editor {
+  padding: 17px 18px;
+  background: #e9f5ff;
+  border: 1px solid #bddcf3;
+  border-radius: 4px;
+  margin-top: 10px;
+}
+.afeo-editor strong {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 17px;
+}
+.afeo-fields {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  gap: 14px;
+  align-items: end;
+}
+.afeo-fields button {
+  align-self: end;
+}
+.afeo-editor small {
+  margin-top: 12px;
+}
+.afeo-compare {
+  border-top: 1px solid var(--line);
+  margin-top: 23px;
+  padding-top: 20px;
+}
+.afeo-compare table {
+  min-width: 650px;
+}
+.afeo-compare-help {
+  font-size: 14px;
+  color: #526980;
+}
+.afeo-mapping {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  align-items: end;
+  border: 1px solid #efd797;
+  background: #fff8e9;
+  padding: 16px 18px;
+  margin: 16px 0;
+}
+.afeo-mapping p {
+  flex-basis: 100%;
+  margin: 0;
+}
+.afeo-mapping small {
+  flex-basis: 100%;
+  color: #79561e;
+}
+.afeo-mapping label {
+  min-width: 240px;
+}
+.afeo-app details {
+  margin: 16px 0;
+}
+.afeo-app summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 8px 0;
+  min-height: 40px;
+}
+.afeo-shipping {
+  display: flex;
+  gap: 12px 18px;
+  flex-wrap: wrap;
+  align-items: end;
+  background: #f4f8fc;
+  padding: 18px;
+}
+.afeo-shipping strong {
+  flex-basis: 100%;
+}
+.afeo-shipping label {
+  width: 190px;
+}
+.afeo-shipping small {
+  flex-basis: 100%;
+}
+.afeo-draft {
+  margin: 20px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 18px 0;
+}
+.afeo-draft-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.afeo-draft-heading span {
+  font-size: 14px;
+  color: #526980;
+}
+.afeo-draft-body {
+  padding-top: 22px;
+}
+.afeo-draft-body table {
+  min-width: 600px;
+}
+.afeo-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.afeo-bottom section + section {
+  border-left: 1px solid var(--line);
+  padding-left: 24px;
+}
+.afeo-bottom ol {
+  max-height: 145px;
+  overflow-y: auto;
+  font-size: 14px;
+  margin: 8px 0;
+  padding-left: 22px;
+}
+.afeo-bottom p {
+  font-size: 15px;
+  color: #526980;
+}
+.afeo-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+.afeo-import {
+  margin-top: 25px;
+  padding-top: 21px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 12px;
+}
+.afeo-import p {
+  font-size: 15px;
+  color: #526980;
+  max-width: 850px;
+}
+.afeo-import-preview {
+  margin-top: 20px;
+  padding: 18px;
+  background: #eff6fc;
+  border: 1px solid var(--line);
+}
+.afeo-import-preview > button {
+  margin: 15px 10px 0 0;
+}
+.afeo-local {
+  font-size: 14px;
+  color: #526980;
+  margin-bottom: 0 !important;
+}
+.afeo-app footer {
+  border-top: 1px solid var(--line);
+  padding: 18px 28px;
+  font-size: 14px;
+}
+.afeo-app [role="alert"] {
+  margin: 14px 0;
+  color: #a32920;
+}
+@media (max-width: 1100px) {
+  .afeo-header {
+    flex-wrap: wrap;
+  }
+  .afeo-header h1 {
+    flex: 1;
+  }
+  .afeo-history {
+    margin-left: 0;
+  }
+  .afeo-layout {
+    grid-template-columns: 220px minmax(0, 1fr);
+  }
+  .afeo-sidebar {
+    padding: 22px 18px;
+  }
+  .afeo-main {
+    padding: 20px;
+  }
+  .afeo-fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .afeo-app table {
+    min-width: 670px;
+  }
+  .afeo-draft-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.afeo-app tbody th button {
+  min-height: 42px;
+}
+@media (max-width: 720px) {
+  .afeo-header {
+    padding: 17px 18px;
+    gap: 10px;
+  }
+  .afeo-brand {
+    font-size: 28px;
+  }
+  .afeo-header h1 {
+    font-size: 19px;
+    min-width: 210px;
+  }
+  .afeo-header > .afeo-primary {
+    flex: 1;
+  }
+  .afeo-header > .afeo-button {
+    flex: 1;
+    justify-content: center;
+  }
+  .afeo-history {
+    flex-basis: 100%;
+  }
+  .afeo-history button {
+    flex: 1;
+  }
+  .afeo-context {
+    padding: 12px 18px;
+  }
+  .afeo-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  .afeo-sidebar {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 20px 18px;
+  }
+  .afeo-sidebar nav {
+    flex-direction: row;
+    overflow: auto;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .afeo-sidebar nav button {
+    flex: 1;
+    min-width: 103px;
+    font-size: 15px;
+  }
+  .afeo-sidebar form {
+    padding: 15px 0;
+  }
+  .afeo-sidebar form label {
+    margin-top: 10px;
+  }
+  .afeo-sidebar .afeo-note {
+    margin-bottom: 0;
+  }
+  .afeo-main {
+    padding: 20px 18px;
+  }
+  .afeo-section-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .afeo-section-heading h2 {
+    font-size: 19px;
+  }
+  .afeo-fields {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .afeo-fields button {
+    grid-column: 1/-1;
+  }
+  .afeo-editor {
+    padding: 15px 13px;
+  }
+  .afeo-mapping label {
+    width: 100%;
+    min-width: 0;
+  }
+  .afeo-mapping button {
+    width: 100%;
+  }
+  .afeo-shipping label {
+    width: 100%;
+  }
+  .afeo-shipping button {
+    width: 100%;
+  }
+  .afeo-bottom {
+    display: block;
+  }
+  .afeo-bottom section + section {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    margin-top: 22px;
+    padding-top: 22px;
+  }
+  .afeo-draft-heading > button {
+    width: 100%;
+  }
+  .afeo-app h2 {
+    font-size: 19px;
+  }
+  .afeo-actions > * {
+    flex: 1 1 140px;
+  }
+  .afeo-import-preview {
+    padding: 14px;
+  }
+  .afeo-import-preview button {
+    width: 100%;
+  }
+  .afeo-app input[type="date"] {
+    min-width: 0;
+    font-size: 15px;
+    padding: 9px 5px;
+  }
+}

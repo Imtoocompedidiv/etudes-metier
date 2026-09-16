@@ -1,0 +1,722 @@
+.capsa-app {
+  --cp-indigo: #2d2e87;
+  --cp-orange: #c54809;
+  --cp-line: #d4d8e2;
+  color: #282d43;
+  background: #f4f5f8;
+  min-height: 100vh;
+  font:
+    16px/1.45 Karla,
+    sans-serif;
+}
+.capsa-app * {
+  box-sizing: border-box;
+}
+.capsa-app h1,
+.capsa-app h2,
+.capsa-app h3 {
+  font-family: Montserrat, sans-serif;
+  color: var(--cp-indigo);
+  margin: 0;
+}
+.capsa-app h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -0.7px;
+}
+.capsa-app h2 {
+  font-size: 19px;
+  line-height: 1.4;
+}
+.capsa-app h3 {
+  font-size: 16px;
+}
+.capsa-app p {
+  margin: 10px 0;
+}
+.capsa-app button,
+.capsa-app input,
+.capsa-app select {
+  font: inherit;
+}
+.capsa-app button {
+  min-height: 42px;
+  padding: 9px 14px;
+  border: 1px solid var(--cp-line);
+  background: white;
+  color: var(--cp-indigo);
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.capsa-app button:hover:not(:disabled) {
+  border-color: var(--cp-indigo);
+  background: #f0f0fa;
+}
+.capsa-app button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+.capsa-app :focus-visible {
+  outline: 3px solid #ed8f38;
+  outline-offset: 3px;
+}
+.capsa-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  min-width: 0;
+}
+.capsa-app input,
+.capsa-app select {
+  background: white;
+  color: #272c41;
+  border: 1px solid #bfc4d2;
+  border-radius: 2px;
+  min-height: 43px;
+  min-width: 0;
+  width: 100%;
+  padding: 8px 10px;
+}
+.capsa-app input[readonly] {
+  background: #f1f2f6;
+  color: #555c72;
+}
+.capsa-app summary {
+  cursor: pointer;
+}
+.capsa-app .cp-primary {
+  background: var(--cp-orange);
+  border-color: var(--cp-orange);
+  color: #fff;
+}
+.capsa-app .cp-primary:hover:not(:disabled) {
+  background: #bd4206;
+  border-color: #bd4206;
+}
+.cp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  background: #fff;
+  border-bottom: 1px solid var(--cp-line);
+  gap: 20px;
+}
+.cp-header > span {
+  font:
+    700 23px Montserrat,
+    sans-serif;
+  color: var(--cp-indigo);
+  position: relative;
+}
+.cp-header > span:after {
+  content: "";
+  display: block;
+  background: var(--cp-orange);
+  height: 3px;
+  width: 48px;
+  margin-top: 7px;
+}
+.cp-header small {
+  font-size: 14px;
+  color: #59627b;
+}
+.cp-main {
+  max-width: 1600px;
+  margin: auto;
+  padding: 30px 28px 0;
+}
+.cp-mobile-hint {
+  display: none;
+  color: #59627b;
+  font-size: 14px;
+}
+.cp-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+.cp-title p {
+  color: #555f79;
+  font-size: 18px;
+}
+.cp-history {
+  display: flex;
+  gap: 8px;
+  padding-top: 5px;
+}
+.cp-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid var(--cp-line);
+  padding: 8px 12px;
+  gap: 20px;
+}
+.cp-toolbar nav {
+  display: flex;
+  gap: 5px;
+}
+.cp-toolbar nav button {
+  border-color: transparent;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
+  min-width: 165px;
+}
+.cp-toolbar nav button[aria-pressed="true"] {
+  border-bottom-color: var(--cp-indigo);
+  background: #f4f4fb;
+}
+.cp-version {
+  flex-direction: row !important;
+  align-items: center;
+  font-weight: 400 !important;
+  gap: 12px !important;
+}
+.cp-version select {
+  width: 155px;
+}
+.cp-planning {
+  border: 1px solid var(--cp-line);
+  border-top: 0;
+  background: #fff;
+  padding: 13px 16px;
+}
+.cp-planning > summary {
+  font-weight: 700;
+  color: var(--cp-indigo);
+}
+.cp-planning > summary span {
+  font-weight: 400;
+  margin-left: 20px;
+  color: #4e5670;
+}
+.cp-planning form {
+  padding-top: 15px;
+  display: flex;
+  gap: 18px;
+  align-items: end;
+  flex-wrap: wrap;
+}
+.cp-planning fieldset {
+  display: flex;
+  gap: 16px;
+  margin: 0;
+  border: 1px solid var(--cp-line);
+  padding: 12px;
+}
+.cp-planning legend {
+  color: var(--cp-indigo);
+  padding: 0 5px;
+}
+.cp-planning label {
+  max-width: 210px;
+}
+.cp-message {
+  font-size: 15px;
+  min-height: 24px;
+  color: #4e5871;
+  margin: 12px 0 !important;
+}
+.cp-workbench {
+  display: grid;
+  grid-template-columns: minmax(0, 1.58fr) minmax(320px, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.cp-sheet,
+.cp-inspector,
+.cp-files {
+  background: #fff;
+  border: 1px solid var(--cp-line);
+  border-radius: 3px;
+  padding: 20px;
+  min-width: 0;
+}
+.cp-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+.cp-section-title > span {
+  white-space: nowrap;
+  color: #687087;
+  font-size: 14px;
+}
+.cp-table-scroll {
+  overflow: auto;
+  max-width: 100%;
+  scrollbar-color: #a9afc8 #f1f2f5;
+}
+.capsa-app table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+}
+.capsa-app th {
+  font-weight: 700;
+  text-align: left;
+  background: #edf0f5;
+  color: #333d5b;
+  font-size: 14px;
+  padding: 13px 12px;
+  border-bottom: 1px solid #c7cdd8;
+  white-space: nowrap;
+}
+.capsa-app td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #e0e3eb;
+  vertical-align: top;
+  font-variant-numeric: tabular-nums;
+}
+.capsa-app td small {
+  display: block;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.cp-bom {
+  min-width: 670px;
+}
+.cp-bom td:first-child {
+  width: 51%;
+}
+.cp-bom td:not(:first-child) {
+  white-space: nowrap;
+}
+.cp-tree {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 44px;
+}
+.cp-tree > button {
+  font-weight: 700;
+  text-align: left;
+  padding: 0;
+  min-height: 26px;
+  border: 0;
+  background: transparent !important;
+  max-width: 100%;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cp-tree > span {
+  font-size: 14px;
+  color: #5b6379;
+}
+.cp-assembly .cp-tree > button {
+  font-weight: 700;
+}
+.cp-selected {
+  background: #fff0e6;
+}
+.cp-selected td:first-child {
+  box-shadow: inset 3px 0 var(--cp-orange);
+}
+.cp-tree:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #c7cada;
+}
+.cp-tree[style="padding-left: 0px;"]:before {
+  display: none;
+}
+.cp-muted {
+  font-size: 15px;
+  color: #626a7e;
+  line-height: 1.5;
+}
+.cp-table-note {
+  margin-top: 18px !important;
+}
+.cp-inspector {
+  padding: 20px;
+}
+.cp-mapping {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.cp-mapping > .cp-muted {
+  margin: 0;
+  font-size: 14px;
+}
+.cp-form-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.cp-conversion {
+  font-size: 14px;
+  color: #555e79;
+}
+.cp-source {
+  margin-top: 20px;
+  background: var(--cp-indigo);
+  color: white;
+  padding: 20px;
+  border-radius: 3px;
+  overflow-wrap: anywhere;
+}
+.cp-source h3 {
+  color: white;
+}
+.cp-source > p:not(.cp-source-note) {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #777ab5;
+}
+.cp-formula {
+  font-size: 19px;
+  line-height: 1.5;
+}
+.cp-source > div,
+.cp-source-note {
+  font-size: 14px;
+  color: #e2e4f5;
+}
+.cp-source-note {
+  margin-bottom: 0 !important;
+}
+.cp-row-editor {
+  margin-top: 18px;
+  font-size: 15px;
+}
+.cp-row-editor summary {
+  color: var(--cp-indigo);
+  font-weight: 600;
+}
+.cp-row-editor form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 15px;
+}
+.cp-assembly-note p {
+  font-size: 16px;
+}
+.cp-needs {
+  display: grid;
+  gap: 20px;
+}
+.cp-needs table {
+  min-width: 1060px;
+}
+.cp-needs .cp-sheet h2 {
+  margin-bottom: 10px;
+}
+.cp-change {
+  background: #fffaf4;
+}
+.cp-number {
+  font-weight: 700;
+  color: var(--cp-indigo);
+}
+.cp-issue {
+  color: #865100 !important;
+  font-weight: 500;
+}
+.cp-provenance {
+  border-bottom: 1px solid var(--cp-line);
+  padding: 14px 0;
+}
+.cp-provenance summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  list-style-position: inside;
+}
+.cp-provenance summary > strong {
+  color: var(--cp-indigo);
+}
+.cp-provenance li {
+  padding: 5px 0;
+  overflow-wrap: anywhere;
+}
+.cp-output {
+  margin: 22px 0;
+  background: #fff;
+  border: 1px solid var(--cp-line);
+  padding: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+.cp-output > div:first-child {
+  max-width: 750px;
+}
+.cp-output-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 460px;
+}
+.cp-output-actions button {
+  flex: 1 1 auto;
+}
+.cp-files {
+  margin: 22px 0;
+}
+.cp-file-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 25px;
+  margin-top: 22px;
+}
+.cp-file-grid > div {
+  min-width: 0;
+}
+.cp-samples,
+.cp-save {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.cp-file-grid .demo-file-field {
+  margin-top: 14px;
+}
+.capsa-app .demo-file-import {
+  position: relative;
+  display: flex;
+  border: 1px solid #bfc4d2;
+  border-radius: 3px;
+  padding: 11px 14px;
+  background: #f8f8fb;
+  color: var(--cp-indigo);
+  font-weight: 600;
+  min-height: 44px;
+  overflow: hidden;
+}
+.capsa-app .demo-file-import input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.capsa-app .demo-file-import:focus-within {
+  outline: 3px solid #ed8f38;
+  outline-offset: 3px;
+}
+.cp-preview {
+  padding: 20px;
+  margin-top: 22px;
+  border: 1px solid #d98d56;
+  background: #fff8f2;
+}
+.cp-preview button {
+  margin: 14px 10px 0 0;
+}
+.cp-preview table {
+  min-width: 610px;
+}
+.cp-format {
+  border-top: 1px solid var(--cp-line);
+  margin-top: 25px;
+  padding-top: 20px;
+  font-size: 15px;
+}
+.cp-format summary {
+  font-weight: 600;
+  color: var(--cp-indigo);
+}
+.capsa-app .demo-footer {
+  margin-top: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--cp-line);
+  color: #5a637a;
+}
+.capsa-app .demo-footer a {
+  color: var(--cp-indigo);
+}
+.capsa-app .demo-error {
+  background: #fff1ee;
+  border-left: 3px solid #b83324;
+  padding: 12px 14px;
+  color: #822519;
+  margin: 12px 0;
+  font-size: 15px;
+}
+@media (min-width: 1600px) {
+  .cp-main {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+}
+@media (max-width: 1050px) {
+  .cp-workbench {
+    grid-template-columns: minmax(0, 1.2fr) minmax(290px, 1fr);
+  }
+  .cp-title {
+    display: block;
+  }
+  .cp-history {
+    margin-top: 12px;
+  }
+  .cp-output {
+    display: block;
+  }
+  .cp-output-actions {
+    max-width: none;
+    margin-top: 18px;
+    justify-content: start;
+  }
+  .cp-file-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .cp-save {
+    grid-column: 1/-1;
+    flex-direction: row;
+  }
+  .cp-header {
+    padding: 16px 20px;
+  }
+  .cp-main {
+    padding: 24px 18px 0;
+  }
+  .cp-sheet,
+  .cp-inspector {
+    padding: 16px;
+  }
+}
+@media (max-width: 760px) {
+  .cp-mobile-hint {
+    display: block;
+  }
+  .cp-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+    padding: 16px;
+  }
+  .cp-header > span {
+    font-size: 21px;
+  }
+  .cp-header small {
+    font-size: 13px;
+  }
+  .cp-main {
+    padding: 24px 12px 0;
+  }
+  .capsa-app h1 {
+    font-size: 25px;
+    letter-spacing: -0.4px;
+  }
+  .cp-title p {
+    font-size: 17px;
+  }
+  .cp-toolbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    padding: 8px;
+  }
+  .cp-toolbar nav button {
+    min-width: 0;
+    flex: 1;
+    padding: 10px 8px;
+  }
+  .cp-toolbar nav {
+    width: 100%;
+  }
+  .cp-version {
+    justify-content: space-between;
+    padding: 0 5px;
+  }
+  .cp-version select {
+    width: 145px;
+  }
+  .cp-planning {
+    padding: 13px 12px;
+  }
+  .cp-planning > summary span {
+    display: block;
+    margin: 7px 0 0 17px;
+    font-size: 14px;
+  }
+  .cp-planning form {
+    display: block;
+  }
+  .cp-planning fieldset {
+    display: block;
+    margin-bottom: 12px;
+  }
+  .cp-planning label {
+    max-width: none;
+    margin-bottom: 10px;
+  }
+  .cp-workbench {
+    display: flex;
+    flex-direction: column;
+  }
+  .cp-inspector {
+    order: -1;
+    width: 100%;
+  }
+  .cp-sheet {
+    width: 100%;
+  }
+  .cp-source {
+    padding: 16px;
+  }
+  .cp-formula {
+    font-size: 17px;
+  }
+  .cp-section-title {
+    display: block;
+  }
+  .cp-section-title > span {
+    display: block;
+    margin-top: 7px;
+  }
+  .cp-output {
+    padding: 17px;
+  }
+  .cp-output-actions {
+    flex-direction: column;
+  }
+  .cp-file-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .cp-save {
+    grid-column: auto;
+    flex-direction: column;
+  }
+  .cp-files {
+    padding: 17px;
+  }
+  .cp-provenance summary {
+    display: block;
+  }
+  .cp-provenance summary > span {
+    display: block;
+    margin-top: 7px;
+  }
+  .cp-preview {
+    padding: 13px;
+  }
+  .capsa-app .demo-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    font-size: 14px;
+  }
+  .cp-message {
+    font-size: 14px;
+  }
+}
