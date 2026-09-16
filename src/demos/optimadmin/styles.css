@@ -1,0 +1,790 @@
+.optim-app {
+  --purple: #665bff;
+  --ink: #11162c;
+  --muted: #5b6380;
+  --line: #dce0f0;
+  font-family: Inter, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: #f5f6fc;
+  min-height: 100vh;
+}
+.optim-app * {
+  box-sizing: border-box;
+}
+.optim-app h1,
+.optim-app h2,
+.optim-app h3,
+.optim-app p {
+  margin: 0;
+}
+.optim-app h1 {
+  font-size: 35px;
+  line-height: 1.17;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+}
+.optim-app h2 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+.optim-app h3 {
+  font-size: 17px;
+}
+.optim-app button,
+.optim-app input,
+.optim-app select,
+.optim-app textarea {
+  font: inherit;
+}
+.optim-app button {
+  min-height: 44px;
+  border: 1px solid #b5bddf;
+  border-radius: 6px;
+  background: #fff;
+  color: #26245b;
+  padding: 9px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+}
+.optim-app button:hover:not(:disabled) {
+  background: #efedff;
+  border-color: var(--purple);
+}
+.optim-app button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+.optim-app button.optim-primary {
+  color: #fff;
+  background: var(--purple);
+  border-color: var(--purple);
+}
+.optim-app button.optim-primary:hover:not(:disabled) {
+  background: #4d40d6;
+}
+.optim-app input:not([type="checkbox"]),
+.optim-app select,
+.optim-app textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 10px;
+  border: 1px solid #aeb8d7;
+  border-radius: 5px;
+  background: white;
+  color: var(--ink);
+}
+.optim-app textarea {
+  resize: vertical;
+}
+.optim-app input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--purple);
+  flex-shrink: 0;
+}
+.optim-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+.optim-app :focus-visible {
+  outline: 3px solid #a96a08;
+  outline-offset: 3px;
+}
+.optim-app code,
+.optim-app time {
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+.optim-header {
+  background: white;
+  border-bottom: 1px solid var(--line);
+  padding: 17px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+}
+.optim-header strong {
+  letter-spacing: 0.06em;
+  font-size: 18px;
+}
+.optim-header > span:last-child {
+  font-size: 13px;
+  color: var(--muted);
+}
+.optim-separator {
+  color: #b5bdd4;
+  margin: 0 16px;
+}
+.optim-app main {
+  padding: 30px 32px 20px;
+  max-width: 1600px;
+  margin: auto;
+}
+.optim-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: flex-start;
+}
+.optim-title p {
+  max-width: 800px;
+  color: var(--muted);
+  margin-top: 11px;
+}
+.optim-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.optim-pipeline {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin: 26px 0;
+  position: relative;
+}
+.optim-pipeline:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4%;
+  right: 4%;
+  height: 2px;
+  background: #a6a0f9;
+}
+.optim-pipeline > div {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px 18px;
+  z-index: 1;
+}
+.optim-node {
+  height: 36px;
+  width: 36px;
+  flex-shrink: 0;
+  background: #edeaff;
+  color: #4940bd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+}
+.optim-pipeline strong {
+  display: block;
+  font-size: 16px;
+}
+.optim-pipeline small {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+.optim-error {
+  padding: 14px 17px;
+  background: #ffe4de;
+  border-left: 4px solid #bc4025;
+  margin: 16px 0;
+}
+.optim-feedback {
+  background: #e8efe8;
+  border-left: 3px solid #49794a;
+  color: #2b4e2c;
+  padding: 12px 16px;
+  margin: 16px 0 !important;
+  font-size: 14px;
+}
+.optim-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(360px, 1fr);
+  gap: 18px;
+  align-items: start;
+}
+.optim-events {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+.optim-events-head {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+}
+.optim-events-head p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.optim-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+.optim-clock > span {
+  font-size: 13px;
+  color: #464190;
+  background: #eeebff;
+  padding: 7px 10px;
+  border-radius: 6px;
+}
+.optim-clock strong {
+  font-variant-numeric: tabular-nums;
+  margin-left: 5px;
+}
+.optim-clock button {
+  min-height: 38px;
+  padding: 5px 10px;
+  font-size: 13px;
+}
+.optim-filterbar {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 13px 20px;
+  background: #fafbff;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.optim-filterbar label {
+  flex-direction: row;
+  align-items: center;
+  gap: 9px;
+}
+.optim-filterbar select {
+  min-height: 38px;
+  padding: 6px 25px 6px 10px;
+  font-size: 14px;
+}
+.optim-filterbar > div {
+  display: flex;
+  gap: 6px;
+}
+.optim-filterbar button {
+  min-height: 38px;
+  padding: 5px 9px;
+  font-size: 13px;
+}
+.optim-scroll {
+  overflow: auto;
+}
+.optim-app table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 620px;
+  font-size: 14px;
+  text-align: left;
+}
+.optim-app th {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 400;
+  background: #f6f7fc;
+  white-space: nowrap;
+}
+.optim-app th,
+.optim-app td {
+  padding: 14px 13px;
+  border-bottom: 1px solid #e7eaf5;
+  vertical-align: middle;
+}
+.optim-app td {
+  font-variant-numeric: tabular-nums;
+}
+.optim-app tr.selected {
+  background: #efedff;
+}
+.optim-app .optim-eventlink {
+  padding: 3px 0;
+  border: none;
+  min-height: 32px;
+  background: transparent;
+  color: #3f36be;
+  white-space: nowrap;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.optim-badge {
+  display: inline-block;
+  padding: 5px 8px;
+  white-space: nowrap;
+  border-radius: 5px;
+  font-size: 12px;
+  background: #f7edce;
+  color: #725412;
+}
+.optim-badge.blocked,
+.optim-badge.failed {
+  background: #ffe5df;
+  color: #983829;
+}
+.optim-badge.retry {
+  background: #e9ecff;
+  color: #46459b;
+}
+.optim-badge.prepared {
+  background: #dfefe4;
+  color: #206642;
+}
+.optim-badge.approved {
+  background: #e8e5ff;
+  color: #473ca3;
+}
+.optim-table-note {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 16px 20px;
+}
+.optim-engine-note {
+  margin: 6px 20px 20px;
+  padding: 16px 18px;
+  background: #f4f5fb;
+  border-left: 3px solid #9289ed;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.optim-engine-note p {
+  margin-top: 6px;
+  color: var(--muted);
+}
+.optim-mobile-link {
+  display: none;
+}
+.optim-editor {
+  padding: 22px;
+  background: #efedff;
+  border: 1px solid #dcd7fa;
+  border-radius: 10px;
+  scroll-margin-top: 20px;
+}
+.optim-detail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 13px;
+  color: #4c5076;
+}
+.optim-detail-head code {
+  background: #e2ddff;
+  color: #292151;
+  padding: 4px 8px;
+  border-radius: 5px;
+}
+.optim-editor h2 {
+  font-size: 25px;
+  margin: 12px 0;
+}
+.optim-editor-intro {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 17px !important;
+}
+.optim-editor form > label {
+  margin-top: 13px;
+}
+.optim-editor .optim-checkbox {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin: 15px 0;
+}
+.optim-editor textarea {
+  margin-bottom: 10px;
+}
+.optim-small {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 9px 0 !important;
+}
+.optim-wide {
+  width: 100%;
+}
+.optim-destination {
+  padding: 13px 15px;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #ddd8f5;
+  margin: 17px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.optim-destination span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.optim-destination strong {
+  font-weight: 400;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.optim-blocked {
+  background: #ffe6de;
+  padding: 10px 12px;
+  color: #943823;
+  font-size: 14px;
+  border-radius: 4px;
+}
+.optim-approval {
+  border-top: 1px solid #d6d0f1;
+  padding-top: 2px;
+}
+.optim-current {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 13px;
+  margin-top: 18px;
+  padding: 12px 14px;
+  background: #f9f8ff;
+  border: 1px solid #d6d0f1;
+  border-radius: 6px;
+}
+.optim-current > span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.optim-current p {
+  margin-top: 7px;
+}
+.optim-current.prepared {
+  background: #e6f1e8;
+  border-color: #c1ddc9;
+  color: #285d39;
+}
+.optim-current.blocked,
+.optim-current.failed {
+  background: #fff0e9;
+  color: #913b28;
+}
+.optim-conflict {
+  padding: 13px;
+  background: #fff1dd;
+  border: 1px solid #e6c9a4;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 17px;
+}
+.optim-conflict p {
+  margin: 7px 0;
+}
+.optim-conflict button {
+  margin-top: 10px;
+  width: 100%;
+}
+.optim-routing,
+.optim-files {
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 17px 20px;
+}
+.optim-routing summary,
+.optim-files summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 30px;
+}
+.optim-routing > p,
+.optim-files p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 8px 0 15px;
+}
+.optim-routes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin: 18px 0;
+}
+.optim-routes form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.optim-journal {
+  margin-top: 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+}
+.optim-journal-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+.optim-journal-head h2 {
+  font-size: 20px;
+}
+.optim-journal-head h2 span {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--muted);
+  margin-left: 8px;
+  white-space: nowrap;
+}
+.optim-journal-head button {
+  min-height: 36px;
+  font-size: 13px;
+  padding: 4px 10px;
+}
+.optim-log {
+  max-height: 440px;
+  overflow: auto;
+}
+.optim-log > div {
+  display: grid;
+  grid-template-columns: 90px 90px 230px 1fr;
+  gap: 14px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #e9ecf6;
+  align-items: baseline;
+  font-size: 13px;
+}
+.optim-log > div:nth-child(2n) {
+  background: #fbfbff;
+}
+.optim-log strong {
+  font-weight: 400;
+}
+.optim-log > div > span {
+  color: var(--muted);
+}
+.optim-exports {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  background: #fafaff;
+  border-top: 1px solid var(--line);
+}
+.optim-exports > div {
+  flex-basis: 100%;
+  margin-bottom: 5px;
+}
+.optim-exports p {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 5px;
+}
+.optim-files > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.optim-local {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 19px 0 !important;
+}
+.optim-empty {
+  padding: 24px;
+  color: var(--muted);
+  font-size: 14px;
+}
+@media (max-width: 1150px) {
+  .optim-title {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .optim-workspace {
+    grid-template-columns: minmax(0, 1.1fr) minmax(320px, 1fr);
+  }
+  .optim-filterbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .optim-events-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .optim-clock {
+    flex-direction: row;
+    align-items: center;
+  }
+  .optim-log > div {
+    grid-template-columns: 80px 85px 190px 1fr;
+  }
+}
+@media (max-width: 750px) {
+  .optim-header {
+    padding: 14px 17px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+  }
+  .optim-header strong {
+    font-size: 16px;
+  }
+  .optim-header > span:last-child {
+    font-size: 12px;
+  }
+  .optim-separator {
+    margin: 0 10px;
+  }
+  .optim-app main {
+    padding: 24px 16px 15px;
+  }
+  .optim-app h1 {
+    font-size: 31px;
+    letter-spacing: -0.035em;
+  }
+  .optim-title p {
+    font-size: 15px;
+  }
+  .optim-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 8px;
+  }
+  .optim-actions button {
+    width: 100%;
+  }
+  .optim-pipeline {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin: 20px 0;
+  }
+  .optim-pipeline:before {
+    left: 33px;
+    right: auto;
+    top: 10%;
+    bottom: 10%;
+    width: 2px;
+    height: auto;
+  }
+  .optim-pipeline > div {
+    padding: 10px 14px;
+    gap: 12px;
+  }
+  .optim-node {
+    height: 30px;
+    width: 30px;
+    font-size: 13px;
+  }
+  .optim-pipeline strong {
+    font-size: 14px;
+  }
+  .optim-workspace {
+    display: flex;
+    flex-direction: column;
+  }
+  .optim-events,
+  .optim-editor {
+    width: 100%;
+  }
+  .optim-events-head {
+    padding: 17px;
+    gap: 15px;
+  }
+  .optim-clock {
+    flex-wrap: wrap;
+    gap: 7px;
+  }
+  .optim-clock > span {
+    font-size: 12px;
+  }
+  .optim-filterbar {
+    padding: 12px 17px;
+  }
+  .optim-filterbar label {
+    width: 100%;
+  }
+  .optim-filterbar select {
+    min-width: 0;
+  }
+  .optim-app td,
+  .optim-app th {
+    padding: 12px 10px;
+  }
+  .optim-table-note {
+    padding: 14px 17px;
+  }
+  .optim-engine-note {
+    margin: 15px 17px 17px;
+    padding: 14px;
+  }
+  .optim-mobile-link {
+    display: block;
+    color: #4f43c7;
+    font-size: 14px;
+    margin: 0 17px;
+  }
+  .optim-editor {
+    padding: 20px 17px;
+  }
+  .optim-editor h2 {
+    font-size: 25px;
+  }
+  .optim-routing,
+  .optim-files {
+    padding: 16px 17px;
+  }
+  .optim-routes {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .optim-journal-head {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px 17px;
+    gap: 10px;
+  }
+  .optim-journal-head h2 {
+    font-size: 21px;
+  }
+  .optim-log > div {
+    grid-template-columns: 80px 1fr;
+    gap: 6px 12px;
+    padding: 13px 17px;
+  }
+  .optim-log strong,
+  .optim-log > div > span {
+    grid-column: 1/-1;
+  }
+  .optim-log strong {
+    font-weight: 600;
+  }
+  .optim-exports {
+    padding: 18px 17px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .optim-files > div {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .optim-files button {
+    width: 100%;
+  }
+}
