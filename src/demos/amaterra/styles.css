@@ -1,0 +1,640 @@
+.amaterra-app {
+  --ink: #171b18;
+  --line: #d8dfd9;
+  --green: #4f7056;
+  --paper: #eaf0e7;
+  --rust: #a94420;
+  background: #fff;
+  color: var(--ink);
+  min-height: 100vh;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.amaterra-app * {
+  box-sizing: border-box;
+}
+.amaterra-app button,
+.amaterra-app input,
+.amaterra-app select {
+  font: inherit;
+  color: inherit;
+}
+.amaterra-app button,
+.amaterra-app .demo-file-import {
+  min-height: 44px;
+  border: 1px solid #bcc8c0;
+  background: #fff;
+  border-radius: 4px;
+  padding: 10px 15px;
+  cursor: pointer;
+  line-height: 1.25;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+}
+.amaterra-app button:hover:not(:disabled),
+.amaterra-app .demo-file-import:hover {
+  border-color: var(--green);
+  background: #eff4ed;
+}
+.amaterra-app button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.amaterra-app :focus-visible {
+  outline: 3px solid #9ba960;
+  outline-offset: 3px;
+}
+.amaterra-app input,
+.amaterra-app select {
+  min-height: 44px;
+  width: 100%;
+  border: 1px solid #b9c5bd;
+  border-radius: 3px;
+  background: white;
+  padding: 8px 10px;
+  font-size: 16px;
+}
+.amaterra-app input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  margin: 4px 0;
+  accent-color: var(--green);
+  flex: none;
+}
+.amaterra-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 14px;
+}
+.amaterra-app label small,
+.amaterra-app small,
+.amaterra-app .amaterra-note {
+  font-size: 14px;
+  color: #56615a;
+  line-height: 1.45;
+}
+.amaterra-app h1,
+.amaterra-app h2,
+.amaterra-app h3,
+.amaterra-header > span {
+  font-family: Domine, Georgia, serif;
+  font-weight: 600;
+}
+.amaterra-app h1 {
+  font-size: 36px;
+  line-height: 1.2;
+  margin: 0 0 12px;
+}
+.amaterra-app h2 {
+  font-size: 23px;
+  line-height: 1.3;
+  margin: 0;
+}
+.amaterra-app h3 {
+  font-size: 19px;
+  line-height: 1.35;
+  margin: 26px 0 10px;
+}
+.amaterra-app p {
+  margin: 10px 0;
+}
+.amaterra-app a {
+  color: var(--green);
+  text-underline-offset: 3px;
+}
+.amaterra-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--line);
+  padding: 18px 36px;
+}
+.amaterra-header > span {
+  font-size: 31px;
+}
+.amaterra-header p {
+  font-size: 14px;
+  color: #5b665e;
+}
+.amaterra-app main {
+  max-width: 1600px;
+  margin: auto;
+  padding: 28px 36px 20px;
+}
+.amaterra-intro {
+  font-size: 18px;
+  color: #48564c;
+  max-width: 1000px;
+}
+.amaterra-toolbar {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+  margin: 24px 0 16px;
+  flex-wrap: wrap;
+}
+.amaterra-toolbar label:nth-child(2) {
+  flex: 1;
+  min-width: 230px;
+}
+.amaterra-toolbar label:nth-child(3) {
+  width: 235px;
+}
+.amaterra-toolbar button {
+  align-self: center;
+}
+.amaterra-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.amaterra-imports {
+  margin-bottom: 20px;
+}
+.amaterra-app .amaterra-primary {
+  background: var(--green);
+  border-color: var(--green);
+  color: white;
+}
+.amaterra-app .amaterra-primary:hover:not(:disabled) {
+  background: #38563f;
+  color: #fff;
+}
+.amaterra-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.75fr) minmax(330px, 1fr);
+  align-items: start;
+  gap: 20px;
+}
+.amaterra-programme,
+.amaterra-editor,
+.amaterra-review {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 18px;
+}
+.amaterra-axis {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  font-size: 14px;
+  color: #68756b;
+  gap: 10px;
+  padding: 0 0 20px;
+  margin-right: 21px;
+}
+.amaterra-axis > div {
+  height: 20px;
+  position: relative;
+}
+.amaterra-axis b {
+  position: absolute;
+  transform: translateX(-50%);
+  font-weight: 400;
+}
+.amaterra-axis b:first-child {
+  transform: none;
+}
+.amaterra-app .amaterra-group {
+  display: grid;
+  grid-template-columns: 155px minmax(0, 1fr);
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  min-height: 115px;
+  text-align: left;
+  align-items: stretch;
+  background: #fff;
+}
+.amaterra-app .amaterra-group:hover:not(:disabled) {
+  background: #f8faf7;
+}
+.amaterra-group.is-selected {
+  box-shadow: inset 4px 0 var(--green);
+}
+.amaterra-group-label {
+  padding: 17px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.amaterra-group-label strong {
+  font-size: 15px;
+}
+.amaterra-track {
+  position: relative;
+  min-height: 115px;
+  background: linear-gradient(
+    90deg,
+    #f5f7f6 0,
+    #f5f7f6 calc(100% - 1px),
+    #e3e8e5 calc(100% - 1px),
+    #e3e8e5 100%
+  );
+  margin-right: 21px;
+}
+.amaterra-block {
+  position: absolute;
+  top: 14px;
+  border-left: 3px solid var(--green);
+  padding: 8px 9px;
+  background: #cbddc7;
+  min-height: 63px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.35;
+  gap: 5px;
+  min-width: 75px;
+  overflow: visible;
+  font-size: 14px;
+}
+.amaterra-block strong {
+  white-space: nowrap;
+  font-size: 14px;
+}
+.amaterra-block > span {
+  font-size: 14px;
+  line-height: 1.1;
+}
+.amaterra-block.is-conflict {
+  background: #f5cfb4;
+  border-color: #b85426;
+}
+.amaterra-conflict-label {
+  position: absolute;
+  bottom: 6px;
+  left: 6px;
+  color: var(--rust);
+  font-size: 14px;
+  line-height: 1.1;
+}
+.amaterra-section-heading {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.amaterra-section-heading > span {
+  font-size: 14px;
+  color: #68756b;
+  white-space: nowrap;
+}
+.amaterra-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 24px;
+  margin: 20px 0;
+}
+.amaterra-app .amaterra-checkbox {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 16px;
+}
+.amaterra-checkbox small {
+  display: block;
+  margin-top: 3px;
+}
+.amaterra-supplies {
+  background: var(--paper);
+  border-radius: 5px;
+  padding: 24px;
+  position: sticky;
+  top: 18px;
+}
+.amaterra-supplies > p {
+  font-size: 14px;
+  color: #536259;
+}
+.amaterra-supply-row {
+  border-top: 1px solid #cbd7c9;
+  padding: 16px 0;
+  display: grid;
+  grid-template-columns: 1fr 86px;
+  gap: 10px 15px;
+}
+.amaterra-supply-row > div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.amaterra-supply-row > div > span {
+  font-weight: 500;
+}
+.amaterra-supply-row > p {
+  grid-column: 1/-1;
+  font-size: 14px;
+  color: #55675a;
+  margin: 0;
+}
+.amaterra-supply-row .amaterra-warning {
+  color: var(--rust);
+}
+.amaterra-supply-row .amaterra-ratio {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  grid-column: 1/-1;
+}
+.amaterra-ratio input {
+  width: 58px;
+  min-height: 36px;
+  padding: 4px 7px;
+}
+.amaterra-supplies details {
+  font-size: 14px;
+  margin-top: 15px;
+}
+.amaterra-app summary {
+  cursor: pointer;
+  min-height: 32px;
+}
+.amaterra-review ul {
+  padding-left: 20px;
+  margin-bottom: 24px;
+  font-size: 15px;
+}
+.amaterra-review li {
+  margin: 9px 0;
+}
+.amaterra-review > .amaterra-checkbox {
+  margin: 18px 0;
+}
+.amaterra-error,
+.amaterra-unsaved {
+  background: #fff0e5;
+  color: #8b381a;
+  border-left: 4px solid #b65b29;
+  padding: 12px 16px;
+}
+.amaterra-notice {
+  color: #35543c;
+  padding: 10px 15px;
+  background: #eef4eb;
+  border-left: 4px solid #769573;
+}
+.amaterra-exports {
+  border-top: 1px solid var(--line);
+  padding: 23px 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+}
+.amaterra-exports h2 {
+  font-family: Roboto, sans-serif;
+  font-size: 18px;
+}
+.amaterra-exports > div:first-child {
+  max-width: 350px;
+}
+.amaterra-exports p {
+  font-size: 14px;
+  color: #59665d;
+}
+.amaterra-exports .amaterra-actions {
+  justify-content: flex-end;
+}
+.amaterra-sources {
+  padding: 15px 0;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: #59665d;
+}
+.amaterra-app .demo-footer {
+  max-width: 1600px;
+  margin: auto;
+  padding: 20px 36px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.amaterra-app .demo-file-import input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  min-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+.amaterra-app .demo-file-import:focus-within {
+  outline: 3px solid #9ba960;
+  outline-offset: 3px;
+}
+.amaterra-app .demo-file-field {
+  display: inline-block;
+}
+.amaterra-app .demo-file-field .demo-error {
+  max-width: 330px;
+  font-size: 14px;
+  color: var(--rust);
+}
+@media (min-width: 1700px) {
+  .amaterra-app h1 {
+    font-size: 40px;
+  }
+  .amaterra-workspace {
+    grid-template-columns: minmax(0, 1.85fr) minmax(380px, 1fr);
+  }
+}
+@media (max-width: 1150px) {
+  .amaterra-app main {
+    padding: 24px;
+  }
+  .amaterra-workspace {
+    grid-template-columns: minmax(0, 1fr) 330px;
+    gap: 15px;
+  }
+  .amaterra-programme {
+    padding: 15px;
+  }
+  .amaterra-app .amaterra-group,
+  .amaterra-axis {
+    grid-template-columns: 125px minmax(0, 1fr);
+  }
+  .amaterra-group-label strong {
+    font-size: 14px;
+  }
+  .amaterra-block {
+    font-size: 14px;
+    padding: 7px 4px;
+  }
+  .amaterra-supplies {
+    padding: 20px;
+  }
+  .amaterra-exports {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .amaterra-exports .amaterra-actions {
+    justify-content: flex-start;
+  }
+}
+@media (max-width: 850px) {
+  .amaterra-workspace {
+    grid-template-columns: 1fr;
+  }
+  .amaterra-supplies {
+    position: static;
+  }
+  .amaterra-header {
+    padding: 16px 20px;
+  }
+  .amaterra-app h1 {
+    font-size: 31px;
+  }
+  .amaterra-axis,
+  .amaterra-app .amaterra-group {
+    grid-template-columns: 150px minmax(0, 1fr);
+  }
+  .amaterra-app .demo-footer {
+    padding: 20px;
+  }
+}
+@media (max-width: 520px) {
+  .amaterra-app main {
+    padding: 22px 16px 16px;
+  }
+  .amaterra-header {
+    align-items: flex-start;
+    padding: 14px 16px;
+    gap: 10px;
+  }
+  .amaterra-header > span {
+    font-size: 25px;
+  }
+  .amaterra-header p {
+    font-size: 14px;
+    max-width: 150px;
+    margin: 2px 0;
+    text-align: right;
+  }
+  .amaterra-app h1 {
+    font-size: 29px;
+  }
+  .amaterra-intro {
+    font-size: 16px;
+  }
+  .amaterra-toolbar {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .amaterra-toolbar label:nth-child(2),
+  .amaterra-toolbar label:nth-child(3) {
+    width: auto;
+    min-width: 0;
+  }
+  .amaterra-toolbar button {
+    justify-self: start;
+  }
+  .amaterra-imports {
+    gap: 8px;
+  }
+  .amaterra-app button,
+  .amaterra-app .demo-file-import {
+    font-size: 14px;
+    padding: 10px 12px;
+  }
+  .amaterra-programme {
+    padding: 14px;
+  }
+  .amaterra-axis {
+    display: none;
+  }
+  .amaterra-app .amaterra-group {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 12px 0;
+    min-height: 120px;
+  }
+  .amaterra-group-label {
+    padding: 3px 10px 10px;
+  }
+  .amaterra-group-label strong {
+    font-size: 16px;
+  }
+  .amaterra-group-label small {
+    font-size: 14px;
+  }
+  .amaterra-track {
+    margin-right: 0;
+    min-height: 94px;
+    background: #f3f6f1;
+  }
+  .amaterra-block {
+    position: relative;
+    left: auto !important;
+    top: 0;
+    width: 100% !important;
+    min-height: 62px;
+    padding: 10px 12px;
+  }
+  .amaterra-block > span {
+    font-size: 15px;
+  }
+  .amaterra-block strong {
+    font-size: 16px;
+  }
+  .amaterra-conflict-label {
+    bottom: 6px;
+  }
+  .amaterra-group:not(:has(.amaterra-conflict-label)) .amaterra-track {
+    min-height: 65px;
+  }
+  .amaterra-form-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .amaterra-editor,
+  .amaterra-review {
+    padding: 18px 16px;
+  }
+  .amaterra-app h2 {
+    font-size: 21px;
+  }
+  .amaterra-supplies {
+    padding: 20px 18px;
+  }
+  .amaterra-section-heading {
+    gap: 6px;
+  }
+  .amaterra-section-heading > span {
+    font-size: 14px;
+  }
+  .amaterra-exports .amaterra-actions > * {
+    width: 100%;
+  }
+  .amaterra-exports .demo-file-import {
+    width: 100%;
+  }
+  .amaterra-supplies > button {
+    width: 100%;
+  }
+  .amaterra-app .demo-footer {
+    padding: 16px;
+    gap: 10px;
+  }
+  .amaterra-sources p {
+    overflow-wrap: anywhere;
+  }
+}
