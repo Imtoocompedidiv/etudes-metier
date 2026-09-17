@@ -1,0 +1,633 @@
+.dra-app {
+  --dra-navy: #002339;
+  --dra-blue: #0076bf;
+  --dra-amber: #f9a825;
+  --dra-line: #cad9e1;
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 16px;
+  color: var(--dra-navy);
+  background: #fff;
+  line-height: 1.4;
+  min-height: 100vh;
+}
+.dra-app * {
+  box-sizing: border-box;
+}
+.dra-app h1,
+.dra-app h2,
+.dra-app h3,
+.dra-top strong {
+  font-family: Oswald, sans-serif;
+  font-weight: 500;
+  margin: 0;
+}
+.dra-app h1 {
+  font-size: 32px;
+  line-height: 1.2;
+}
+.dra-app h2 {
+  font-size: 22px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.dra-app h3 {
+  font-size: 19px;
+}
+.dra-app p {
+  margin: 8px 0 14px;
+}
+.dra-app small {
+  display: block;
+  font-size: 14px;
+  color: #486071;
+}
+.dra-app button,
+.dra-app input,
+.dra-app textarea,
+.dra-app select {
+  font: inherit;
+  min-height: 42px;
+  border: 1px solid #a7bdca;
+  border-radius: 3px;
+  background: #fff;
+  color: var(--dra-navy);
+  max-width: 100%;
+}
+.dra-app button {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+.dra-app button:hover:not(:disabled) {
+  background: #edf5fa;
+  border-color: var(--dra-blue);
+}
+.dra-app button:disabled {
+  opacity: 0.48;
+  cursor: default;
+}
+.dra-app button.dra-primary {
+  background: var(--dra-blue);
+  color: white;
+  border-color: var(--dra-blue);
+}
+.dra-app button.dra-primary:hover:not(:disabled) {
+  background: #005f99;
+}
+.dra-app input,
+.dra-app textarea,
+.dra-app select {
+  padding: 8px 9px;
+  width: 100%;
+}
+.dra-app textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+.dra-app label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.dra-app label input,
+.dra-app label textarea,
+.dra-app label select {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.dra-app :focus-visible {
+  outline: 3px solid var(--dra-amber);
+  outline-offset: 3px;
+}
+.dra-app :is(main, section, article, aside, form, div) {
+  min-width: 0;
+}
+.dra-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--dra-navy);
+  color: #fff;
+  padding: 13px 20px;
+}
+.dra-top strong {
+  font-size: 21px;
+}
+.dra-top span,
+.dra-top p {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+.dra-heading {
+  padding: 24px 22px 20px;
+  border-bottom: 1px solid var(--dra-line);
+}
+.dra-heading p {
+  margin: 8px 0 0;
+}
+.dra-feedback {
+  padding: 14px 22px;
+  border-bottom: 1px solid var(--dra-line);
+}
+.dra-notice {
+  background: #edf6fc;
+  border-left: 4px solid var(--dra-blue);
+  padding: 10px 14px;
+}
+.dra-feedback section {
+  border: 1px solid var(--dra-line);
+  padding: 16px;
+  background: #f6f9fb;
+}
+.dra-inline {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.dra-workbench {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr) 300px;
+  grid-template-areas: "rules trace inspector" "rules results results";
+  align-items: start;
+}
+.dra-rules {
+  grid-area: rules;
+  padding: 20px 18px;
+  background: #f8fafb;
+  align-self: stretch;
+  border-right: 1px solid var(--dra-line);
+}
+.dra-rules > p {
+  font-size: 14px;
+}
+.dra-rules > button,
+.dra-rules form > button,
+.dra-rule-import button,
+.dra-rule-import label {
+  width: 100%;
+  margin: 5px 0;
+}
+.dra-rule-list {
+  display: grid;
+  gap: 12px;
+  margin: 18px 0;
+}
+.dra-rule-list section {
+  border: 1px solid var(--dra-line);
+  background: white;
+  padding: 14px;
+}
+.dra-rule-list h3 {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  overflow-wrap: anywhere;
+}
+.dra-rule-list h3 span {
+  font:
+    600 16px "Source Sans 3",
+    sans-serif;
+}
+.dra-rule-list p {
+  margin-bottom: 0;
+}
+.dra-rule-import {
+  border-top: 1px solid var(--dra-line);
+  margin-top: 20px;
+  padding-top: 16px;
+}
+.dra-rule-forms {
+  display: grid;
+  gap: 12px;
+}
+.dra-app fieldset {
+  min-width: 0;
+  border: 1px solid var(--dra-line);
+  padding: 12px;
+  margin: 0;
+  background: #fff;
+}
+.dra-app legend {
+  font-weight: 600;
+  font-size: 14px;
+}
+.dra-rule-forms label {
+  margin-bottom: 10px;
+}
+.dra-rule-range {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.dra-app details {
+  margin: 18px 0;
+}
+.dra-app summary {
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 42px;
+  padding: 10px 0;
+}
+.dra-rules details p {
+  font-size: 14px;
+}
+.dra-trace {
+  grid-area: trace;
+  padding: 20px 18px 16px;
+}
+.dra-run-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.dra-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 18px 0;
+}
+.dra-progress span {
+  font-size: 14px;
+  font-weight: 600;
+}
+.dra-progress progress {
+  width: 160px;
+  height: 10px;
+  accent-color: var(--dra-blue);
+}
+.dra-trace-filter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.dra-scroll {
+  overflow: auto;
+  max-width: 100%;
+  border: 1px solid var(--dra-line);
+  border-radius: 3px;
+}
+.dra-app table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  text-align: left;
+  background: #fff;
+}
+.dra-app th,
+.dra-app td {
+  padding: 10px;
+  border-bottom: 1px solid #dbe4ea;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.dra-app thead th {
+  background: #f1f6fa;
+  font-weight: 600;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--dra-line);
+}
+.dra-app tbody tr:last-child > * {
+  border-bottom: 0;
+}
+.dra-app tbody th {
+  font-weight: 600;
+}
+.dra-trace-table {
+  min-width: 650px;
+}
+.dra-trace-table th:nth-child(1) {
+  width: 100px;
+}
+.dra-trace-table th:nth-child(7) {
+  width: 130px;
+}
+.dra-trace-table tbody th {
+  padding: 3px 5px;
+}
+.dra-trace-table button {
+  border: 0;
+  background: transparent;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 8px 10px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  width: 100%;
+  text-align: left;
+}
+.dra-app tr.dra-selected {
+  background: #fff3d9;
+  box-shadow: inset 4px 0 0 var(--dra-amber);
+}
+.dra-status {
+  font-size: 14px;
+  color: #496170;
+  display: block;
+}
+.dra-status.accepte,
+.dra-event-status.accepte {
+  color: #075c53;
+}
+.dra-status.rejete,
+.dra-event-status.rejete {
+  color: #824704;
+}
+.dra-status.doublon {
+  color: #576377;
+}
+.dra-note {
+  font-size: 14px;
+  color: #486071;
+  overflow-wrap: anywhere;
+}
+.dra-inspector {
+  grid-area: inspector;
+  padding: 20px 18px;
+  border-left: 1px solid var(--dra-line);
+  align-self: stretch;
+  background: #fbfcfd;
+}
+.dra-event-id {
+  font-weight: 700;
+}
+.dra-event-id span {
+  font-size: 14px;
+  font-weight: 400;
+}
+.dra-event-status {
+  font-size: 14px;
+  font-weight: 600;
+}
+.dra-reasons {
+  padding-left: 19px;
+  font-size: 14px;
+  margin: 12px 0 20px;
+}
+.dra-reasons li + li {
+  margin-top: 6px;
+}
+.dra-event-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+.dra-event-fields label:first-child {
+  grid-column: span 2;
+}
+.dra-event-fields small {
+  font-weight: 400;
+  overflow-wrap: anywhere;
+  margin-top: 5px;
+}
+.dra-inspector form > button {
+  width: 100%;
+  margin-top: 12px;
+}
+.dra-inspector .dra-note {
+  margin-top: 16px;
+}
+.dra-results {
+  grid-area: results;
+  border-top: 1px solid var(--dra-line);
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+}
+.dra-current,
+.dra-reference {
+  padding: 20px 18px;
+}
+.dra-reference {
+  border-left: 1px solid var(--dra-line);
+}
+.dra-current .dra-scroll table {
+  min-width: 330px;
+}
+.dra-current > p:last-child {
+  font-size: 14px;
+}
+.dra-reference table {
+  min-width: 400px;
+}
+.dra-reference table small {
+  margin-top: 7px;
+}
+.dra-await {
+  background: #edf5fb;
+  padding: 12px;
+  border-left: 3px solid var(--dra-blue);
+}
+.dra-reference > button {
+  margin-top: 12px;
+}
+.dra-bottom {
+  border-top: 1px solid var(--dra-line);
+  padding: 0 22px;
+}
+.dra-bottom details + details {
+  border-top: 1px solid #dbe4ea;
+}
+.dra-journal {
+  list-style: none;
+  padding: 0;
+}
+.dra-journal li {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 12px;
+  border-top: 1px solid #e0e7eb;
+  padding: 10px 0;
+}
+.dra-journal time {
+  font-size: 14px;
+  color: #486071;
+}
+.dra-toolbar {
+  background: var(--dra-navy);
+  color: white;
+  padding: 18px 22px;
+}
+.dra-toolbar button {
+  background: transparent;
+  color: white;
+  border-color: #7392a5;
+}
+.dra-toolbar button:hover:not(:disabled) {
+  background: #123c56;
+  color: white;
+}
+.dra-toolbar p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.dra-app .demo-footer {
+  margin-top: 0;
+}
+.dra-toolbar label {
+  color: white;
+}
+.dra-toolbar button:disabled {
+  color: #d1dce3;
+}
+.dra-app .shared-error {
+  background: #fff2db;
+  color: #6c3700;
+  border-left: 3px solid var(--dra-amber);
+}
+@media (min-width: 1600px) {
+  .dra-workbench {
+    grid-template-columns: 270px minmax(0, 1fr) 330px;
+  }
+  .dra-trace-table {
+    min-width: 700px;
+  }
+}
+@media (max-width: 1190px) {
+  .dra-workbench {
+    grid-template-columns: 220px minmax(0, 1fr);
+    grid-template-areas: "rules trace" "rules inspector" "results results";
+  }
+  .dra-inspector {
+    border-top: 1px solid var(--dra-line);
+    border-left: 0;
+  }
+  .dra-event-fields {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .dra-event-fields label:first-child {
+    grid-column: auto;
+  }
+  .dra-inspector form > button {
+    width: auto;
+  }
+  .dra-inspector form > label {
+    max-width: 600px;
+  }
+}
+@media (max-width: 650px) {
+  .dra-top {
+    display: block;
+    padding: 12px 16px;
+  }
+  .dra-top strong {
+    font-size: 19px;
+  }
+  .dra-top p {
+    margin-top: 6px;
+  }
+  .dra-heading {
+    padding: 22px 16px;
+  }
+  .dra-app h1 {
+    font-size: 28px;
+  }
+  .dra-app h2 {
+    font-size: 21px;
+  }
+  .dra-feedback {
+    padding: 12px 16px;
+  }
+  .dra-workbench {
+    display: flex;
+    flex-direction: column;
+  }
+  .dra-trace {
+    order: 1;
+    width: 100%;
+    padding: 20px 16px;
+  }
+  .dra-inspector {
+    order: 2;
+    width: 100%;
+    padding: 20px 16px;
+  }
+  .dra-rules {
+    order: 3;
+    width: 100%;
+    padding: 20px 16px;
+    border-top: 1px solid var(--dra-line);
+    border-right: 0;
+  }
+  .dra-results {
+    order: 4;
+    width: 100%;
+    display: block;
+  }
+  .dra-reference {
+    border-left: 0;
+    border-top: 1px solid var(--dra-line);
+  }
+  .dra-current,
+  .dra-reference {
+    padding: 20px 16px;
+  }
+  .dra-run-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .dra-run-controls button,
+  .dra-run-controls label {
+    width: 100%;
+  }
+  .dra-trace-filter {
+    grid-template-columns: 1fr;
+  }
+  .dra-progress {
+    gap: 12px;
+  }
+  .dra-progress progress {
+    width: 105px;
+  }
+  .dra-event-fields {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dra-event-fields label:first-child {
+    grid-column: span 2;
+  }
+  .dra-inspector form > button {
+    width: 100%;
+  }
+  .dra-rule-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .dra-rule-forms {
+    grid-template-columns: 1fr;
+  }
+  .dra-rules > button,
+  .dra-rules form > button {
+    width: 100%;
+  }
+  .dra-bottom {
+    padding: 0 16px;
+  }
+  .dra-journal li {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+  .dra-toolbar {
+    padding: 18px 16px;
+  }
+  .dra-toolbar .dra-inline {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .dra-toolbar .dra-inline button,
+  .dra-toolbar .dra-inline label {
+    width: 100%;
+  }
+  .dra-app .demo-footer {
+    padding: 16px;
+  }
+  .dra-reference > button {
+    width: 100%;
+  }
+}

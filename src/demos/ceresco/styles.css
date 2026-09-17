@@ -1,0 +1,646 @@
+.ce-app {
+  --petrol: #003c49;
+  --ink: #193e48;
+  --line: #ccd8dc;
+  --lime: #d3e997;
+  --paper: #eef6dd;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--ink);
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.45;
+  min-height: 100vh;
+}
+.ce-app * {
+  box-sizing: border-box;
+}
+.ce-app h1,
+.ce-app h2,
+.ce-app h3,
+.ce-app p {
+  margin: 0;
+}
+.ce-app h1 {
+  font-size: 34px;
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+.ce-app h2 {
+  font-size: 22px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+.ce-app button,
+.ce-app input,
+.ce-app select,
+.ce-app textarea {
+  font: inherit;
+  color: inherit;
+}
+.ce-app button,
+.ce-app select,
+.ce-app input {
+  min-height: 44px;
+}
+.ce-app button {
+  padding: 9px 15px;
+  border: 1px solid #aabcc3;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+.ce-app button:hover:not(:disabled) {
+  background: #f0f5f6;
+  border-color: var(--petrol);
+}
+.ce-app button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.ce-app :focus-visible {
+  outline: 3px solid #a85b00;
+  outline-offset: 3px;
+}
+.ce-app .ce-primary,
+.ce-heading .ce-actions > button:first-child {
+  background: var(--petrol);
+  color: #fff;
+  border-color: var(--petrol);
+}
+.ce-app .ce-primary:hover:not(:disabled) {
+  background: #0a5361;
+  color: #fff;
+}
+.ce-app input,
+.ce-app select,
+.ce-app textarea {
+  border: 1px solid #a6b9bd;
+  border-radius: 3px;
+  background: white;
+  padding: 9px 11px;
+  max-width: 100%;
+  width: 100%;
+}
+.ce-app textarea {
+  min-height: 72px;
+  resize: vertical;
+  line-height: 1.35;
+}
+.ce-app label {
+  display: block;
+  font-size: 16px;
+}
+.ce-app label > input,
+.ce-app label > textarea,
+.ce-app label > select {
+  display: block;
+  margin-top: 6px;
+}
+.ce-app fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.ce-app details summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+  padding: 12px 0;
+}
+.ce-app details p,
+.ce-app details label {
+  margin-top: 12px;
+}
+.ce-app hr {
+  border: 0;
+  border-top: 1px solid #cbd9b2;
+  margin: 20px 0;
+}
+.ce-app table {
+  border-collapse: collapse;
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+.ce-app th,
+.ce-app td {
+  border-bottom: 1px solid var(--line);
+  padding: 10px 12px;
+  text-align: right;
+  vertical-align: middle;
+  font-size: 15px;
+}
+.ce-app th:first-child,
+.ce-app td:first-child {
+  text-align: left;
+}
+.ce-app thead th {
+  background: #f3f6f7;
+  font-size: 14px;
+  line-height: 1.3;
+}
+.ce-app th {
+  font-weight: 600;
+}
+.ce-app .ce-scroll {
+  overflow: auto;
+}
+.ce-header {
+  background: var(--petrol);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 28px;
+}
+.ce-header strong {
+  font-size: 23px;
+  letter-spacing: 0.3px;
+}
+.ce-header span {
+  font-size: 16px;
+}
+.ce-header span:last-child {
+  margin-left: auto;
+  color: #d2e5e8;
+}
+.ce-app main {
+  max-width: 1660px;
+  margin: auto;
+  padding: 24px 28px 0;
+}
+.ce-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 26px;
+}
+.ce-heading > div:first-child {
+  max-width: 800px;
+}
+.ce-heading p {
+  margin-top: 8px;
+  font-size: 19px;
+}
+.ce-actions {
+  display: flex;
+  gap: 9px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.ce-heading .ce-actions {
+  justify-content: flex-end;
+  max-width: 500px;
+}
+.ce-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 2.15fr) minmax(330px, 1fr);
+  gap: 16px;
+  align-items: start;
+}
+.ce-workspace > * {
+  min-width: 0;
+}
+.ce-chart,
+.ce-comparison {
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: #fff;
+}
+.ce-chart {
+  margin-bottom: 16px;
+}
+.ce-section-heading {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.ce-legend {
+  display: flex;
+  gap: 15px;
+  font-size: 14px;
+  flex-wrap: wrap;
+}
+.ce-legend span {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  white-space: nowrap;
+}
+.ce-legend i {
+  display: block;
+  background: var(--petrol);
+  width: 14px;
+  height: 14px;
+}
+.ce-legend i.ce-line {
+  height: 3px;
+  background: #63882b;
+  width: 22px;
+}
+.ce-chart-scroll {
+  overflow: auto;
+  padding: 0 12px;
+}
+.ce-chart svg {
+  width: 100%;
+  min-width: 590px;
+  display: block;
+  overflow: visible;
+}
+.ce-chart svg text {
+  font-size: 15px;
+  fill: var(--ink);
+  font-family: inherit;
+}
+.ce-chart svg line {
+  stroke: #d6e0e3;
+  stroke-width: 1;
+}
+.ce-chart svg rect {
+  fill: var(--petrol);
+}
+.ce-chart svg rect.ce-overload {
+  fill: #be741a;
+}
+.ce-chart svg path {
+  fill: none;
+  stroke: #63882b;
+  stroke-width: 3;
+}
+.ce-chart svg .ce-axis {
+  font-size: 14px;
+}
+.ce-month-buttons {
+  display: flex;
+  gap: 2px;
+  padding: 0 15px 10px;
+  flex-wrap: wrap;
+}
+.ce-month-buttons button {
+  flex: 1;
+  min-width: 43px;
+  padding: 6px 5px;
+  border-color: transparent;
+  font-size: 14px;
+}
+.ce-month-buttons button[aria-pressed="true"] {
+  background: var(--lime);
+  border-color: #8da94e;
+}
+.ce-dot {
+  color: #8a4900;
+  padding-left: 4px;
+  font-weight: 700;
+}
+.ce-help {
+  font-size: 14px;
+  color: #527079;
+  line-height: 1.45;
+}
+.ce-chart > .ce-help,
+.ce-comparison > .ce-help {
+  padding: 0 18px 15px;
+}
+.ce-comparison .ce-section-heading button {
+  font-size: 14px;
+  max-width: 210px;
+}
+.ce-comparison table {
+  min-width: 760px;
+}
+.ce-comparison th:first-child {
+  padding: 2px 6px;
+}
+.ce-comparison tbody th button {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  width: 100%;
+  font-size: 16px;
+  padding: 4px 8px;
+  min-height: 34px;
+}
+.ce-comparison tbody td {
+  padding: 5px 12px;
+}
+.ce-comparison .ce-selected {
+  background: var(--paper);
+}
+.ce-comparison .ce-selected th {
+  border-left: 4px solid #75983a;
+}
+.ce-comparison .ce-selected td {
+  font-weight: 600;
+}
+.ce-app .ce-excess {
+  color: #854f05;
+  font-weight: 700;
+}
+.ce-annual {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  padding: 16px 18px;
+  font-size: 16px;
+}
+.ce-annual strong {
+  width: 100%;
+}
+.ce-base {
+  padding: 4px 18px;
+  border-bottom: 1px solid var(--line);
+}
+.ce-base p,
+.ce-base ul {
+  font-size: 15px;
+}
+.ce-base > p:last-child {
+  padding-bottom: 15px;
+}
+.ce-notebook {
+  padding: 20px;
+  background: var(--paper);
+  border: 1px solid #d4e7af;
+  border-radius: 3px;
+}
+.ce-notebook h2 {
+  margin-bottom: 22px;
+}
+.ce-param-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(80px, 1fr);
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 13px;
+}
+.ce-param-row input {
+  font-variant-numeric: tabular-nums;
+}
+.ce-notebook fieldset > label {
+  margin-bottom: 16px;
+}
+.ce-notebook .ce-primary {
+  width: 100%;
+  margin-top: 18px;
+}
+.ce-notebook .ce-primary + button {
+  margin-top: 10px;
+  width: 100%;
+}
+.ce-notebook .ce-help {
+  margin-top: 10px;
+}
+.ce-formula {
+  background: #f5f8ef;
+  padding: 20px;
+  border: 1px solid #d4e7af;
+  border-top: 0;
+  border-radius: 0 0 3px 3px;
+}
+.ce-formula h2 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+.ce-formula p {
+  margin-top: 12px;
+}
+.ce-equation {
+  font-size: 21px;
+  line-height: 1.4;
+  background: white;
+  padding: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.ce-formula .ce-warning {
+  margin-top: 15px;
+}
+.ce-app .ce-warning {
+  padding: 12px 15px;
+  background: #fff5e4;
+  border-left: 3px solid #9c621d;
+  color: #784806;
+  margin: 12px 0;
+}
+.ce-notice {
+  padding: 12px 16px;
+  border-left: 3px solid var(--petrol);
+  background: #eef5f6;
+  margin: 0 0 15px !important;
+}
+.ce-mobile-inspector {
+  display: none;
+}
+.ce-review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  border-top: 1px solid var(--line);
+  margin-top: 28px;
+  padding: 24px 18px;
+}
+.ce-review p {
+  margin-top: 10px;
+}
+.ce-review form > fieldset > label {
+  margin-bottom: 14px;
+}
+.ce-review .ce-checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.ce-checkbox input {
+  width: 20px;
+  min-height: 20px;
+  height: 20px;
+  margin: 0 !important;
+}
+.ce-review-note {
+  padding: 12px;
+  border-left: 3px solid #718f36;
+  background: #f3f8e9;
+}
+.ce-exports {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid var(--line);
+  padding: 22px 18px;
+  border-radius: 3px;
+}
+.ce-exports p {
+  margin-top: 7px;
+  color: #527079;
+  font-size: 15px;
+  max-width: 390px;
+}
+.ce-journal {
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+}
+.ce-journal li {
+  margin-bottom: 6px;
+}
+.ce-local {
+  font-size: 14px;
+  color: #527079;
+  margin: 20px 0 !important;
+  max-width: 1100px;
+}
+.ce-app > footer {
+  max-width: 1600px;
+  margin: auto;
+  padding: 20px 28px;
+}
+.ce-dialog {
+  max-width: 800px;
+  width: calc(100% - 32px);
+  border: 1px solid #b7c9ce;
+  border-radius: 4px;
+  padding: 26px;
+  color: #193e48;
+  font:
+    16px/1.45 "Source Sans 3",
+    sans-serif;
+}
+.ce-dialog::backdrop {
+  background: #14384477;
+}
+.ce-dialog h2 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+.ce-dialog p {
+  margin: 12px 0;
+}
+.ce-dialog button {
+  font:
+    600 16px "Source Sans 3",
+    sans-serif;
+  background: #fff;
+  border: 1px solid #aabcc3;
+  border-radius: 3px;
+  min-height: 44px;
+  padding: 9px 15px;
+  cursor: pointer;
+}
+.ce-dialog button.ce-primary {
+  background: #003c49;
+  color: white;
+}
+.ce-dialog .ce-scroll {
+  overflow: auto;
+  max-height: 360px;
+}
+.ce-dialog table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+.ce-dialog td,
+.ce-dialog th {
+  padding: 8px;
+  border-bottom: 1px solid #ccd8dc;
+  text-align: left;
+}
+.ce-dialog .ce-actions {
+  margin-top: 20px;
+}
+@media (max-width: 1150px) {
+  .ce-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .ce-heading .ce-actions {
+    max-width: none;
+    justify-content: flex-start;
+  }
+  .ce-workspace {
+    grid-template-columns: minmax(0, 1.65fr) minmax(315px, 1fr);
+  }
+  .ce-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .ce-exports {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+@media (max-width: 800px) {
+  .ce-app main {
+    padding: 20px 16px 0;
+  }
+  .ce-app h1 {
+    font-size: 29px;
+  }
+  .ce-header {
+    padding: 12px 16px;
+    gap: 6px 12px;
+    flex-wrap: wrap;
+  }
+  .ce-header span {
+    font-size: 14px;
+  }
+  .ce-header span:last-child {
+    margin-left: 0;
+  }
+  .ce-workspace {
+    grid-template-columns: 1fr;
+  }
+  .ce-workspace > aside {
+    grid-row: 1;
+  }
+  .ce-comparison tbody th button {
+    min-height: 44px;
+  }
+  .ce-notebook {
+    scroll-margin-top: 16px;
+  }
+  .ce-review {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 22px 0;
+  }
+  .ce-mobile-inspector {
+    display: block;
+    padding: 12px 18px;
+    color: var(--petrol);
+    font-weight: 600;
+  }
+  .ce-month-buttons button {
+    flex: 0 0 calc(16.666% - 2px);
+  }
+  .ce-chart svg {
+    min-width: 650px;
+  }
+  .ce-heading p {
+    font-size: 17px;
+  }
+  .ce-heading .ce-actions {
+    width: 100%;
+  }
+  .ce-heading .ce-actions > button {
+    flex: 1 1 40%;
+  }
+  .ce-notebook,
+  .ce-formula {
+    padding: 18px;
+  }
+  .ce-exports .ce-actions {
+    width: 100%;
+  }
+  .ce-exports .ce-actions button {
+    flex: 1 1 40%;
+  }
+  .ce-dialog {
+    padding: 20px;
+  }
+}
