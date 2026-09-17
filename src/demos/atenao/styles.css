@@ -1,0 +1,757 @@
+.atenao-app {
+  --navy: #202e4f;
+  --orange: #f38f1f;
+  --line: #d4dde6;
+  --muted: #52627b;
+  --ink: #1b2945;
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: white;
+  min-height: 100vh;
+}
+.atenao-app * {
+  box-sizing: border-box;
+}
+.atenao-app button,
+.atenao-app input,
+.atenao-app select,
+.atenao-app textarea {
+  font: inherit;
+}
+.atenao-app button {
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 44px;
+  border: 1px solid #91a0b5;
+  border-radius: 3px;
+  background: white;
+  color: var(--navy);
+  padding: 9px 13px;
+  cursor: pointer;
+}
+.atenao-app button:hover {
+  background: #fff4e8;
+  border-color: #c77721;
+}
+.atenao-app button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.atenao-app .atenao-primary {
+  background: #c45c00;
+  border-color: #c45c00;
+  color: white;
+}
+.atenao-app .atenao-primary:hover {
+  background: #a74d00;
+}
+.atenao-app button:focus-visible,
+.atenao-app input:focus-visible,
+.atenao-app select:focus-visible,
+.atenao-app textarea:focus-visible,
+.atenao-app summary:focus-visible,
+.atenao-app a:focus-visible {
+  outline: 3px solid #b75400;
+  outline-offset: 3px;
+}
+.atenao-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.atenao-app input:not([type="checkbox"]),
+.atenao-app select,
+.atenao-app textarea {
+  min-height: 44px;
+  padding: 9px;
+  border: 1px solid #a9b6c7;
+  border-radius: 3px;
+  background: #fff;
+  color: var(--ink);
+  width: 100%;
+  font-size: 16px;
+}
+.atenao-app textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+.atenao-app input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: #c45c00;
+  flex-shrink: 0;
+}
+.atenao-app h1,
+.atenao-app h2,
+.atenao-app h3,
+.atenao-app p {
+  margin: 0;
+}
+.atenao-app h1,
+.atenao-app h2,
+.atenao-app h3 {
+  font-family: "Roboto Condensed", Roboto, sans-serif;
+}
+.atenao-app h1 {
+  font-size: 32px;
+  line-height: 1.17;
+  letter-spacing: -0.35px;
+}
+.atenao-app h2 {
+  font-size: 22px;
+  line-height: 1.3;
+}
+.atenao-app mark {
+  background: #ffe1b9;
+  color: inherit;
+  border-radius: 1px;
+  padding: 1px;
+}
+.atenao-header {
+  background: var(--navy);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 28px;
+  gap: 20px;
+}
+.atenao-header > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.atenao-header strong {
+  font-size: 26px;
+  letter-spacing: 1px;
+}
+.atenao-header span {
+  border-left: 1px solid #8490a5;
+  padding-left: 20px;
+}
+.atenao-header p {
+  font-size: 14px;
+  color: #dce3ed;
+}
+.atenao-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0, 1fr);
+  max-width: 1700px;
+  margin: auto;
+}
+.atenao-glossary {
+  background: #eef2f7;
+  border-right: 1px solid var(--line);
+  padding: 30px 16px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+.atenao-glossary h2 {
+  font-size: 23px;
+}
+.atenao-glossary > p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 4px 0 23px;
+}
+.atenao-glossary > label {
+  font-size: 13px;
+  font-weight: 400;
+}
+.atenao-glossary input {
+  font-size: 14px !important;
+}
+.atenao-glossary nav {
+  margin: 20px -16px 35px;
+}
+.atenao-glossary nav button {
+  width: 100%;
+  display: block;
+  text-align: left;
+  padding: 16px;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  min-height: 110px;
+  border-left: 4px solid transparent;
+}
+.atenao-glossary nav strong {
+  display: block;
+  font-size: 17px;
+  font-family: "Roboto Condensed", Roboto, sans-serif;
+}
+.atenao-glossary nav span {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 5px 0;
+  overflow-wrap: anywhere;
+}
+.atenao-glossary nav span b {
+  font-weight: 500;
+}
+.atenao-glossary nav small {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--muted);
+}
+.atenao-glossary nav button.atenao-term-selected {
+  background: #fff4e7;
+  border-left-color: var(--orange);
+}
+.atenao-no-term {
+  padding: 16px;
+  font-size: 14px;
+}
+.atenao-method {
+  margin-top: auto;
+  border: 1px solid #cbd5e1;
+  border-radius: 3px;
+  padding: 13px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.atenao-method strong {
+  color: var(--navy);
+  display: block;
+  margin-bottom: 6px;
+}
+.atenao-app main {
+  padding: 28px 24px;
+  min-width: 0;
+}
+.atenao-heading > p {
+  margin: 11px 0 24px;
+  max-width: 850px;
+  color: var(--muted);
+}
+.atenao-preference {
+  background: #f0f4f8;
+  border: 1px solid #dfe5ec;
+  border-radius: 4px;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr auto;
+  gap: 18px;
+  align-items: end;
+}
+.atenao-preference > div > span {
+  display: block;
+  font-size: 13px;
+  color: var(--muted);
+}
+.atenao-preference > div > strong {
+  display: block;
+  margin: 5px 0;
+  font-size: 18px;
+}
+.atenao-preference > div > small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+.atenao-preference > label input {
+  border-color: #c97521;
+}
+.atenao-preference > details {
+  grid-column: 1/-1;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.atenao-preference > details summary {
+  cursor: pointer;
+  min-height: 24px;
+}
+.atenao-preference > details p {
+  margin: 10px 0;
+}
+.atenao-preference > details label {
+  max-width: 700px;
+}
+.atenao-preference > details small {
+  font-size: 12px;
+  font-weight: 400;
+}
+.atenao-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+  justify-content: space-between;
+  margin: 24px 0 18px;
+}
+.atenao-toolbar > label {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+}
+.atenao-toolbar > label select {
+  width: auto;
+  font-size: 14px;
+}
+.atenao-toolbar > p {
+  font-size: 13px;
+  color: var(--muted);
+}
+.atenao-toolbar > div {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.atenao-message,
+.atenao-error {
+  border-left: 3px solid #507a6a;
+  background: #edf5f0;
+  color: #315c47;
+  padding: 12px 15px;
+  font-size: 14px;
+  margin: 14px 0 !important;
+}
+.atenao-error {
+  color: #8d3020;
+  background: #fff0eb;
+  border-color: #a84425;
+}
+.atenao-concordance {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.atenao-column-titles,
+.atenao-segment-button {
+  display: grid !important;
+  grid-template-columns: 135px minmax(0, 1fr) minmax(0, 1fr) 103px;
+  gap: 16px;
+  text-align: left;
+}
+.atenao-column-titles {
+  padding: 14px 16px;
+  background: #eff3f7;
+  font-family: "Roboto Condensed", Roboto, sans-serif;
+  font-size: 14px;
+  border-bottom: 1px solid var(--line);
+  font-weight: 600;
+}
+.atenao-segment {
+  border-bottom: 1px solid var(--line);
+}
+.atenao-segment:last-child {
+  border-bottom: 0;
+}
+.atenao-app .atenao-segment-button {
+  width: 100%;
+  padding: 19px 16px;
+  border: 0;
+  border-radius: 0;
+  background: white;
+  font-weight: 400;
+  font-size: 16px;
+  align-items: start;
+  line-height: 1.55;
+}
+.atenao-segment-button:hover {
+  background: #f8fafc !important;
+}
+.atenao-open {
+  box-shadow: inset 3px 0 var(--orange);
+}
+.atenao-open .atenao-segment-button {
+  background: #fffaf4;
+  padding-left: 17px;
+}
+.atenao-document {
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+.atenao-document strong {
+  display: block;
+  font-family: "Roboto Condensed", Roboto, sans-serif;
+  font-size: 14px;
+}
+.atenao-document code {
+  display: block;
+  margin-top: 7px;
+  color: var(--muted);
+}
+.atenao-source,
+.atenao-target {
+  overflow-wrap: anywhere;
+}
+.atenao-mobile-label {
+  display: none;
+}
+.atenao-status {
+  font-family: "Roboto Condensed", Roboto, sans-serif;
+  background: #fff0db;
+  color: #804710;
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.35;
+}
+.atenao-status.confirmed {
+  background: #e7f3eb;
+  color: #246243;
+}
+.atenao-status.exception {
+  background: #e7edf8;
+  color: #2e4e81;
+}
+.atenao-found {
+  margin: 0 !important;
+  padding: 10px 19px;
+  border-top: 1px solid #f0d9bd;
+  background: #fffaf4;
+  font-size: 12px;
+  color: var(--muted);
+}
+.atenao-editor {
+  padding: 20px;
+  border-top: 1px solid #e7d0b5;
+  background: #f7f9fc;
+}
+.atenao-editor-head {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.atenao-editor-head > strong {
+  font-size: 17px;
+  font-family: "Roboto Condensed", Roboto, sans-serif;
+}
+.atenao-editor-head > span {
+  font-size: 13px;
+  color: var(--muted);
+}
+.atenao-original > span,
+.atenao-suggestion > span {
+  font-size: 13px;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 6px;
+}
+.atenao-original p {
+  font-size: 15px;
+  line-height: 1.6;
+  padding-bottom: 14px;
+}
+.atenao-suggestion {
+  background: #edf2f9;
+  padding: 13px;
+  margin-bottom: 18px;
+  border-left: 2px solid #9dacc4;
+}
+.atenao-suggestion p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+.atenao-suggestion button {
+  margin-top: 12px;
+}
+.atenao-editor form > label {
+  margin-bottom: 15px;
+}
+.atenao-app .atenao-exception-check {
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  font-weight: 400;
+}
+.atenao-editor-actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.atenao-editor form > p {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 12px;
+}
+.atenao-empty {
+  padding: 34px 24px;
+}
+.atenao-empty h2 {
+  margin-bottom: 10px;
+}
+.atenao-empty p {
+  color: var(--muted);
+}
+.atenao-outputs {
+  margin-top: 25px;
+  padding: 22px 0;
+  border-top: 2px solid var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.atenao-outputs p {
+  font-size: 14px;
+  margin: 8px 0;
+  color: var(--muted);
+  max-width: 540px;
+}
+.atenao-outputs > div:last-child {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+.atenao-files {
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+.atenao-files summary {
+  font-size: 14px;
+  cursor: pointer;
+  min-height: 32px;
+  font-weight: 500;
+}
+.atenao-files > p {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 13px 0;
+  max-width: 850px;
+}
+.atenao-files > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.atenao-local {
+  font-size: 13px;
+  color: var(--muted);
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  max-width: 950px;
+}
+@media (max-width: 1200px) {
+  .atenao-layout {
+    grid-template-columns: 205px minmax(0, 1fr);
+  }
+  .atenao-app main {
+    padding: 24px 18px;
+  }
+  .atenao-column-titles,
+  .atenao-segment-button {
+    grid-template-columns: 100px minmax(0, 1fr) minmax(0, 1fr) 90px;
+    gap: 10px;
+  }
+  .atenao-preference {
+    grid-template-columns: 1fr 1.4fr;
+  }
+  .atenao-preference > button {
+    grid-column: 2;
+    justify-self: start;
+  }
+  .atenao-outputs {
+    display: block;
+  }
+  .atenao-outputs > div:last-child {
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+}
+@media (max-width: 850px) {
+  .atenao-layout {
+    display: block;
+  }
+  .atenao-glossary {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    padding: 20px;
+  }
+  .atenao-glossary > p {
+    margin-bottom: 15px;
+  }
+  .atenao-glossary > label {
+    max-width: 380px;
+  }
+  .atenao-glossary nav {
+    margin: 15px 0 0;
+    display: flex;
+    overflow: auto;
+    gap: 0;
+  }
+  .atenao-glossary nav button {
+    min-width: 200px;
+    border-bottom: 0;
+    border-top: 1px solid var(--line);
+    border-right: 1px solid var(--line);
+    padding: 12px;
+    min-height: 105px;
+  }
+  .atenao-method {
+    margin-top: 16px;
+    max-width: 600px;
+  }
+  .atenao-app main {
+    padding: 24px;
+  }
+  .atenao-column-titles,
+  .atenao-segment-button {
+    grid-template-columns: 100px minmax(0, 1fr) minmax(0, 1fr) 90px;
+  }
+}
+@media (max-width: 600px) {
+  .atenao-header {
+    display: block;
+    padding: 16px;
+  }
+  .atenao-header > div {
+    gap: 14px;
+  }
+  .atenao-header strong {
+    font-size: 23px;
+  }
+  .atenao-header span {
+    font-size: 14px;
+    padding-left: 14px;
+  }
+  .atenao-header p {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+  .atenao-glossary {
+    padding: 20px 16px;
+  }
+  .atenao-method {
+    font-size: 13px;
+  }
+  .atenao-app main {
+    padding: 23px 16px;
+  }
+  .atenao-app h1 {
+    font-size: 29px;
+  }
+  .atenao-heading > p {
+    font-size: 15px;
+  }
+  .atenao-preference {
+    display: block;
+    padding: 16px;
+  }
+  .atenao-preference > label {
+    margin: 18px 0 13px;
+  }
+  .atenao-preference > button {
+    width: 100%;
+  }
+  .atenao-preference > details {
+    margin-top: 17px;
+  }
+  .atenao-toolbar {
+    display: block;
+  }
+  .atenao-toolbar > label {
+    display: block;
+  }
+  .atenao-toolbar > label select {
+    width: 100%;
+    margin-top: 6px;
+  }
+  .atenao-toolbar > p {
+    margin: 14px 0;
+  }
+  .atenao-toolbar > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .atenao-toolbar > div > label {
+    grid-column: 1/-1;
+  }
+  .atenao-toolbar > div > label button {
+    width: 100%;
+  }
+  .atenao-column-titles {
+    display: none !important;
+  }
+  .atenao-app .atenao-segment-button {
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    padding: 17px;
+  }
+  .atenao-document {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .atenao-document strong {
+    font-size: 15px;
+  }
+  .atenao-document code {
+    margin-top: 3px;
+  }
+  .atenao-status {
+    grid-column: 2;
+    grid-row: 1;
+    align-self: start;
+  }
+  .atenao-source {
+    grid-column: 1/-1;
+    grid-row: 2;
+  }
+  .atenao-target {
+    grid-column: 1/-1;
+    grid-row: 3;
+    border-top: 1px solid #e0e5ec;
+    padding-top: 12px;
+  }
+  .atenao-mobile-label {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+  .atenao-editor {
+    padding: 17px;
+  }
+  .atenao-editor-head {
+    display: block;
+  }
+  .atenao-editor-head > span {
+    display: block;
+    margin-top: 5px;
+  }
+  .atenao-editor-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .atenao-app .atenao-exception-check {
+    align-items: flex-start;
+    font-size: 14px;
+  }
+  .atenao-exception-check input {
+    margin-top: 2px;
+  }
+  .atenao-outputs > div:last-child,
+  .atenao-files > div {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .atenao-outputs button,
+  .atenao-files button {
+    width: 100%;
+  }
+  .atenao-glossary nav button {
+    min-width: 215px;
+  }
+  .atenao-files summary {
+    line-height: 1.6;
+  }
+}

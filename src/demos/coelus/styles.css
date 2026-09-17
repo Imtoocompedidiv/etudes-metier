@@ -1,0 +1,568 @@
+.coelus-app {
+  --co-purple: #8b25ca;
+  --co-line: #dce0e6;
+  --co-ink: #212529;
+  font:
+    400 16px/1.5 Manrope,
+    sans-serif;
+  color: var(--co-ink);
+  background: #fff;
+  min-height: 100vh;
+  display: flex;
+}
+.coelus-app * {
+  box-sizing: border-box;
+}
+.coelus-app h1 {
+  font-size: 32px;
+  line-height: 1.18;
+  letter-spacing: -1px;
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+.coelus-app h2 {
+  font-size: 19px;
+  line-height: 1.3;
+  margin: 0 0 15px;
+}
+.coelus-app h3 {
+  font-size: 15px;
+  margin: 18px 0 10px;
+}
+.coelus-app p {
+  margin: 0 0 12px;
+}
+.coelus-app button,
+.coelus-app input,
+.coelus-app select,
+.coelus-app textarea {
+  font: inherit;
+  min-height: 42px;
+  border: 1px solid #b8c1ce;
+  border-radius: 4px;
+  padding: 9px 12px;
+  color: #252b39;
+  background: #fff;
+}
+.coelus-app button {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.coelus-app button:hover:not(:disabled) {
+  background: #f5edfa;
+  border-color: var(--co-purple);
+}
+.coelus-app button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.coelus-app button:focus-visible,
+.coelus-app a:focus-visible,
+.coelus-app summary:focus-visible,
+.coelus-app input:focus-visible,
+.coelus-app select:focus-visible,
+.coelus-app textarea:focus-visible,
+.coelus-app [tabindex]:focus-visible {
+  outline: 3px solid #ad40ed;
+  outline-offset: 3px;
+}
+.coelus-app .co-primary {
+  background: var(--co-purple);
+  border-color: var(--co-purple);
+  color: white;
+}
+.coelus-app .co-primary:hover:not(:disabled) {
+  background: #7320a6;
+  color: white;
+}
+.coelus-app label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+.coelus-app input,
+.coelus-app select,
+.coelus-app textarea {
+  width: 100%;
+  min-width: 0;
+  font-weight: 400;
+}
+.coelus-app textarea {
+  resize: vertical;
+}
+.coelus-app .co-muted {
+  font-size: 14px;
+  color: #5b6474;
+  line-height: 1.6;
+}
+.coelus-app .co-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.coelus-app .co-rail {
+  flex: 0 0 132px;
+  background: #212529;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+.coelus-app .co-rail > strong {
+  font-size: 25px;
+  padding: 17px 18px;
+  border-bottom: 1px solid #46505a;
+}
+.coelus-app .co-rail nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 16px 0;
+}
+.coelus-app .co-rail a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  padding: 16px 12px;
+  border-left: 3px solid transparent;
+}
+.coelus-app .co-rail a:hover {
+  background: #3e2d50;
+  border-left-color: #ad40ed;
+}
+.coelus-app .co-rail a:first-child {
+  background: #3e2d50;
+  border-left-color: #ad40ed;
+}
+.coelus-app .co-rail > span {
+  font-size: 13px;
+  padding: 20px 13px;
+  margin-top: auto;
+  color: #d9e0e6;
+}
+.coelus-app .co-body {
+  min-width: 0;
+  flex: 1;
+}
+.coelus-app .co-body > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 13px 25px;
+  border-bottom: 1px solid var(--co-line);
+}
+.coelus-app .co-body > header > span {
+  font-size: 17px;
+  font-weight: 600;
+  color: #596172;
+}
+.coelus-app .demo-context {
+  margin: 0 !important;
+  background: #faf9fb !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 10px 25px !important;
+  font-size: 14px !important;
+}
+.coelus-app .demo-context strong {
+  display: inline !important;
+  margin-right: 10px;
+}
+.coelus-app .demo-context p {
+  display: inline !important;
+}
+.coelus-app main {
+  padding: 24px;
+  max-width: 1600px;
+  margin: auto;
+}
+.coelus-app .co-intro {
+  font-size: 17px;
+  color: #535e72;
+  margin-bottom: 20px;
+}
+.coelus-app .co-sources {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid var(--co-line);
+  border-radius: 4px;
+  padding: 18px 0;
+}
+.coelus-app .co-sources > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  min-width: 0;
+}
+.coelus-app .co-sources > div + div {
+  border-left: 1px solid #c4cbd4;
+}
+.coelus-app .co-sources > div > div {
+  min-width: 130px;
+}
+.coelus-app .co-sources span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 3px;
+}
+.coelus-app .co-sources strong {
+  display: block;
+  font-size: 18px;
+}
+.coelus-app .co-sources small {
+  font-size: 13px;
+  color: #596172;
+}
+.coelus-app .demo-file-field {
+  font-size: 14px;
+}
+.coelus-app .co-sources .demo-file-field {
+  margin-left: auto;
+}
+.coelus-app .co-notice {
+  min-height: 22px;
+  font-size: 14px;
+  margin: 12px 0;
+  color: #236744;
+}
+.coelus-app .co-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 15px;
+  align-items: start;
+}
+.coelus-app .co-main {
+  min-width: 0;
+}
+.coelus-app .co-compare {
+  border: 1px solid var(--co-line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.coelus-app .co-toolbar {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) 145px 170px;
+  gap: 12px;
+  padding: 14px;
+}
+.coelus-app .co-check {
+  flex-direction: row;
+  align-items: center;
+  align-self: end;
+  min-height: 42px;
+  font-weight: 400;
+}
+.coelus-app .co-check input {
+  width: 18px;
+  min-height: 18px;
+  margin: 0 6px 0 0;
+  accent-color: var(--co-purple);
+}
+.coelus-app .co-scroll {
+  overflow-x: auto;
+  width: 100%;
+}
+.coelus-app table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 725px;
+  text-align: left;
+  font-size: 14px;
+}
+.coelus-app thead {
+  background: #f3f4f6;
+}
+.coelus-app th,
+.coelus-app td {
+  padding: 12px 13px;
+  border-bottom: 1px solid #e0e5eb;
+  vertical-align: middle;
+}
+.coelus-app td + td,
+.coelus-app td + th {
+  border-left: 1px solid #edf0f3;
+}
+.coelus-app .co-group {
+  background: #edf0f4;
+}
+.coelus-app .co-group th {
+  padding: 8px 13px;
+  font-weight: 700;
+}
+.coelus-app tbody th > button {
+  border: 0;
+  background: transparent;
+  padding: 5px 0;
+  text-align: left;
+  min-height: 34px;
+  color: inherit;
+  word-break: break-word;
+}
+.coelus-app td span {
+  font-weight: 600;
+}
+.coelus-app td small {
+  display: block;
+  font-size: 13px;
+  margin-top: 5px;
+}
+.coelus-app .co-same td:nth-child(3) {
+  color: #187747;
+}
+.coelus-app .co-selected {
+  background: #f2e3fc;
+  color: #602b80;
+  box-shadow: inset 3px 0 #ad40ed;
+}
+.coelus-app .co-table-note {
+  padding: 13px 15px;
+  font-size: 14px;
+  color: #5a6475;
+  margin: 0;
+}
+.coelus-app .co-empty {
+  padding: 20px;
+}
+.coelus-app .co-inspector {
+  border: 1px solid var(--co-line);
+  border-radius: 4px;
+  padding: 20px;
+  background: #fff;
+}
+.coelus-app .co-inspector h2 {
+  color: #702d98;
+  overflow-wrap: anywhere;
+  margin-bottom: 5px;
+}
+.coelus-app .co-inspector dl {
+  background: #f6f7fa;
+  border: 1px solid #e0e4e9;
+  border-radius: 3px;
+  padding: 13px;
+  margin: 0 0 18px;
+  font-size: 14px;
+}
+.coelus-app dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 5px 0;
+}
+.coelus-app dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+  text-align: right;
+}
+.coelus-app .co-inspector form {
+  display: grid;
+  gap: 12px;
+}
+.coelus-app .co-inspector form h3 {
+  margin: 2px 0;
+}
+.coelus-app .co-inspector form label {
+  display: grid;
+  grid-template-columns: 83px minmax(0, 1fr);
+  gap: 10px;
+  align-items: center;
+}
+.coelus-app .co-inspector form .co-primary {
+  margin-top: 6px;
+  width: 100%;
+}
+.coelus-app .co-remove {
+  color: #8a3d34;
+  font-size: 13px;
+  width: 100%;
+}
+.coelus-app .co-decision {
+  border: 1px solid var(--co-line);
+  border-radius: 4px;
+  margin-top: 15px;
+  padding: 19px;
+}
+.coelus-app .co-decision-body {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 22px;
+}
+.coelus-app .co-decision-body > div {
+  background: #f6f7fa;
+  padding: 14px;
+  border: 1px solid #e0e4e9;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.coelus-app .co-decision-body > div > strong {
+  overflow-wrap: anywhere;
+}
+.coelus-app .co-decision-body > div > p {
+  margin-top: 10px;
+}
+.coelus-app .co-decision form .co-actions {
+  margin-top: 12px;
+}
+.coelus-app .co-exports {
+  margin-top: 18px;
+  border: 1px solid var(--co-line);
+  padding: 20px;
+  border-radius: 4px;
+}
+.coelus-app .co-exports > p {
+  font-size: 14px;
+  color: #5b6474;
+}
+.coelus-app .co-restore {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  border-top: 1px solid #e6e9ee;
+  padding-top: 18px;
+}
+.coelus-app .co-limits,
+.coelus-app .co-journal {
+  font-size: 14px;
+  margin: 18px 0;
+  color: #515d6d;
+}
+.coelus-app summary {
+  font-weight: 600;
+  cursor: pointer;
+}
+.coelus-app .co-limits p {
+  margin-top: 15px;
+  max-width: 1100px;
+}
+.coelus-app .co-journal li {
+  margin: 8px 0;
+}
+.coelus-app .demo-footer {
+  border-top: 1px solid var(--co-line);
+  padding: 18px 24px !important;
+  font-size: 13px;
+}
+.coelus-app section {
+  scroll-margin-top: 15px;
+}
+@media (max-width: 1200px) {
+  .coelus-app .co-rail {
+    flex-basis: 110px;
+  }
+  .coelus-app .co-rail > strong {
+    font-size: 22px;
+    padding-left: 12px;
+  }
+  .coelus-app .co-workspace {
+    grid-template-columns: minmax(0, 1fr) 275px;
+  }
+  .coelus-app .co-toolbar {
+    grid-template-columns: 1fr 130px;
+  }
+  .coelus-app .co-check {
+    grid-column: 1/-1;
+  }
+  .coelus-app .co-decision-body {
+    grid-template-columns: 1fr;
+  }
+  .coelus-app .co-sources > div {
+    display: block;
+  }
+  .coelus-app .co-sources .demo-file-field {
+    margin-top: 14px;
+  }
+  .coelus-app .co-sources > div > div {
+    min-width: 0;
+  }
+}
+@media (max-width: 780px) {
+  .coelus-app {
+    display: block;
+  }
+  .coelus-app .co-rail {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .coelus-app .co-rail > strong {
+    border: 0;
+    padding: 12px 18px;
+  }
+  .coelus-app .co-rail nav {
+    flex-direction: row;
+    padding: 0;
+  }
+  .coelus-app .co-rail a {
+    padding: 14px 9px;
+    font-size: 13px;
+    border: 0;
+  }
+  .coelus-app .co-rail a:first-child {
+    background: transparent;
+  }
+  .coelus-app .co-rail > span {
+    display: none;
+  }
+  .coelus-app .co-body > header {
+    padding: 12px 18px;
+    flex-wrap: wrap;
+  }
+  .coelus-app .demo-context {
+    padding: 12px 18px !important;
+  }
+  .coelus-app main {
+    padding: 22px 18px;
+  }
+  .coelus-app h1 {
+    font-size: 29px;
+  }
+  .coelus-app .co-sources {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .coelus-app .co-sources > div {
+    padding: 16px;
+  }
+  .coelus-app .co-sources > div + div {
+    border-left: 0;
+    border-top: 1px solid var(--co-line);
+  }
+  .coelus-app .co-workspace {
+    display: block;
+  }
+  .coelus-app .co-inspector {
+    margin-top: 16px;
+  }
+  .coelus-app .co-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 12px;
+  }
+  .coelus-app .co-check {
+    grid-column: auto;
+  }
+  .coelus-app .co-decision-body {
+    display: block;
+  }
+  .coelus-app .co-decision-body > div {
+    margin-bottom: 16px;
+  }
+  .coelus-app .co-restore {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .coelus-app .co-inspector form label {
+    grid-template-columns: 100px minmax(0, 1fr);
+  }
+  .coelus-app .co-exports .co-actions > button {
+    flex: 1 1 100%;
+  }
+  .coelus-app .demo-footer {
+    padding: 16px 18px !important;
+  }
+}
