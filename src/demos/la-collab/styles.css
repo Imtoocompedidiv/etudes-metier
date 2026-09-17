@@ -1,0 +1,687 @@
+.lc-app {
+  --ink: #121114;
+  --mint: #33ff99;
+  --line: #d8d8dc;
+  font:
+    16px/1.5 "Poppins",
+    sans-serif;
+  background: #f1f1f1;
+  color: var(--ink);
+  min-height: 100vh;
+}
+.lc-app * {
+  box-sizing: border-box;
+}
+.lc-app h1,
+.lc-app h2,
+.lc-app h3,
+.lc-app p {
+  margin: 0;
+}
+.lc-app h1 {
+  font-size: 32px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+.lc-app h2 {
+  font-size: 22px;
+  line-height: 1.25;
+  letter-spacing: -0.6px;
+  font-weight: 600;
+}
+.lc-app h3 {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.lc-app button,
+.lc-app input,
+.lc-app select,
+.lc-app textarea {
+  font: inherit;
+  color: inherit;
+}
+.lc-app button {
+  min-height: 44px;
+  padding: 9px 14px;
+  border: 1.5px solid var(--ink);
+  background: #fff;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+}
+.lc-app button:hover:not(:disabled) {
+  background: #e7fff2;
+}
+.lc-app button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.lc-app .lc-black {
+  background: var(--ink);
+  color: #fff;
+}
+.lc-app .lc-black:hover:not(:disabled) {
+  background: #343238;
+}
+.lc-app input,
+.lc-app select,
+.lc-app textarea {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #b4b4bc;
+  border-radius: 2px;
+  padding: 9px 11px;
+  background: #fff;
+  font-size: 16px;
+}
+.lc-app textarea {
+  resize: vertical;
+  min-height: 84px;
+}
+.lc-app input[type="checkbox"],
+.lc-app input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  accent-color: #087b48;
+  margin: 0;
+  flex: none;
+}
+.lc-app :focus-visible {
+  outline: 3px solid #007342;
+  outline-offset: 3px;
+}
+.lc-app fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+.lc-app label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+}
+.lc-app label > input,
+.lc-app label > select,
+.lc-app label > textarea {
+  margin-top: 6px;
+}
+.lc-app .lc-check {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  font-weight: 400;
+  font-size: 14px;
+}
+.lc-app .lc-check input {
+  margin: 0;
+}
+.lc-app header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--ink);
+  color: #fff;
+  padding: 12px 30px;
+}
+.lc-app header strong {
+  font-size: 27px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.9px;
+}
+.lc-app header span {
+  font-size: 14px;
+}
+.lc-app header span:nth-child(2) {
+  margin-left: auto;
+}
+.lc-app main {
+  padding: 27px 22px 0;
+  max-width: 1800px;
+  margin: auto;
+}
+.lc-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  align-items: center;
+  margin-bottom: 26px;
+}
+.lc-heading p {
+  font-size: 18px;
+  margin-top: 7px;
+}
+.lc-actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.lc-heading .lc-actions {
+  flex-shrink: 0;
+}
+.lc-mobile-nav {
+  display: none;
+}
+.lc-workspace {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(330px, 1fr) minmax(
+      390px,
+      1.15fr
+    );
+  gap: 13px;
+  align-items: start;
+}
+.lc-workspace > section {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  min-width: 0;
+  padding: 20px;
+}
+.lc-fields h2 {
+  margin-bottom: 15px;
+}
+.lc-field-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+  max-height: 325px;
+  overflow: auto;
+}
+.lc-field-list button {
+  text-align: left;
+  background: transparent;
+  border: 0;
+  padding: 8px 10px;
+  position: relative;
+  width: 100%;
+}
+.lc-field-list button strong {
+  font-size: 15px;
+  font-weight: 500;
+  display: block;
+}
+.lc-field-list button > span {
+  display: block;
+  font-size: 14px;
+  color: #55535b;
+  font-weight: 400;
+  overflow-wrap: anywhere;
+}
+.lc-field-list button[aria-pressed="true"] {
+  background: var(--mint);
+}
+.lc-field-list .lc-field-warning {
+  font-size: 13px;
+  color: #733e00;
+}
+.lc-editor {
+  padding-top: 17px;
+}
+.lc-editor h3 {
+  margin-bottom: 4px;
+}
+.lc-editor fieldset > label {
+  margin-top: 14px;
+}
+.lc-editor .lc-black {
+  width: 100%;
+  margin-top: 15px;
+}
+.lc-app .lc-link-button {
+  border: 0;
+  text-decoration: underline;
+  background: transparent;
+  font-weight: 400;
+}
+.lc-meta {
+  font-size: 14px;
+  color: #5d5b65;
+  line-height: 1.55;
+}
+.lc-app details summary {
+  font-size: 14px;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 12px 0;
+  font-weight: 500;
+}
+.lc-editor details {
+  margin-top: 8px;
+}
+.lc-editor details ul {
+  font-size: 14px;
+  padding-left: 20px;
+}
+.lc-trial h2 {
+  margin-bottom: 19px;
+}
+.lc-trial > form {
+  background: white;
+  padding: 16px;
+  border: 1px solid #e0e0e4;
+  border-radius: 3px;
+}
+.lc-form-field {
+  margin-bottom: 18px;
+}
+.lc-form-field > label,
+.lc-choice legend {
+  font-size: 15px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+.lc-form-field .lc-meta {
+  margin-top: 6px;
+}
+.lc-choice label {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 7px 0;
+  min-height: 32px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.lc-trial > form > fieldset > button {
+  width: 100%;
+  margin-top: 8px;
+}
+.lc-trial > form > fieldset > .lc-meta {
+  margin-top: 10px;
+}
+.lc-field-error {
+  font-size: 14px;
+  color: #943023;
+  margin-top: 6px !important;
+}
+.lc-form-field [aria-invalid="true"] {
+  border-color: #aa3926;
+}
+.lc-error-summary {
+  border: 1px solid #ba5949;
+  background: #fff5f3;
+  padding: 12px;
+  margin-bottom: 16px;
+  font-size: 14px;
+}
+.lc-error-summary ul {
+  padding-left: 18px;
+  margin: 8px 0;
+}
+.lc-error-summary a {
+  color: #943023;
+}
+.lc-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.lc-section-heading .lc-black {
+  max-width: 160px;
+  line-height: 1.4;
+}
+.lc-scroll {
+  overflow: auto;
+}
+.lc-app table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+}
+.lc-app th,
+.lc-app td {
+  text-align: left;
+  padding: 10px 9px;
+  border-bottom: 1px solid #e3e3e6;
+  vertical-align: top;
+}
+.lc-app thead th {
+  font-weight: 500;
+  background: #f6f6f7;
+}
+.lc-app tbody th {
+  font-weight: 400;
+  min-width: 150px;
+}
+.lc-tests tbody th button {
+  border: 0;
+  padding: 2px 0;
+  min-height: 38px;
+  background: transparent;
+  text-align: left;
+  font-weight: 500;
+}
+.lc-tests tbody td:nth-child(2) {
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+.lc-selected {
+  background: #ebfff4;
+}
+.lc-pass {
+  color: #076338;
+  font-weight: 500;
+}
+.lc-fail {
+  color: #9b3220;
+  font-weight: 500;
+}
+.lc-faults {
+  margin-top: 18px;
+  padding: 15px;
+  border: 1px solid #c49146;
+  border-radius: 3px;
+  background: #fff9ee;
+}
+.lc-faults h3 {
+  margin-bottom: 6px;
+}
+.lc-faults ul {
+  font-size: 14px;
+  margin: 0;
+  padding-left: 18px;
+}
+.lc-faults li {
+  margin: 8px 0;
+}
+.lc-faults button {
+  font-size: 14px;
+  min-height: 26px;
+  padding: 0 4px;
+  border: 0;
+  border-bottom: 1px solid #915407;
+  border-radius: 0;
+  background: transparent;
+}
+.lc-step-results {
+  margin-top: 23px;
+}
+.lc-step-results > .lc-meta {
+  margin-top: 8px;
+}
+.lc-step-results > details {
+  border-bottom: 1px solid var(--line);
+  padding: 3px 0;
+}
+.lc-step-results dl {
+  font-size: 14px;
+  margin: 8px 0;
+}
+.lc-step-results dt {
+  font-weight: 500;
+}
+.lc-step-results dd {
+  margin: 6px 0 14px;
+  overflow-wrap: anywhere;
+}
+.lc-step-results dd div {
+  margin-top: 5px;
+}
+.lc-expect {
+  font-size: 14px;
+  padding: 10px 0;
+  border-top: 1px dotted #d0d0d5;
+}
+.lc-expect p {
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+.lc-scenario-editor {
+  margin-top: 16px;
+  padding-top: 8px;
+  border-top: 1px solid var(--line);
+}
+.lc-scenario-editor label {
+  margin: 12px 0;
+}
+.lc-code {
+  font:
+    14px/1.55 ui-monospace,
+    Consolas,
+    monospace !important;
+  min-height: 310px !important;
+  tab-size: 2;
+}
+.lc-app pre {
+  font:
+    14px/1.6 ui-monospace,
+    Consolas,
+    monospace;
+  background: #f7f7f8;
+  padding: 14px;
+  overflow: auto;
+  border: 1px solid #e2e2e5;
+  max-width: 100%;
+}
+.lc-delivery {
+  margin-top: 20px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 22px;
+}
+.lc-delivery p {
+  font-size: 14px;
+  margin-top: 8px;
+  max-width: 680px;
+}
+.lc-delivery .lc-actions {
+  justify-content: flex-end;
+}
+.lc-formats,
+.lc-journal {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 14px;
+}
+.lc-formats p {
+  max-width: 1150px;
+  margin: 10px 0;
+}
+.lc-journal li {
+  margin-bottom: 5px;
+}
+.lc-local {
+  font-size: 14px;
+  color: #57555e;
+  padding: 20px 0;
+  max-width: 1120px;
+}
+.lc-app > footer {
+  max-width: 1800px;
+  margin: auto;
+  padding: 22px;
+}
+.lc-notice,
+.lc-warning,
+.lc-success,
+.lc-purged {
+  padding: 12px 15px;
+  margin-bottom: 16px !important;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.lc-notice {
+  background: #e8fff3;
+  border-left: 3px solid #0c8650;
+}
+.lc-warning {
+  background: #fff7e9;
+  border-left: 3px solid #a16818;
+  color: #7b4900;
+}
+.lc-success,
+.lc-purged {
+  background: #e8fff3;
+  border-left: 3px solid #0c8650;
+  margin-top: 15px !important;
+}
+.lc-dialog {
+  font:
+    16px/1.5 "Poppins",
+    sans-serif;
+  border: 1px solid #aaa;
+  max-width: 650px;
+  width: calc(100% - 32px);
+  padding: 25px;
+  border-radius: 4px;
+}
+.lc-dialog::backdrop {
+  background: #12111466;
+}
+.lc-dialog h2 {
+  font-size: 24px;
+  margin: 0 0 16px;
+}
+.lc-dialog p {
+  margin: 14px 0;
+}
+.lc-dialog button {
+  font:
+    500 14px "Poppins",
+    sans-serif;
+  min-height: 44px;
+  background: #fff;
+  border: 1px solid #121114;
+  padding: 9px 14px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+.lc-dialog button.lc-black {
+  background: #121114;
+  color: #fff;
+}
+.lc-dialog ul {
+  max-height: 240px;
+  overflow: auto;
+  font-size: 14px;
+}
+.lc-dialog .lc-actions {
+  margin-top: 22px;
+}
+@media (max-width: 1250px) {
+  .lc-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .lc-workspace {
+    grid-template-columns: minmax(280px, 1fr) minmax(330px, 1.2fr);
+  }
+  .lc-workspace > .lc-tests {
+    grid-column: 1/-1;
+  }
+  .lc-section-heading .lc-black {
+    max-width: none;
+  }
+  .lc-delivery {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .lc-delivery .lc-actions {
+    justify-content: flex-start;
+  }
+  .lc-step-results > details {
+    max-width: 950px;
+  }
+}
+@media (max-width: 760px) {
+  .lc-app main {
+    padding: 22px 15px 0;
+  }
+  .lc-app header {
+    padding: 14px 16px;
+    gap: 7px 16px;
+    flex-wrap: wrap;
+  }
+  .lc-app header strong {
+    font-size: 25px;
+  }
+  .lc-app header span {
+    font-size: 13px;
+  }
+  .lc-app header span:nth-child(2) {
+    margin-left: 0;
+  }
+  .lc-app h1 {
+    font-size: 29px;
+  }
+  .lc-heading p {
+    font-size: 16px;
+  }
+  .lc-heading .lc-actions {
+    width: 100%;
+  }
+  .lc-heading .lc-actions button {
+    flex: 1;
+  }
+  .lc-mobile-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 9px;
+    margin: 0 0 20px;
+  }
+  .lc-mobile-nav a {
+    font-size: 14px;
+    color: #121114;
+    padding: 10px 7px;
+    text-decoration: underline;
+  }
+  .lc-workspace {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .lc-workspace > section {
+    padding: 18px;
+    scroll-margin-top: 15px;
+  }
+  .lc-workspace > .lc-tests {
+    grid-column: auto;
+  }
+  .lc-trial > form {
+    padding: 14px;
+  }
+  .lc-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .lc-section-heading button {
+    width: 100%;
+  }
+  .lc-delivery {
+    padding: 18px;
+  }
+  .lc-delivery .lc-actions {
+    width: 100%;
+  }
+  .lc-delivery button {
+    flex: 1 1 42%;
+  }
+  .lc-app table {
+    min-width: 390px;
+  }
+  .lc-field-list {
+    max-height: 265px;
+  }
+  .lc-dialog {
+    padding: 20px;
+  }
+  .lc-formats .lc-actions button {
+    flex: 1 1 45%;
+  }
+}
