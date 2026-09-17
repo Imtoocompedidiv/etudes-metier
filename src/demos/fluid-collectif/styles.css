@@ -1,0 +1,679 @@
+.fluid-app {
+  --navy: #050527;
+  --yellow: #f5c748;
+  --line: #dce0e8;
+  --ink: #111737;
+  background: var(--navy);
+  color: var(--ink);
+  font:
+    16px/1.55 Lexend,
+    Arial,
+    sans-serif;
+  min-height: 100vh;
+  padding: 0 16px 0;
+}
+.fluid-app * {
+  box-sizing: border-box;
+}
+.fluid-app h1,
+.fluid-app h2,
+.fluid-app p {
+  margin: 0;
+}
+.fluid-app button,
+.fluid-app input,
+.fluid-app select {
+  font: inherit;
+}
+.fluid-app button {
+  min-height: 44px;
+  padding: 10px 15px;
+  border: 1px solid #cbd0dc;
+  border-radius: 7px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 14px;
+  line-height: 1.4;
+  font-weight: 600;
+  cursor: pointer;
+}
+.fluid-app button:hover:enabled {
+  background: #f2f4f9;
+  border-color: #aeb7ca;
+}
+.fluid-app button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+.fluid-app :focus-visible {
+  outline: 3px solid #b07500;
+  outline-offset: 3px;
+}
+.fluid-app .fluid-yellow {
+  background: var(--yellow);
+  border-color: var(--yellow);
+  color: #101429;
+}
+.fluid-app .fluid-yellow:hover:enabled {
+  background: #edb924;
+  border-color: #edb924;
+}
+.fluid-app .fluid-navy {
+  background: #090c30;
+  color: #fff;
+  border-color: #090c30;
+}
+.fluid-app .fluid-navy:hover:enabled {
+  background: #242c4e;
+}
+.fluid-app input,
+.fluid-app select {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #cbd1df;
+  border-radius: 6px;
+  padding: 9px 12px;
+  background: #fff;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 6px;
+}
+.fluid-app label,
+.fluid-field-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.fluid-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 14px 20px;
+  gap: 20px;
+}
+.fluid-brand strong {
+  font-size: 26px;
+  letter-spacing: -0.6px;
+}
+.fluid-brand > span {
+  font-size: 14px;
+  color: #dadceb;
+}
+.fluid-shell {
+  background: #fff;
+  border-radius: 18px;
+  padding: 21px 22px 0;
+  max-width: 1600px;
+  margin: auto;
+}
+.fluid-heading h1 {
+  font-size: 30px;
+  line-height: 1.2;
+  font-weight: 600;
+  letter-spacing: -0.8px;
+}
+.fluid-heading p {
+  color: #5d6784;
+  font-size: 16px;
+  margin-top: 5px;
+}
+.fluid-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 20px 0 14px;
+}
+.fluid-actions {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fluid-progress {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #f5f6f9;
+  padding: 13px 16px;
+  border: 1px solid #d9deea;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.fluid-progress strong {
+  white-space: nowrap;
+}
+.fluid-progress progress {
+  flex: 1;
+  min-width: 40px;
+  height: 12px;
+  accent-color: #d4a72d;
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.fluid-progress progress::-webkit-progress-bar {
+  background: #e2e6ef;
+}
+.fluid-progress progress::-webkit-progress-value {
+  background: #e7b52d;
+}
+.fluid-progress > span {
+  color: #5c6481;
+}
+.fluid-contract {
+  font-size: 13px;
+  color: #66708a;
+  padding: 10px 2px 17px;
+}
+.fluid-workspace {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 20px;
+}
+.fluid-receipts {
+  border-right: 1px solid var(--line);
+  padding-right: 15px;
+  min-width: 0;
+}
+.fluid-app h2 {
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+.fluid-receipts > label {
+  margin: 17px 0 13px;
+}
+.fluid-receipts ol {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  max-height: 720px;
+  overflow: auto;
+}
+.fluid-receipts li {
+  display: flex;
+  align-items: center;
+  border-radius: 7px;
+  position: relative;
+  border-bottom: 1px solid #ebedf2;
+}
+.fluid-receipts li.is-selected {
+  background: #f4edcf;
+}
+.fluid-app .fluid-pick {
+  display: flex;
+  gap: 11px;
+  align-items: start;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 13px 7px;
+  width: 100%;
+  min-width: 0;
+}
+.fluid-pick > span:last-child {
+  min-width: 0;
+}
+.fluid-pick strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+.fluid-pick small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: #69728b;
+  margin-top: 4px;
+  overflow-wrap: anywhere;
+}
+.fluid-pick em {
+  font-style: normal;
+  font-size: 12px;
+  font-weight: 400;
+  color: #69728b;
+  display: block;
+  margin-top: 2px;
+}
+.fluid-dot {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #8996ac;
+  border-radius: 50%;
+  background: #fff;
+  flex: none;
+  margin-top: 4px;
+}
+.fluid-dot.reserved,
+.fluid-dot.cancelled,
+.fluid-dot.cancelled-on-arrival,
+.fluid-dot.resolved {
+  background: #d3a332;
+  border-color: #b58d25;
+}
+.fluid-dot.collision,
+.fluid-dot.order-conflict {
+  background: #d91f4e;
+  border-color: #d91f4e;
+}
+.fluid-dot.duplicate,
+.fluid-dot.duplicate-order,
+.fluid-dot.already-cancelled {
+  background: #8d98b0;
+  border-color: #8d98b0;
+}
+.fluid-dot.waiting {
+  background: #fff1ce;
+  border-color: #c99c27;
+}
+.fluid-order-buttons {
+  display: flex;
+  gap: 3px;
+  margin-right: 4px;
+}
+.fluid-app .fluid-order-buttons button {
+  min-height: 44px;
+  width: 44px;
+  padding: 5px 3px;
+  font-size: 17px;
+}
+.fluid-detail {
+  min-width: 0;
+}
+.fluid-event,
+.fluid-decision {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 21px;
+  margin-bottom: 14px;
+}
+.fluid-event h2 {
+  font-size: 26px;
+}
+.fluid-subtitle {
+  color: #5e6a86;
+  margin-top: 5px !important;
+  font-size: 14px;
+}
+.fluid-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 22px;
+  margin: 20px 0;
+}
+.fluid-no-quantity {
+  font-size: 14px;
+  background: #f4f5f8;
+  color: #6f7990;
+  border: 1px solid #d9dfeb;
+  border-radius: 6px;
+  min-height: 44px;
+  padding: 11px;
+  margin-top: 6px !important;
+}
+.fluid-warning {
+  padding: 13px;
+  border: 1px solid #f0bbc7;
+  border-radius: 7px;
+  background: #fff2f5;
+  color: #8b243d;
+  font-size: 14px;
+}
+.fluid-warning p {
+  margin-top: 8px;
+}
+.fluid-editor > .fluid-warning {
+  margin-bottom: 14px;
+}
+.fluid-decision h2 {
+  font-size: 20px;
+  margin-bottom: 11px;
+}
+.fluid-empty {
+  background: #f6f7fb;
+  border: 1px solid #d9deec;
+  border-radius: 7px;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #62708b;
+}
+.fluid-decision-text {
+  border-left: 3px solid #e0b447;
+  background: #fffdf5;
+  padding: 12px 15px;
+  font-size: 14px;
+}
+.fluid-decision-text p {
+  margin-top: 8px;
+}
+.fluid-stocks {
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  overflow: hidden;
+}
+.fluid-stocks h2 {
+  background: #0b1234;
+  color: #fff;
+  font-size: 20px;
+  padding: 12px 17px;
+}
+.fluid-table-scroll {
+  overflow: auto;
+}
+.fluid-app table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 560px;
+  font-size: 14px;
+}
+.fluid-app th,
+.fluid-app td {
+  text-align: left;
+  vertical-align: top;
+  padding: 12px 14px;
+  border-bottom: 1px solid #e4e8f0;
+  overflow-wrap: anywhere;
+}
+.fluid-app thead th {
+  font-size: 13px;
+  font-weight: 600;
+  background: #f5f7fb;
+}
+.fluid-app tbody th {
+  font-weight: 400;
+}
+.fluid-stocks tr:last-child td,
+.fluid-stocks tr:last-child th {
+  border-bottom: 0;
+}
+.fluid-problem {
+  color: #aa1541;
+  font-weight: 600;
+}
+.fluid-review {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 15px 0;
+  font-size: 14px;
+  color: #505e7e;
+}
+.fluid-review p {
+  max-width: 620px;
+}
+.fluid-review button {
+  flex: none;
+}
+.fluid-exports {
+  margin-top: 15px;
+}
+.fluid-full-trace {
+  margin-top: 25px;
+  border-top: 1px solid var(--line);
+}
+.fluid-full-trace summary,
+.fluid-method summary {
+  font-size: 14px;
+  min-height: 44px;
+  padding-top: 12px;
+  cursor: pointer;
+}
+.fluid-full-trace table {
+  min-width: 800px;
+}
+.fluid-full-trace td {
+  max-width: 430px;
+}
+.fluid-full-trace td p {
+  font-size: 13px;
+  margin-top: 5px;
+  color: #637089;
+}
+.fluid-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 19px 0;
+}
+.fluid-bottom p {
+  max-width: 770px;
+  font-size: 13px;
+  color: #606e8a;
+}
+.fluid-method {
+  font-size: 14px;
+  color: #68748c;
+  padding-bottom: 19px;
+}
+.fluid-method p {
+  max-width: 1150px;
+  margin: 12px 0;
+  line-height: 1.7;
+}
+.fluid-notice {
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.fluid-empty-list {
+  font-size: 14px;
+  padding: 20px 5px;
+  color: #65718b;
+}
+.fluid-dialog {
+  font:
+    16px/1.5 Lexend,
+    Arial,
+    sans-serif;
+  padding: 27px;
+  border: 1px solid #a4acc0;
+  border-radius: 12px;
+  color: #111737;
+  max-width: 540px;
+  width: calc(100% - 40px);
+}
+.fluid-dialog::backdrop {
+  background: #03062695;
+}
+.fluid-dialog h2 {
+  font-size: 23px;
+}
+.fluid-dialog p {
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+.fluid-dialog button {
+  font:
+    600 14px Lexend,
+    Arial,
+    sans-serif;
+  padding: 10px 15px;
+  min-height: 44px;
+  border: 1px solid #cbd0dc;
+  border-radius: 7px;
+  background: #fff;
+}
+.fluid-dialog .fluid-yellow {
+  background: #f5c748;
+  border-color: #f5c748;
+}
+.fluid-app .demo-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  color: #cbd0e3;
+  font-size: 13px;
+  max-width: 1600px;
+  margin: auto;
+}
+.fluid-app .demo-footer a {
+  color: #f5c748;
+}
+@media (max-width: 1150px) {
+  .fluid-workspace {
+    grid-template-columns: 280px minmax(0, 1fr);
+  }
+  .fluid-receipts {
+    padding-right: 10px;
+  }
+  .fluid-order-buttons {
+    display: grid;
+    gap: 2px;
+  }
+  .fluid-app .fluid-order-buttons button {
+    min-height: 44px;
+  }
+  .fluid-fields {
+    gap: 14px;
+  }
+  .fluid-review {
+    display: block;
+  }
+  .fluid-review button {
+    margin-top: 12px;
+  }
+  .fluid-toolbar {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  .fluid-bottom {
+    align-items: start;
+  }
+  .fluid-bottom > p {
+    max-width: 60%;
+  }
+}
+@media (max-width: 740px) {
+  .fluid-app {
+    padding: 0 8px;
+  }
+  .fluid-brand {
+    padding: 16px 10px;
+  }
+  .fluid-brand strong {
+    font-size: 20px;
+  }
+  .fluid-brand > span {
+    font-size: 11px;
+  }
+  .fluid-shell {
+    border-radius: 13px;
+    padding: 20px 14px 0;
+  }
+  .fluid-heading h1 {
+    font-size: 27px;
+    line-height: 1.2;
+    letter-spacing: -0.7px;
+  }
+  .fluid-heading p {
+    font-size: 15px;
+    margin-top: 9px;
+  }
+  .fluid-toolbar {
+    display: block;
+  }
+  .fluid-toolbar > .fluid-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 12px;
+  }
+  .fluid-toolbar > .fluid-actions > button {
+    padding: 10px 7px;
+  }
+  .fluid-progress {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 12px;
+  }
+  .fluid-progress progress {
+    width: 100%;
+  }
+  .fluid-progress span {
+    grid-column: 1/-1;
+    font-size: 13px;
+  }
+  .fluid-contract {
+    font-size: 12px;
+    padding-bottom: 16px;
+  }
+  .fluid-workspace {
+    display: block;
+  }
+  .fluid-receipts {
+    padding: 0 0 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 17px;
+  }
+  .fluid-receipts ol {
+    max-height: 300px;
+  }
+  .fluid-order-buttons {
+    display: flex;
+    gap: 6px;
+    margin-right: 7px;
+  }
+  .fluid-app .fluid-order-buttons button {
+    min-height: 44px;
+    width: 44px;
+  }
+  .fluid-event,
+  .fluid-decision {
+    padding: 17px 14px;
+  }
+  .fluid-event h2 {
+    font-size: 23px;
+  }
+  .fluid-fields {
+    grid-template-columns: 1fr;
+    margin: 18px 0;
+  }
+  .fluid-editor > .fluid-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .fluid-stocks h2 {
+    font-size: 20px;
+    padding: 12px 14px;
+  }
+  .fluid-review {
+    margin-top: 16px;
+  }
+  .fluid-review button {
+    width: 100%;
+  }
+  .fluid-exports {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .fluid-bottom {
+    display: block;
+  }
+  .fluid-bottom > p {
+    max-width: none;
+  }
+  .fluid-bottom > .fluid-actions {
+    margin-top: 15px;
+  }
+  .fluid-method p {
+    font-size: 13px;
+  }
+  .fluid-app .demo-footer {
+    display: block;
+    padding: 19px 9px;
+  }
+  .fluid-app .demo-footer a {
+    display: block;
+    margin-top: 9px;
+  }
+  .fluid-dialog .fluid-actions {
+    display: grid;
+  }
+}

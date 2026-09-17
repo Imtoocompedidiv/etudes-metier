@@ -1,0 +1,757 @@
+.elio-app {
+  --linen: #f6f2e4;
+  --ink: #3c3d3d;
+  --basil: #899d6f;
+  --green: #4f6340;
+  --coral: #ad3f24;
+  --line: #c8c5b9;
+  color: var(--ink);
+  background: var(--linen);
+  font:
+    400 17px/1.35 "League Spartan",
+    sans-serif;
+  min-height: 100vh;
+  padding: 0 38px;
+}
+.elio-app * {
+  box-sizing: border-box;
+}
+.elio-app button,
+.elio-app input,
+.elio-app textarea {
+  font: inherit;
+  color: inherit;
+}
+.elio-app button {
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 1px solid #8c8e85;
+  background: #fcfbf6;
+  border-radius: 2px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+}
+.elio-app button:hover:not(:disabled) {
+  background: #e8eadf;
+}
+.elio-app button:disabled {
+  cursor: default;
+  opacity: 0.43;
+}
+.elio-app button:focus-visible,
+.elio-app input:focus-visible,
+.elio-app textarea:focus-visible,
+.elio-app summary:focus-visible,
+.elio-app [tabindex]:focus-visible {
+  outline: 3px solid #ad3f24;
+  outline-offset: 3px;
+}
+.elio-app .elio-primary {
+  background: var(--basil);
+  border-color: var(--green);
+  color: #18250e;
+}
+.elio-app .elio-primary:hover:not(:disabled) {
+  background: #9daf86;
+}
+.elio-app button[aria-pressed="true"] {
+  background: #e3e5d8;
+  border-color: var(--green);
+}
+.elio-app h1,
+.elio-app h2,
+.elio-app h3,
+.elio-app p {
+  margin: 0;
+}
+.elio-app h1 {
+  font-size: 36px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.8px;
+}
+.elio-app h2 {
+  font-size: 22px;
+  line-height: 1.1;
+  font-weight: 600;
+}
+.elio-app h3 {
+  font-size: 26px;
+  line-height: 1.15;
+}
+.elio-app main {
+  max-width: 1600px;
+  margin: auto;
+}
+.elio-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  max-width: 1600px;
+  margin: auto;
+  border-bottom: 1px solid var(--line);
+  height: 65px;
+  font-size: 14px;
+}
+.elio-wordmark {
+  font-size: 28px;
+  letter-spacing: 6px;
+  color: #30322f;
+}
+.elio-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  padding: 26px 0 24px;
+}
+.elio-heading > div:first-child {
+  max-width: 790px;
+}
+.elio-heading p {
+  font-size: 20px;
+  color: #5c6257;
+  margin-top: 9px;
+}
+.elio-heading > .elio-actions {
+  flex-shrink: 0;
+}
+.elio-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.elio-version-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: 13px 0;
+}
+.elio-version-strip > div {
+  padding: 0 22px;
+  border-right: 1px solid var(--line);
+}
+.elio-version-strip > div:last-child {
+  border: 0;
+}
+.elio-version-strip span {
+  display: block;
+  font-size: 14px;
+  color: #53594f;
+}
+.elio-version-strip strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+}
+.elio-waiting {
+  color: var(--coral);
+}
+.elio-ready {
+  color: var(--green);
+}
+.elio-message {
+  min-height: 24px;
+  padding: 8px 0;
+  font-size: 15px;
+}
+.elio-message:empty {
+  padding: 0;
+  min-height: 18px;
+}
+.elio-error {
+  padding: 10px 14px;
+  border-left: 3px solid var(--coral);
+  background: #f4dfd5;
+  color: #79311e;
+  margin: 9px 0 !important;
+}
+.elio-workspace {
+  display: grid;
+  grid-template-columns: 200px 205px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+.elio-sites,
+.elio-fields {
+  padding-right: 15px;
+  border-right: 1px solid var(--line);
+  min-width: 0;
+}
+.elio-sites h2,
+.elio-fields h2 {
+  font-size: 17px;
+  margin: 8px 0 18px;
+}
+.elio-sites nav,
+.elio-fields nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.elio-sites nav button,
+.elio-fields nav button {
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  text-align: left;
+  border-radius: 0;
+  background: transparent;
+  padding: 16px 11px;
+  line-height: 1.2;
+  min-height: 72px;
+}
+.elio-sites nav button strong {
+  display: block;
+  font-size: 17px;
+}
+.elio-sites nav button span,
+.elio-fields nav button small {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+.elio-sites nav button[aria-pressed="true"] {
+  border-left-color: var(--coral);
+  background: #ebe6d8;
+}
+.elio-fields nav button[aria-pressed="true"] {
+  border-left-color: var(--green);
+  background: #e7e9da;
+}
+.elio-sites > p {
+  font-size: 14px;
+  margin-top: 18px;
+  color: #53594f;
+}
+.elio-detail {
+  min-width: 0;
+}
+.elio-compare > h2 {
+  font-size: 26px;
+  margin: 8px 0 4px;
+}
+.elio-compare > p {
+  font-size: 15px;
+  color: #53594f;
+}
+.elio-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 22px;
+}
+.elio-value {
+  min-width: 0;
+}
+.elio-value > label:first-child {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+.elio-value textarea {
+  width: 100%;
+  min-height: 95px;
+  resize: vertical;
+  border: 1px solid #b8b7aa;
+  background: #eeeadf;
+  border-radius: 2px;
+  padding: 12px 13px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+.elio-value textarea:disabled {
+  background: #ece8df;
+  color: #68695e;
+}
+.elio-presence {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  min-height: 40px;
+  margin-top: 4px;
+}
+.elio-presence input {
+  appearance: auto;
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: var(--green);
+}
+.elio-absent {
+  font-size: 14px;
+  color: #686256;
+}
+.elio-edit-actions {
+  display: flex;
+  gap: 9px;
+  margin: 10px 0 20px;
+}
+.elio-source-warning {
+  font-size: 14px;
+  color: var(--coral);
+  margin: 8px 0 !important;
+}
+.elio-decision {
+  background: #e9ebdf;
+  border-left: 3px solid var(--basil);
+  padding: 13px 16px;
+}
+.elio-decision.is-conflict {
+  background: #f6e4da;
+  border-left-color: var(--coral);
+}
+.elio-decision strong {
+  font-size: 17px;
+}
+.elio-decision p {
+  font-size: 15px;
+  margin-top: 5px;
+}
+.elio-resolution {
+  margin-top: 14px;
+}
+.elio-resolution > span {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 7px;
+}
+.elio-resolution .elio-actions {
+  gap: 12px;
+}
+.elio-preview {
+  border-top: 1px solid var(--line);
+  margin-top: 26px;
+  padding-top: 18px;
+}
+.elio-section-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.elio-section-line h2 {
+  font-size: 20px;
+}
+.elio-section-line strong {
+  font-size: 16px;
+}
+.elio-preview-page {
+  background: #fcfaf4;
+  padding: 18px 20px;
+}
+.elio-preview-page > p {
+  margin-top: 11px;
+  font-size: 16px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.elio-preview-page h3 {
+  overflow-wrap: anywhere;
+}
+.elio-preview-pending {
+  display: block;
+  background: #f4e0d7;
+  padding: 10px 14px;
+  color: var(--coral);
+  font-size: 16px;
+  line-height: 1.35;
+  font-weight: 500;
+}
+.elio-preview-booking {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  overflow-wrap: anywhere;
+}
+.elio-preview-booking > strong {
+  border: 1px solid var(--ink);
+  padding: 8px 16px;
+  align-self: flex-start;
+  max-width: 100%;
+  font-size: 16px;
+  font-weight: 600;
+}
+.elio-preview-booking > span {
+  font-size: 14px;
+}
+.elio-preview-page small {
+  display: block;
+  font-size: 14px;
+  color: #606456;
+  margin-top: 14px;
+}
+.elio-summary {
+  margin-top: 26px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.elio-summary h2 {
+  font-size: 21px;
+}
+.elio-summary > p {
+  font-size: 15px;
+  margin: 6px 0 12px;
+}
+.elio-table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.elio-app table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 1050px;
+  font-size: 15px;
+  line-height: 1.35;
+  table-layout: fixed;
+}
+.elio-app td,
+.elio-app th {
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+.elio-app thead th {
+  font-weight: 600;
+  background: #e9e6db;
+}
+.elio-app tbody {
+  background: #fcfaf4;
+}
+.elio-app tbody th {
+  font-weight: 600;
+}
+.elio-app th > button {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  padding: 0;
+  min-height: 44px;
+}
+.elio-app td small {
+  display: block;
+  margin-top: 5px;
+  color: #565e50;
+  font-size: 14px;
+}
+.elio-delivery {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: start;
+}
+.elio-delivery > div:first-child {
+  max-width: 300px;
+}
+.elio-delivery p {
+  font-size: 14px;
+  color: #555d50;
+  margin-top: 7px;
+}
+.elio-delivery > .elio-actions {
+  justify-content: flex-end;
+}
+.elio-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.elio-bottom p {
+  font-size: 14px;
+  max-width: 650px;
+}
+.elio-bottom .elio-actions {
+  flex-shrink: 0;
+}
+.elio-method {
+  border-top: 1px solid var(--line);
+  padding: 16px 0 23px;
+}
+.elio-method summary {
+  cursor: pointer;
+  min-height: 44px;
+  padding-top: 10px;
+  font-size: 16px;
+}
+.elio-method p {
+  font-size: 15px;
+  margin: 8px 0;
+  max-width: 1050px;
+}
+.elio-app .demo-footer {
+  max-width: 1600px;
+  margin: auto;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  color: #50564b;
+  background: transparent;
+  font-size: 14px;
+}
+.elio-app .demo-footer a {
+  color: var(--ink);
+}
+.elio-dialog {
+  border: 1px solid var(--line);
+  background: var(--linen);
+  max-width: 550px;
+  width: calc(100% - 30px);
+  padding: 28px;
+  color: var(--ink);
+  font-family: inherit;
+}
+.elio-dialog::backdrop {
+  background: #2228;
+}
+.elio-dialog p {
+  margin: 15px 0 22px;
+}
+.elio-dialog h2 {
+  font-size: 26px;
+}
+@media (max-width: 1200px) {
+  .elio-app {
+    padding: 0 25px;
+  }
+  .elio-heading {
+    display: block;
+  }
+  .elio-heading > .elio-actions {
+    margin-top: 18px;
+  }
+  .elio-workspace {
+    grid-template-columns: 180px minmax(0, 1fr);
+  }
+  .elio-fields {
+    grid-column: 2;
+    padding: 0;
+    border: 0;
+  }
+  .elio-fields nav {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+  }
+  .elio-fields nav button {
+    padding: 9px;
+    min-height: 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .elio-fields h2 {
+    margin: 8px 0;
+  }
+  .elio-sites {
+    grid-row: 1/3;
+  }
+  .elio-detail {
+    grid-column: 2;
+  }
+  .elio-values {
+    gap: 12px;
+  }
+  .elio-delivery {
+    display: block;
+  }
+  .elio-delivery > .elio-actions {
+    justify-content: flex-start;
+    margin-top: 15px;
+  }
+  .elio-bottom {
+    align-items: start;
+  }
+}
+@media (max-width: 650px) {
+  .elio-app {
+    padding: 0 16px;
+  }
+  .elio-header {
+    height: auto;
+    min-height: 68px;
+    gap: 14px;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .elio-wordmark {
+    font-size: 21px;
+    letter-spacing: 3px;
+  }
+  .elio-header > span:last-child {
+    font-size: 12px;
+    text-align: right;
+    max-width: 115px;
+  }
+  .elio-heading {
+    padding: 21px 0;
+  }
+  .elio-app h1 {
+    font-size: 31px;
+    line-height: 1.08;
+    letter-spacing: -0.6px;
+  }
+  .elio-heading p {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .elio-heading > .elio-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .elio-heading > .elio-actions > button {
+    padding: 10px 8px;
+  }
+  .elio-version-strip {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .elio-version-strip > div {
+    padding: 0 10px;
+  }
+  .elio-version-strip > div:nth-child(2) {
+    border: 0;
+  }
+  .elio-version-strip > div:last-child {
+    grid-column: 1/-1;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+  }
+  .elio-version-strip strong {
+    font-size: 22px;
+  }
+  .elio-workspace {
+    display: block;
+  }
+  .elio-sites,
+  .elio-fields {
+    padding: 0;
+    border: 0;
+    margin-bottom: 18px;
+  }
+  .elio-sites nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  .elio-sites nav button {
+    padding: 12px 8px;
+    min-height: 88px;
+  }
+  .elio-sites nav button strong {
+    font-size: 16px;
+  }
+  .elio-sites h2 {
+    margin: 8px 0;
+  }
+  .elio-sites > p {
+    margin-top: 10px;
+  }
+  .elio-fields nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+  .elio-fields nav button {
+    min-height: 67px;
+    padding: 9px;
+  }
+  .elio-values {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+  }
+  .elio-value textarea {
+    min-height: 78px;
+  }
+  .elio-presence {
+    min-height: 44px;
+    margin-top: 0;
+  }
+  .elio-edit-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .elio-edit-actions button {
+    padding: 9px 8px;
+  }
+  .elio-resolution .elio-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .elio-resolution button {
+    text-align: left;
+  }
+  .elio-section-line {
+    display: block;
+  }
+  .elio-section-line strong {
+    display: block;
+    margin-top: 6px;
+  }
+  .elio-preview-page {
+    padding: 15px 12px;
+  }
+  .elio-preview-page h3 {
+    font-size: 23px;
+  }
+  .elio-summary {
+    margin-top: 21px;
+  }
+  .elio-delivery .elio-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .elio-delivery .elio-actions button {
+    padding: 10px 7px;
+  }
+  .elio-delivery > div:first-child {
+    max-width: none;
+  }
+  .elio-delivery > div:first-child > button {
+    width: 100%;
+  }
+  .elio-bottom {
+    display: block;
+    padding: 18px 0;
+  }
+  .elio-bottom .elio-actions {
+    margin-top: 14px;
+    gap: 8px;
+  }
+  .elio-bottom .elio-actions button {
+    padding: 10px 12px;
+  }
+  .elio-app .demo-footer {
+    display: block;
+    padding: 17px 0;
+  }
+  .elio-app .demo-footer a {
+    display: block;
+    margin-top: 8px;
+  }
+  .elio-dialog .elio-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .elio-method p {
+    font-size: 15px;
+  }
+}
