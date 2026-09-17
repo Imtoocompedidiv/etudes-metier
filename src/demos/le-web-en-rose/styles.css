@@ -1,0 +1,669 @@
+.rose-app {
+  font-family: Inter, Arial, sans-serif;
+  color: #141414;
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+  --rose: #e60080;
+  --pink: #fff2fa;
+  --line: #dedbe2;
+}
+.rose-app * {
+  box-sizing: border-box;
+}
+.rose-app button,
+.rose-app input,
+.rose-app select,
+.rose-app textarea {
+  font: inherit;
+}
+.rose-app button {
+  min-height: 44px;
+  border: 1px solid #d7d2dc;
+  border-radius: 5px;
+  background: #fff;
+  color: #23202a;
+  padding: 9px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.rose-app button:hover:enabled {
+  border-color: #e60080;
+  background: #fff2fa;
+}
+.rose-app button:disabled {
+  opacity: 0.46;
+  cursor: not-allowed;
+}
+.rose-app :focus-visible {
+  outline: 3px solid #e60080;
+  outline-offset: 3px;
+}
+.rose-app input:not([type="checkbox"]),
+.rose-app select,
+.rose-app textarea {
+  width: 100%;
+  border: 1px solid #cec9d3;
+  border-radius: 4px;
+  background: #fff;
+  color: #242029;
+  min-height: 44px;
+  padding: 9px 11px;
+}
+.rose-app label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+}
+.rose-app h1,
+.rose-app h2,
+.rose-app h3,
+.rose-app p {
+  margin: 0;
+}
+.rose-app h1 {
+  font-size: clamp(29px, 2.7vw, 41px);
+  line-height: 1.12;
+  font-weight: 900;
+  letter-spacing: -1.4px;
+}
+.rose-app h2 {
+  font-size: 23px;
+  line-height: 1.2;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+}
+.rose-app h3 {
+  font-size: 17px;
+}
+.rose-app .rose-pink {
+  background: var(--rose);
+  color: #fff;
+  border-color: var(--rose);
+}
+.rose-app .rose-pink:hover:enabled {
+  background: #c0006b;
+  color: #fff;
+}
+.rose-app .rose-black {
+  background: #141414;
+  color: #fff;
+  border-color: #141414;
+}
+.rose-app .rose-black:hover:enabled {
+  background: #333;
+  color: #fff;
+}
+.rose-brand {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  min-height: 52px;
+  padding: 10px 32px;
+  border-bottom: 1px solid var(--line);
+  background: #fff7fc;
+}
+.rose-brand strong {
+  font-size: 20px;
+  font-weight: 900;
+}
+.rose-brand strong span {
+  color: var(--rose);
+}
+.rose-brand > span {
+  font-size: 14px;
+}
+.rose-heading {
+  padding: 28px 32px 23px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+.rose-heading > div:first-child {
+  flex: 1;
+}
+.rose-heading p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #514a59;
+}
+.rose-app .rose-inline {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  color: #ae005f;
+  text-decoration: underline;
+  background: none;
+  font-size: inherit;
+}
+.rose-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.rose-origins {
+  display: flex;
+  align-items: end;
+  gap: 22px;
+  padding: 19px 32px;
+  background: var(--pink);
+}
+.rose-origins label {
+  flex: 1;
+}
+.rose-origins input {
+  margin-top: 5px;
+}
+.rose-origins > button {
+  min-width: 190px;
+}
+.rose-workspace {
+  display: grid;
+  grid-template-columns: 250px minmax(400px, 1fr) minmax(320px, 0.82fr);
+  border-bottom: 1px solid var(--line);
+}
+.rose-options {
+  padding: 24px 20px;
+  border-right: 1px solid var(--line);
+}
+.rose-options label {
+  margin-bottom: 12px;
+}
+.rose-options p {
+  font-size: 14px;
+  margin: 18px 0;
+}
+.rose-accent {
+  color: #bf006a;
+}
+.rose-option-list {
+  max-height: 590px;
+  overflow: auto;
+}
+.rose-app .rose-option {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #ece8ee;
+  border-radius: 5px;
+  padding: 14px 11px;
+  min-height: 74px;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.rose-option > span {
+  min-width: 0;
+}
+.rose-option small {
+  display: block;
+  color: #625a69;
+  font-weight: 400;
+  font-size: 14px;
+  margin-top: 2px;
+}
+.rose-app .rose-option.is-selected {
+  border-color: #ed168e;
+  background: #fff2fa;
+}
+.rose-dot {
+  width: 12px;
+  height: 12px;
+  background: #c8c7ce;
+  border-radius: 50%;
+  flex: none;
+}
+.rose-dot.changed {
+  background: #ec0086;
+}
+.rose-dot.error {
+  background: #cb173e;
+}
+.rose-dot.excluded {
+  background: #fff;
+  border: 2px solid #777;
+}
+.rose-comparison {
+  padding: 24px 22px;
+  min-width: 0;
+}
+.rose-help {
+  font-size: 14px;
+  color: #665d6d;
+  margin-top: 8px !important;
+  line-height: 1.6;
+}
+.rose-table-scroll {
+  overflow: auto;
+  margin-top: 22px;
+}
+.rose-app table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  min-width: 470px;
+}
+.rose-app th,
+.rose-app td {
+  padding: 13px 8px;
+  border-bottom: 1px solid #e9e5eb;
+  vertical-align: top;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+.rose-app th {
+  font-weight: 600;
+}
+.rose-app tbody th {
+  min-width: 110px;
+  max-width: 170px;
+}
+.rose-app th code {
+  font:
+    12px/1.5 ui-monospace,
+    Consolas,
+    monospace;
+  overflow-wrap: anywhere;
+}
+.rose-app th small {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #746b7c;
+  margin-top: 5px;
+}
+.rose-app td {
+  max-width: 210px;
+}
+.rose-app td:last-child {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #62586b;
+}
+.rose-changed td:nth-child(3) {
+  color: #ad005d;
+  background: #fff6fb;
+}
+.rose-inspector {
+  min-width: 0;
+  border-left: 1px solid var(--line);
+}
+.rose-raw {
+  background: #141414;
+  padding: 23px 22px;
+  color: #fff;
+}
+.rose-raw-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.rose-raw-label > span {
+  color: #b8b4be;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.rose-raw pre {
+  font:
+    13px/1.6 ui-monospace,
+    Consolas,
+    monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #1c1c1c;
+  border: 1px solid #424047;
+  border-radius: 4px;
+  padding: 11px;
+  margin: 6px 0 0;
+  max-height: 170px;
+  overflow: auto;
+}
+.rose-editor {
+  padding: 18px 22px 23px;
+}
+.rose-editor > textarea {
+  height: 142px;
+  font:
+    13px/1.6 ui-monospace,
+    Consolas,
+    monospace;
+  margin-top: 10px;
+  resize: vertical;
+}
+.rose-app .rose-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 13px 0;
+}
+.rose-check input {
+  width: 20px;
+  height: 20px;
+  accent-color: #df0079;
+}
+.rose-editor .rose-actions {
+  margin-top: 14px;
+}
+.rose-editor > .rose-actions > button {
+  flex: 1;
+}
+.rose-editor label > textarea {
+  margin-top: 6px;
+}
+.rose-error {
+  background: #fff1f4;
+  color: #8d1532;
+  border: 1px solid #edb5c4;
+  padding: 14px;
+  font-size: 14px;
+}
+.rose-error p + p {
+  margin-top: 9px;
+}
+.rose-exclusion {
+  background: #f5f3f6;
+  border-left: 3px solid #777;
+  padding: 14px;
+  font-size: 14px;
+  margin: 16px 0;
+}
+.rose-exclusion p {
+  margin: 5px 0;
+}
+.rose-exclusion span {
+  color: #5b5361;
+}
+.rose-review {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 30px;
+  background: #fff0f8;
+  border-bottom: 1px solid #ffd1e9;
+}
+.rose-review strong {
+  font-size: 15px;
+}
+.rose-review p {
+  font-size: 14px;
+  color: #665461;
+  margin-top: 3px;
+}
+.rose-exceptions {
+  padding: 24px 30px;
+}
+.rose-exceptions h2,
+.rose-export h2 {
+  font-size: 19px;
+}
+.rose-exception-row {
+  display: grid;
+  grid-template-columns: 170px 1fr 200px auto;
+  align-items: center;
+  gap: 22px;
+  border-bottom: 1px solid var(--line);
+  padding: 17px 0;
+  font-size: 14px;
+}
+.rose-export {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  padding: 23px 30px;
+  background: #faf9fb;
+  border-block: 1px solid var(--line);
+}
+.rose-export > div:first-child {
+  max-width: 450px;
+}
+.rose-export p {
+  font-size: 14px;
+  color: #625769;
+  margin-top: 7px;
+}
+.rose-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 22px 30px;
+}
+.rose-bottom p {
+  font-size: 14px;
+  color: #605866;
+  max-width: 690px;
+}
+.rose-method {
+  margin: 0 30px 25px;
+  font-size: 14px;
+  color: #645a6c;
+}
+.rose-method summary {
+  cursor: pointer;
+  font-weight: 600;
+  min-height: 44px;
+  padding-top: 10px;
+}
+.rose-method p {
+  max-width: 1000px;
+  margin-top: 12px;
+}
+.rose-notice {
+  margin: 14px 30px;
+  font-size: 14px;
+}
+.rose-mobile-nav {
+  display: none;
+}
+.rose-dialog {
+  max-width: 520px;
+  width: calc(100% - 40px);
+  border: 1px solid #d0c5ce;
+  border-radius: 8px;
+  padding: 28px;
+  font:
+    16px/1.5 Inter,
+    Arial,
+    sans-serif;
+  color: #141414;
+}
+.rose-dialog::backdrop {
+  background: #21112270;
+}
+.rose-dialog p {
+  margin: 18px 0;
+  overflow-wrap: anywhere;
+}
+.rose-dialog button {
+  min-height: 44px;
+  padding: 10px 14px;
+  font:
+    600 14px Inter,
+    Arial,
+    sans-serif;
+  border: 1px solid #d7d2dc;
+  border-radius: 5px;
+  background: #fff;
+}
+.rose-dialog .rose-pink {
+  background: #e60080;
+  color: #fff;
+  border-color: #e60080;
+}
+.rose-app .demo-footer {
+  background: #fff7fc;
+  font-size: 13px;
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  border-top: 1px solid var(--line);
+}
+.rose-app .demo-footer a {
+  color: #8e0050;
+}
+@media (min-width: 1500px) {
+  .rose-workspace {
+    grid-template-columns: 290px minmax(500px, 1fr) minmax(380px, 0.8fr);
+  }
+}
+@media (max-width: 1190px) {
+  .rose-heading {
+    display: block;
+  }
+  .rose-heading > .rose-actions {
+    margin-top: 18px;
+  }
+  .rose-workspace {
+    grid-template-columns: 230px minmax(0, 1fr);
+  }
+  .rose-inspector {
+    grid-column: 1/-1;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .rose-option-list {
+    max-height: 450px;
+  }
+  .rose-exception-row {
+    grid-template-columns: 150px 1fr auto;
+  }
+  .rose-exception-row > span:nth-child(3) {
+    display: none;
+  }
+  .rose-export {
+    display: block;
+  }
+  .rose-export .rose-actions {
+    margin-top: 16px;
+  }
+  .rose-origins > button {
+    min-width: 140px;
+  }
+}
+@media (max-width: 700px) {
+  .rose-brand {
+    padding: 12px 18px;
+  }
+  .rose-brand > span {
+    font-size: 12px;
+  }
+  .rose-heading {
+    padding: 24px 18px;
+  }
+  .rose-heading h1 {
+    font-size: 30px;
+    letter-spacing: -0.9px;
+  }
+  .rose-heading > .rose-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .rose-origins {
+    padding: 18px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+  .rose-mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    gap: 12px;
+    padding: 13px 10px;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+  }
+  .rose-mobile-nav a {
+    color: #9c0057;
+  }
+  .rose-workspace {
+    display: block;
+  }
+  .rose-options {
+    padding: 22px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .rose-option-list {
+    max-height: 238px;
+  }
+  .rose-comparison {
+    padding: 24px 18px;
+  }
+  .rose-table-scroll {
+    margin-top: 16px;
+  }
+  .rose-inspector {
+    display: block;
+    border-left: 0;
+  }
+  .rose-raw,
+  .rose-editor {
+    padding: 22px 18px;
+  }
+  .rose-review {
+    display: block;
+    padding: 22px 18px;
+  }
+  .rose-review button {
+    margin-top: 13px;
+    width: 100%;
+  }
+  .rose-exceptions {
+    padding: 22px 18px;
+  }
+  .rose-exception-row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+  }
+  .rose-exception-row > span:nth-child(3) {
+    display: block;
+  }
+  .rose-exception-row button {
+    margin-top: 3px;
+  }
+  .rose-export,
+  .rose-bottom {
+    padding: 22px 18px;
+  }
+  .rose-export .rose-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .rose-bottom {
+    display: block;
+  }
+  .rose-bottom > .rose-actions {
+    margin-top: 16px;
+  }
+  .rose-method {
+    margin: 0 18px 23px;
+  }
+  .rose-notice {
+    margin: 14px 18px;
+  }
+  .rose-app .demo-footer {
+    padding: 18px;
+    display: block;
+  }
+  .rose-app .demo-footer a {
+    display: block;
+    margin-top: 10px;
+  }
+  .rose-dialog h2 {
+    font-size: 22px;
+  }
+  .rose-dialog .rose-actions {
+    display: grid;
+  }
+}

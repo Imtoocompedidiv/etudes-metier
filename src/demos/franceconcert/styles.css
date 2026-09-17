@@ -1,0 +1,944 @@
+.franceconcert-app {
+  --fc-red: #d71220;
+  --fc-border: #dcdfe3;
+  --fc-muted: #596273;
+  background: #fff;
+  color: #252525;
+  min-height: 100vh;
+  font:
+    16px/1.5 Arial,
+    Helvetica,
+    sans-serif;
+}
+.franceconcert-app * {
+  box-sizing: border-box;
+}
+.franceconcert-app button,
+.franceconcert-app input,
+.franceconcert-app select,
+.franceconcert-app textarea {
+  font:
+    400 16px/1.4 Arial,
+    Helvetica,
+    sans-serif;
+  color: inherit;
+}
+.franceconcert-app button,
+.franceconcert-app .demo-file-import {
+  border: 1px solid #cbd0d7;
+  background: white;
+  border-radius: 3px;
+  min-height: 44px;
+  padding: 9px 14px;
+  cursor: pointer;
+}
+.franceconcert-app button:hover {
+  background: #f5f5f6;
+}
+.franceconcert-app button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+.franceconcert-app :focus-visible {
+  outline: 3px solid #2a68b4;
+  outline-offset: 3px;
+}
+.franceconcert-app input,
+.franceconcert-app select,
+.franceconcert-app textarea {
+  border: 1px solid #cbd0d7;
+  border-radius: 3px;
+  padding: 9px 11px;
+  min-height: 44px;
+  max-width: 100%;
+  background: #fff;
+}
+.franceconcert-app input,
+.franceconcert-app select {
+  min-width: 0;
+}
+.franceconcert-app textarea {
+  resize: vertical;
+  min-height: 88px;
+  width: 100%;
+}
+.franceconcert-app h1,
+.franceconcert-app h2,
+.franceconcert-app h3,
+.franceconcert-app p {
+  margin: 0;
+}
+.franceconcert-app h1,
+.franceconcert-app h2 {
+  font-family: Oswald, "Arial Narrow", sans-serif;
+  font-weight: 600;
+  color: var(--fc-red);
+  line-height: 1.2;
+}
+.franceconcert-app h1 {
+  font-size: 36px;
+}
+.franceconcert-app h2 {
+  font-size: 29px;
+}
+.franceconcert-app h3 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+.franceconcert-app label {
+  font-size: 14px;
+}
+.fc-header {
+  min-height: 76px;
+  border-bottom: 1px solid var(--fc-border);
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  padding: 0 34px;
+}
+.fc-brand {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.fc-brand strong {
+  font:
+    600 31px/1.1 Oswald,
+    "Arial Narrow",
+    sans-serif;
+  color: var(--fc-red);
+}
+.fc-brand span {
+  font-size: 14px;
+  color: var(--fc-muted);
+  white-space: nowrap;
+}
+.fc-header nav {
+  display: flex;
+  align-self: stretch;
+  gap: 25px;
+  margin-left: auto;
+}
+.fc-header nav button {
+  border: 0;
+  border-bottom: 5px solid transparent;
+  border-radius: 0;
+  background: none;
+  padding: 10px 0;
+  font-size: 15px;
+  white-space: nowrap;
+}
+.fc-header nav button[aria-current="page"] {
+  border-bottom-color: var(--fc-red);
+  font-weight: bold;
+}
+.fc-fictive {
+  font-size: 14px;
+  color: #6e7681;
+  margin-left: auto;
+  white-space: nowrap;
+}
+.franceconcert-app main {
+  max-width: 1700px;
+  margin: auto;
+}
+.fc-feedback {
+  font-size: 14px;
+  padding: 0 34px;
+  color: #28523d;
+  min-height: 12px;
+}
+.fc-feedback:has(p) {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  min-height: 40px;
+}
+.fc-feedback [role="alert"] {
+  color: #b5101b;
+  font-weight: 700;
+}
+.fc-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.95fr) minmax(390px, 1fr);
+  align-items: stretch;
+}
+.fc-left {
+  padding: 20px 26px 28px 34px;
+  min-width: 0;
+}
+.fc-lead {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-top: 12px !important;
+}
+.fc-matrix-toolbar {
+  display: flex;
+  align-items: end;
+  gap: 16px;
+  margin: 25px 0 19px;
+  flex-wrap: wrap;
+}
+.fc-matrix-toolbar > span {
+  font-size: 14px;
+  max-width: 130px;
+  line-height: 1.4;
+  margin-right: auto;
+  padding-bottom: 11px;
+}
+.fc-matrix-toolbar label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.fc-matrix-toolbar select {
+  min-width: 190px;
+}
+.fc-matrix-toolbar > .fc-primary {
+  font-size: 14px;
+  padding: 11px 16px;
+}
+.fc-matrix-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--fc-border);
+  border-radius: 3px;
+}
+.fc-matrix {
+  border-collapse: collapse;
+  min-width: 810px;
+  width: 100%;
+  table-layout: fixed;
+}
+.fc-matrix th,
+.fc-matrix td {
+  text-align: left;
+  vertical-align: top;
+  border-right: 1px solid #e2e5e8;
+  border-bottom: 1px solid #e2e5e8;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+.fc-matrix th:last-child,
+.fc-matrix td:last-child {
+  border-right: 0;
+}
+.fc-matrix tr:last-child td,
+.fc-matrix tr:last-child th {
+  border-bottom: 0;
+}
+.fc-matrix thead {
+  background: #f1f2f4;
+}
+.fc-matrix thead th {
+  padding: 14px 13px;
+  font-size: 14px;
+  height: 70px;
+  vertical-align: middle;
+}
+.fc-matrix thead th:first-child {
+  width: 24%;
+}
+.fc-matrix thead th:nth-child(2) {
+  width: 21%;
+}
+.fc-matrix th small {
+  display: block;
+  font-weight: 400;
+  margin-top: 4px;
+  color: var(--fc-muted);
+}
+.fc-matrix tbody th {
+  font-weight: 400;
+  padding: 10px 13px;
+  font-size: 15px;
+}
+.fc-matrix tbody th > span {
+  display: block;
+  color: var(--fc-muted);
+  line-height: 1.5;
+  margin-top: 5px;
+}
+.fc-matrix tbody .fc-row-selected {
+  background: #fff4f5;
+  outline: 1px solid var(--fc-red);
+  outline-offset: -1px;
+}
+.fc-matrix td > .fc-muted {
+  display: block;
+  padding: 12px 13px;
+  font-size: 14px;
+}
+.franceconcert-app .fc-session-link {
+  border: 0;
+  min-height: 26px;
+  background: none;
+  padding: 0;
+  font-weight: bold;
+  font-size: 15px;
+  text-align: left;
+  line-height: 1.5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.franceconcert-app .fc-reference-link,
+.franceconcert-app .fc-listing {
+  border: 0;
+  border-radius: 0;
+  padding: 12px 13px;
+  min-height: 85px;
+  width: 100%;
+  background: none;
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.4;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.fc-reference-link span {
+  color: var(--fc-muted);
+}
+.fc-reference-link strong,
+.fc-listing strong {
+  font-size: 16px;
+}
+.franceconcert-app .fc-listing-selected {
+  box-shadow: inset 0 -3px 0 var(--fc-red);
+  background: #ffebed;
+}
+.fc-calm {
+  color: #1f713c;
+}
+.fc-prepared {
+  color: #8d1534;
+}
+.fc-amber {
+  color: #8e590b;
+}
+.fc-red {
+  color: #c61222;
+}
+.fc-muted {
+  color: var(--fc-muted);
+}
+.fc-caption {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--fc-muted);
+}
+.fc-programme > .fc-caption {
+  margin-top: 14px;
+}
+.fc-unmatched {
+  border: 1px solid var(--fc-border);
+  border-radius: 3px;
+  padding: 20px 20px 16px;
+  margin-top: 26px;
+}
+.fc-unmatched h2 {
+  font-size: 26px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--fc-border);
+}
+.fc-unmatched form {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 0;
+  border-bottom: 1px solid #eee;
+}
+.fc-unmatched form > div {
+  flex: 1;
+}
+.fc-unmatched form span,
+.fc-unmatched form small {
+  display: block;
+  margin-top: 3px;
+  font-size: 14px;
+  color: var(--fc-muted);
+}
+.fc-unmatched form label {
+  flex: 1.3;
+  min-width: 0;
+}
+.fc-unmatched select {
+  width: 100%;
+  font-size: 14px;
+}
+.fc-unmatched button {
+  background: #f1f2f4;
+  font-size: 14px;
+}
+.fc-unmatched > .fc-caption {
+  margin-top: 13px;
+}
+.fc-visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+.fc-inspector {
+  border-left: 1px solid var(--fc-border);
+  padding: 20px 30px 28px 25px;
+  min-width: 0;
+}
+.fc-inspector > h2 {
+  font-size: 31px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--fc-border);
+  margin-bottom: 14px;
+}
+.fc-source-date {
+  font-weight: 700;
+}
+.fc-inspector > .fc-muted {
+  font-size: 14px;
+  margin-top: 4px;
+  line-height: 1.5;
+}
+.fc-inspector > .fc-caption {
+  font-size: 13px;
+  margin-top: 7px;
+  overflow-wrap: anywhere;
+}
+.fc-comparison-scroll {
+  overflow-x: auto;
+  margin-top: 19px;
+}
+.fc-comparison {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+  table-layout: fixed;
+}
+.fc-comparison th,
+.fc-comparison td {
+  padding: 11px 10px;
+  border: 1px solid var(--fc-border);
+  text-align: left;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+.fc-comparison th:first-child {
+  width: 24%;
+}
+.fc-comparison tbody th {
+  font-weight: 400;
+}
+.fc-comparison thead {
+  background: #f1f2f4;
+}
+.fc-comparison thead th {
+  font-weight: 700;
+}
+.fc-duration-note {
+  background: #f1f2f4;
+  border: 1px solid #e1e4e8;
+  border-radius: 3px;
+  padding: 17px;
+  margin-top: 20px;
+}
+.fc-duration-note p {
+  margin-top: 9px;
+  font-size: 14px;
+}
+.fc-duration-note button {
+  margin-top: 15px;
+  font-size: 14px;
+  width: 100%;
+  background: #fff;
+}
+.fc-age-warning {
+  background: #fff2da;
+  border-left: 4px solid #a9690f;
+  padding: 15px;
+  margin-top: 17px;
+  font-size: 14px;
+}
+.fc-age-warning p {
+  margin-top: 5px;
+}
+.fc-decision {
+  margin-top: 25px;
+}
+.fc-decision label,
+.fc-record-editor label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 16px;
+}
+.fc-decision h3 {
+  margin-bottom: 3px;
+}
+.franceconcert-app .fc-primary {
+  background: #d71220;
+  border-color: #d71220;
+  color: #fff;
+  font-weight: 700;
+}
+.franceconcert-app .fc-primary:hover {
+  background: #b90e1b;
+}
+.fc-decision > .fc-primary {
+  width: 100%;
+  margin-top: 22px;
+}
+.fc-decision > .fc-discard {
+  width: 100%;
+  margin-top: 10px;
+  border: 0;
+  text-decoration: underline;
+}
+.fc-inspector-empty {
+  margin-top: 20px !important;
+  font-size: 15px;
+  color: var(--fc-muted);
+}
+.fc-existing-decisions {
+  border-top: 1px solid var(--fc-border);
+  margin-top: 22px;
+  padding-top: 20px;
+}
+.fc-existing-decisions > div {
+  margin-top: 16px;
+  font-size: 14px;
+}
+.fc-existing-decisions p {
+  margin-top: 5px;
+}
+.fc-existing-decisions small {
+  display: block;
+  margin-top: 4px;
+}
+.fc-existing-decisions button {
+  margin-top: 9px;
+  font-size: 14px;
+  min-height: 36px;
+}
+.fc-record-editor > p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--fc-muted);
+}
+.fc-form-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.fc-form-pair label {
+  min-width: 0;
+}
+.fc-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+.fc-form-actions button {
+  font-size: 14px;
+  flex: 1;
+}
+.fc-record-editor > .fc-caption {
+  margin-top: 12px;
+}
+.fc-editing-note {
+  padding: 12px 34px;
+  color: #8e590b;
+  background: #fff9eb;
+  border-top: 1px solid #f1e6cc;
+  font-size: 14px;
+}
+.fc-toolbar {
+  border-top: 1px solid var(--fc-border);
+  padding: 18px 34px;
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+}
+.fc-toolbar button {
+  font-size: 14px;
+}
+.fc-reset {
+  margin-left: auto;
+}
+.fc-context {
+  text-align: right;
+  font-size: 13px;
+  color: var(--fc-muted);
+  padding: 0 34px 20px !important;
+}
+.franceconcert-app .demo-footer {
+  font-size: 13px;
+  background: #fff;
+  border-top: 1px solid var(--fc-border);
+  color: var(--fc-muted);
+  padding: 18px 34px;
+}
+.franceconcert-app .demo-footer a {
+  color: #b7101b;
+}
+.fc-imports {
+  padding: 24px 34px;
+  border-top: 1px solid var(--fc-border);
+  background: #fafafa;
+}
+.fc-imports > p {
+  margin-top: 12px;
+  max-width: 1000px;
+}
+.fc-import-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 25px;
+}
+.fc-import-columns h3 {
+  margin-bottom: 12px;
+}
+.fc-import-columns button {
+  font-size: 14px;
+  margin-top: 11px;
+  width: 100%;
+}
+.fc-import-columns .demo-file-import {
+  font-size: 14px;
+  text-align: center;
+}
+.fc-import-columns .fc-caption {
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+}
+.fc-corrections {
+  padding: 24px 34px;
+}
+.fc-output-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(300px, 1fr);
+  gap: 32px;
+  margin-top: 30px;
+}
+.fc-output-layout > div,
+.fc-output-actions {
+  min-width: 0;
+}
+.fc-output-table {
+  overflow-x: auto;
+  border: 1px solid var(--fc-border);
+  border-radius: 3px;
+}
+.fc-output-table table {
+  border-collapse: collapse;
+  min-width: 700px;
+  width: 100%;
+  font-size: 14px;
+}
+.fc-output-table th,
+.fc-output-table td {
+  padding: 13px 12px;
+  text-align: left;
+  border-bottom: 1px solid var(--fc-border);
+  vertical-align: top;
+}
+.fc-output-table thead {
+  background: #f1f2f4;
+}
+.fc-output-table small {
+  display: block;
+  margin-top: 5px;
+  color: var(--fc-muted);
+  font-weight: 400;
+  max-width: 220px;
+}
+.fc-output-layout h2 {
+  font-size: 26px;
+}
+.fc-output-layout > div > h2 {
+  margin-top: 25px;
+}
+.fc-output-actions {
+  border-left: 1px solid var(--fc-border);
+  padding-left: 26px;
+}
+.fc-output-actions p {
+  margin-top: 15px;
+}
+.fc-output-actions button {
+  width: 100%;
+  margin-top: 14px;
+  text-align: left;
+  font-size: 14px;
+}
+.fc-open-items {
+  padding: 0;
+  list-style: none;
+  margin: 15px 0;
+}
+.fc-open-items li {
+  padding: 13px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--fc-border);
+  font-size: 14px;
+}
+.fc-open-items strong {
+  font-weight: 400;
+}
+.fc-empty {
+  padding: 24px 16px !important;
+  background: #f6f6f7;
+  color: var(--fc-muted);
+  font-size: 15px;
+}
+@media (max-width: 1250px) {
+  .fc-brand span {
+    display: none;
+  }
+  .fc-workspace {
+    grid-template-columns: minmax(0, 1.6fr) minmax(340px, 1fr);
+  }
+  .fc-left {
+    padding: 20px 20px 24px;
+  }
+  .fc-inspector {
+    padding: 20px;
+  }
+  .fc-header {
+    padding: 0 22px;
+  }
+  .fc-header nav {
+    gap: 20px;
+  }
+  .fc-matrix-toolbar > span {
+    max-width: none;
+    width: 100%;
+    padding-bottom: 0;
+  }
+  .fc-matrix-toolbar label {
+    flex: 1;
+  }
+  .franceconcert-app h1 {
+    font-size: 32px;
+  }
+  .fc-inspector > h2 {
+    font-size: 28px;
+  }
+  .fc-unmatched form {
+    flex-wrap: wrap;
+  }
+  .fc-unmatched form > div {
+    flex-basis: 100%;
+  }
+  .fc-form-pair {
+    grid-template-columns: 1fr;
+  }
+  .fc-matrix {
+    min-width: 780px;
+  }
+}
+@media (max-width: 850px) {
+  .fc-header {
+    flex-wrap: wrap;
+    gap: 10px 20px;
+    padding: 16px 22px 0;
+  }
+  .fc-header nav {
+    order: 3;
+    width: 100%;
+    margin: 0;
+  }
+  .fc-header nav button {
+    flex: 1;
+    padding: 13px 0;
+  }
+  .fc-brand strong {
+    font-size: 28px;
+  }
+  .fc-workspace {
+    grid-template-columns: 1fr;
+  }
+  .fc-inspector {
+    border-left: 0;
+    border-top: 1px solid var(--fc-border);
+    padding: 25px;
+  }
+  .fc-left {
+    padding: 20px 22px 25px;
+  }
+  .fc-matrix-toolbar > span {
+    width: auto;
+    margin-right: auto;
+  }
+  .fc-matrix-toolbar label {
+    flex: 0 1 auto;
+  }
+  .fc-form-pair {
+    grid-template-columns: 1fr 1fr;
+  }
+  .fc-output-layout {
+    grid-template-columns: 1fr;
+  }
+  .fc-output-actions {
+    border-left: 0;
+    border-top: 1px solid var(--fc-border);
+    padding: 23px 0 0;
+  }
+  .fc-import-columns {
+    grid-template-columns: 1fr;
+  }
+  .fc-corrections,
+  .fc-imports {
+    padding: 24px;
+  }
+  .fc-reset {
+    margin-left: 0;
+  }
+  .fc-unmatched form > div {
+    flex-basis: auto;
+  }
+  .fc-unmatched form {
+    flex-wrap: nowrap;
+  }
+}
+@media (max-width: 540px) {
+  .fc-header {
+    padding: 14px 16px 0;
+    gap: 8px;
+  }
+  .fc-brand strong {
+    font-size: 26px;
+  }
+  .fc-fictive {
+    font-size: 12px;
+  }
+  .fc-header nav {
+    gap: 20px;
+  }
+  .fc-header nav button {
+    font-size: 14px;
+    white-space: normal;
+  }
+  .fc-feedback {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .fc-left {
+    padding: 19px 16px 24px;
+  }
+  .franceconcert-app h1 {
+    font-size: 32px;
+  }
+  .fc-lead {
+    font-size: 16px;
+  }
+  .fc-matrix-toolbar {
+    gap: 14px;
+    margin-top: 20px;
+  }
+  .fc-matrix-toolbar > span {
+    width: 100%;
+    font-size: 14px;
+  }
+  .fc-matrix-toolbar label {
+    flex: 1;
+    min-width: 0;
+  }
+  .fc-matrix-toolbar select {
+    width: 100%;
+    min-width: 0;
+    font-size: 14px;
+  }
+  .fc-matrix-toolbar > .fc-primary {
+    width: 100%;
+    font-size: 15px;
+  }
+  .fc-matrix {
+    min-width: 780px;
+  }
+  .fc-unmatched {
+    padding: 18px 14px;
+  }
+  .fc-unmatched form {
+    flex-wrap: wrap;
+  }
+  .fc-unmatched form > div {
+    flex-basis: 100%;
+  }
+  .fc-unmatched form label {
+    flex: 1 1 100%;
+  }
+  .fc-unmatched button {
+    width: 100%;
+  }
+  .fc-unmatched h2 {
+    font-size: 26px;
+  }
+  .fc-inspector {
+    padding: 24px 16px;
+  }
+  .fc-inspector > h2 {
+    font-size: 29px;
+  }
+  .fc-comparison th,
+  .fc-comparison td {
+    padding: 10px 7px;
+    font-size: 14px;
+  }
+  .fc-comparison th:first-child {
+    width: 27%;
+  }
+  .fc-form-pair {
+    grid-template-columns: 1fr;
+  }
+  .fc-toolbar {
+    padding: 16px;
+    gap: 10px;
+  }
+  .fc-toolbar button {
+    flex: 1 1 140px;
+  }
+  .fc-toolbar .fc-reset {
+    flex-basis: 100%;
+  }
+  .fc-context {
+    padding: 0 16px 18px !important;
+    text-align: left;
+    line-height: 1.5;
+  }
+  .fc-editing-note {
+    padding: 13px 16px;
+  }
+  .franceconcert-app .demo-footer {
+    padding: 18px 16px;
+    gap: 12px;
+  }
+  .fc-corrections,
+  .fc-imports {
+    padding: 22px 16px;
+  }
+  .fc-open-items li {
+    flex-direction: column;
+    gap: 4px;
+  }
+  .fc-output-layout {
+    gap: 18px;
+  }
+  .fc-output-actions button {
+    font-size: 15px;
+  }
+}
+.fc-scroll-hint {
+  display: none;
+}
+@media (max-width: 1050px) {
+  .fc-scroll-hint {
+    display: block;
+    color: #5b6063;
+    font-size: 14px;
+    line-height: 1.45;
+    margin: 0 0 12px;
+  }
+}

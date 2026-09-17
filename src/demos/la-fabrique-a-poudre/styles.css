@@ -1,0 +1,575 @@
+.poudre-app {
+  --navy: #052244;
+  --red: #d64142;
+  --line: #d3dce7;
+  --muted: #536b85;
+  font:
+    16px/1.5 "Open Sans",
+    sans-serif;
+  color: #233d59;
+  background: #fff;
+  min-height: 100vh;
+}
+.poudre-app * {
+  box-sizing: border-box;
+}
+.poudre-app button,
+.poudre-app input,
+.poudre-app textarea,
+.poudre-app select {
+  font: inherit;
+}
+.poudre-app button,
+.poudre-app input,
+.poudre-app select,
+.poudre-app textarea {
+  border: 1px solid #b6c7d9;
+  border-radius: 5px;
+  background: #fff;
+  color: var(--navy);
+}
+.poudre-app button {
+  min-height: 44px;
+  padding: 9px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+.poudre-app button:hover:not(:disabled) {
+  background: #edf2f7;
+}
+.poudre-app button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+.poudre-app :focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+}
+.poudre-app h1,
+.poudre-app h2,
+.poudre-app h3 {
+  font-family: "Baloo 2", sans-serif;
+  color: var(--navy);
+  line-height: 1.15;
+  margin: 0 0 7px;
+  font-weight: 700;
+}
+.poudre-app h1 {
+  font-size: 34px;
+}
+.poudre-app h2 {
+  font-size: 23px;
+}
+.poudre-app h3 {
+  font-size: 19px;
+}
+.poudre-app p {
+  margin: 0 0 14px;
+}
+.poudre-header {
+  background: var(--navy);
+  color: #fff;
+  min-height: 57px;
+  padding: 16px 30px;
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+}
+.poudre-header strong {
+  font-size: 18px;
+}
+.poudre-header span {
+  font-size: 14px;
+  color: #d5e1ef;
+}
+.poudre-app main {
+  max-width: 1680px;
+  margin: auto;
+  padding: 27px 26px;
+}
+.poudre-intro {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+.poudre-intro p {
+  margin: 0;
+}
+.poudre-toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  max-width: 610px;
+}
+.poudre-workspace {
+  display: grid;
+  grid-template-columns: 355px minmax(0, 1fr);
+  gap: 17px;
+  align-items: start;
+}
+.poudre-rail {
+  background: #f5f7fb;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 17px;
+}
+.poudre-rail > p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.poudre-transfer-list {
+  display: grid;
+  gap: 9px;
+  max-height: 300px;
+  overflow: auto;
+  padding: 3px;
+}
+.poudre-transfer-list button {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  text-align: left;
+  font-weight: 400;
+  padding: 11px 13px;
+  gap: 2px;
+  width: 100%;
+}
+.poudre-transfer-list button small {
+  grid-column: 1 / -1;
+}
+.poudre-identity summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+.poudre-transfer-list strong {
+  font-size: 17px;
+  font-weight: 600;
+}
+.poudre-transfer-list small,
+.poudre-app small {
+  font-size: 14px;
+  color: var(--muted);
+  display: block;
+}
+.poudre-transfer-list button.selected {
+  border-color: var(--red);
+  border-left-width: 3px;
+  background: #fff1f1;
+}
+.poudre-transfer-list button.selected strong {
+  color: #b52429;
+}
+.poudre-identity {
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  margin-top: 18px;
+}
+.poudre-identity dl {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 5px;
+  margin: 10px 0 19px;
+  font-size: 14px;
+}
+.poudre-identity dt {
+  color: var(--muted);
+}
+.poudre-identity dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+.poudre-app label {
+  display: grid;
+  gap: 5px;
+  font-size: 14px;
+}
+.poudre-app input,
+.poudre-app select,
+.poudre-app textarea {
+  min-height: 44px;
+  padding: 9px 11px;
+  width: 100%;
+}
+.poudre-app textarea {
+  resize: vertical;
+}
+.poudre-edit {
+  display: grid;
+  gap: 12px;
+  margin-top: 18px;
+  padding-top: 17px;
+  border-top: 1px solid var(--line);
+}
+.poudre-edit > p {
+  font-size: 14px;
+  margin: -6px 0 0;
+  color: var(--muted);
+}
+.poudre-edit small {
+  line-height: 1.45;
+}
+.poudre-app .poudre-primary {
+  background: var(--red);
+  color: white;
+  border-color: var(--red);
+}
+.poudre-app .poudre-primary:hover:not(:disabled) {
+  background: #b82e34;
+}
+.poudre-app .poudre-text {
+  border: 0;
+  background: transparent;
+  text-decoration: underline;
+}
+.poudre-results {
+  min-width: 0;
+  scroll-margin-top: 16px;
+}
+.poudre-tabs {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 14px;
+  gap: 6px;
+}
+.poudre-tabs button {
+  border: 0;
+  border-radius: 0;
+  padding: 15px 23px;
+  background: transparent;
+  border-bottom: 3px solid transparent;
+  font-size: 16px;
+}
+.poudre-tabs button[aria-current] {
+  border-bottom-color: var(--red);
+  font-weight: 600;
+}
+.poudre-panel {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 19px;
+  margin-bottom: 14px;
+  min-width: 0;
+}
+.poudre-panel > p,
+.poudre-section-title p {
+  font-size: 14px;
+  color: var(--muted);
+}
+.poudre-equation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.poudre-equation > div {
+  background: #d8e7f7;
+  padding: 11px 10px;
+  text-align: center;
+  display: grid;
+  gap: 1px;
+}
+.poudre-equation strong {
+  font-family: "Baloo 2";
+  font-size: 24px;
+  line-height: 1.15;
+}
+.poudre-equation span {
+  font-size: 14px;
+}
+.poudre-equation .poudre-transit {
+  background: #fbe0e1;
+  color: #9a2127;
+}
+.poudre-app .poudre-equation-text {
+  margin: 12px 0 0;
+  font-size: 15px;
+  color: #233d59;
+}
+.poudre-section-title {
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  align-items: start;
+}
+.poudre-section-title button {
+  flex-shrink: 0;
+}
+.poudre-table {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  max-height: 490px;
+}
+.poudre-table table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  min-width: 620px;
+}
+.poudre-table th,
+.poudre-table td {
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+.poudre-table th {
+  background: #edf1f6;
+  font-weight: 600;
+  position: sticky;
+  top: 0;
+  color: var(--navy);
+}
+.poudre-table tr:last-child td {
+  border-bottom: 0;
+}
+.poudre-table .transit-row {
+  background: #f8fafd;
+}
+.poudre-table .poudre-number {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.poudre-table small {
+  font-size: 13px;
+  max-width: 260px;
+  overflow-wrap: anywhere;
+}
+.poudre-after-table {
+  margin-top: 15px;
+}
+.poudre-disclosure {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  margin-top: 13px;
+  background: #f5f7fb;
+  padding: 0 17px;
+}
+.poudre-disclosure summary {
+  cursor: pointer;
+  padding: 16px 0;
+  font-weight: 600;
+}
+.poudre-disclosure[open] {
+  padding-bottom: 18px;
+}
+.poudre-disclosure p,
+.poudre-disclosure li {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+.poudre-disclosure li {
+  margin: 7px 0;
+}
+.poudre-panel details {
+  margin-top: 20px;
+}
+.poudre-panel summary {
+  cursor: pointer;
+  margin-bottom: 12px;
+}
+.poudre-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0;
+}
+.poudre-source {
+  font-size: 14px;
+  margin-top: 14px !important;
+  overflow-wrap: anywhere;
+}
+.poudre-unrun {
+  background: #f3f6fa;
+  border-left: 3px solid #9caec3;
+  padding: 14px;
+}
+.poudre-error {
+  background: #fff1f1;
+  border: 1px solid #d86b6d;
+  color: #9a2127;
+  padding: 12px 15px;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+}
+.poudre-error ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+.poudre-error p {
+  margin-bottom: 0;
+}
+.poudre-notice {
+  background: #edf3fa;
+  border-left: 3px solid var(--navy);
+  padding: 12px 15px;
+}
+.poudre-app .poudre-checkbox {
+  display: flex;
+  align-items: center;
+  margin: 12px 0 16px;
+}
+.poudre-checkbox input {
+  width: 20px;
+  min-height: 20px;
+  height: 20px;
+  accent-color: var(--navy);
+}
+.poudre-reserve {
+  color: #ac252b;
+  font-weight: 600;
+}
+.poudre-comparison-summary {
+  font-weight: 600;
+  color: var(--navy) !important;
+}
+.poudre-mobile-nav {
+  display: none;
+}
+.poudre-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: #05224480;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 1000;
+}
+.poudre-modal {
+  background: #fff;
+  max-width: 560px;
+  width: 100%;
+  padding: 28px;
+  border-radius: 7px;
+  box-shadow: 0 12px 45px #001a3533;
+}
+.poudre-modal p {
+  overflow-wrap: anywhere;
+}
+.poudre-app footer {
+  margin-top: 25px;
+  font-size: 14px;
+}
+.poudre-app a {
+  color: var(--navy);
+}
+@media (min-width: 1500px) {
+  .poudre-workspace {
+    grid-template-columns: 410px minmax(0, 1fr);
+  }
+  .poudre-intro h1 {
+    font-size: 39px;
+  }
+  .poudre-toolbar {
+    max-width: 620px;
+  }
+  .poudre-transfer-list button {
+    padding: 12px 14px;
+  }
+}
+@media (max-width: 1200px) {
+  .poudre-intro {
+    display: block;
+  }
+  .poudre-toolbar {
+    justify-content: flex-start;
+    max-width: none;
+    margin-top: 17px;
+  }
+  .poudre-workspace {
+    grid-template-columns: 315px minmax(0, 1fr);
+  }
+  .poudre-section-title {
+    display: block;
+  }
+  .poudre-section-title button {
+    margin-bottom: 14px;
+  }
+  .poudre-tabs button {
+    padding: 13px 17px;
+  }
+}
+@media (max-width: 760px) {
+  .poudre-header {
+    padding: 14px 17px;
+    display: block;
+  }
+  .poudre-header span {
+    display: block;
+    margin-top: 5px;
+  }
+  .poudre-app main {
+    padding: 22px 16px;
+  }
+  .poudre-app h1 {
+    font-size: 31px;
+  }
+  .poudre-toolbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .poudre-workspace {
+    display: block;
+  }
+  .poudre-rail {
+    margin-bottom: 20px;
+    padding: 16px;
+  }
+  .poudre-transfer-list {
+    max-height: 265px;
+  }
+  .poudre-mobile-nav {
+    display: flex;
+    gap: 17px;
+    margin-bottom: 18px;
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .poudre-edit {
+    scroll-margin-top: 15px;
+  }
+  .poudre-panel {
+    padding: 15px;
+  }
+  .poudre-tabs {
+    gap: 0;
+  }
+  .poudre-tabs button {
+    padding: 13px 11px;
+    font-size: 14px;
+    flex: 1;
+  }
+  .poudre-equation strong {
+    font-size: 20px;
+  }
+  .poudre-equation span {
+    font-size: 13px;
+  }
+  .poudre-equation > div {
+    padding: 12px 5px;
+  }
+  .poudre-panel > h2 {
+    font-size: 22px;
+  }
+  .poudre-equation-text {
+    font-size: 14px !important;
+  }
+  .poudre-disclosure {
+    padding: 0 14px;
+  }
+  .poudre-modal {
+    padding: 21px;
+  }
+  .poudre-app h2 {
+    overflow-wrap: anywhere;
+  }
+}
