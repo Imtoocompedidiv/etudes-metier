@@ -376,7 +376,7 @@ export default function App() {
         <span className="aud-wordmark">
           audacy<span>/</span>
         </span>
-        <span>Étude indépendante · JD</span>
+        <span>Étude indépendante</span>
       </header>
       <main>
         <div className="aud-heading">

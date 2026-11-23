@@ -528,7 +528,7 @@ export default function App() {
     <main className="ourse-app">
       <header className="ourse-top">
         <strong>La grande Ourse</strong>
-        <span>Étude indépendante · JD</span>
+        <span>Étude indépendante</span>
       </header>
       <div className="ourse-intro">
         <h1>Du message au composant</h1>

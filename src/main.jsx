@@ -60,7 +60,7 @@ root.render(
           proposition reçue.
         </p>
         <a href="https://imtoocompedidiv.github.io/portfolio/">
-          Le travail de JD
+          Voir le portfolio
         </a>
       </main>
     )}

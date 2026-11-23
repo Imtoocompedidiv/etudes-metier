@@ -355,7 +355,7 @@ export default function App() {
         <strong>
           H3 <span>Campus Online</span>
         </strong>
-        <span>Étude indépendante · JD</span>
+        <span>Étude indépendante</span>
       </header>
       <main>
         <div className="h3-heading">

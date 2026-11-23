@@ -257,7 +257,7 @@ export default function App() {
     <div className="elio-app">
       <header className="elio-header">
         <span className="elio-wordmark">ELIOPHOT</span>
-        <span>Étude indépendante · JD</span>
+        <span>Étude indépendante</span>
       </header>
       <main>
         <div className="elio-heading">

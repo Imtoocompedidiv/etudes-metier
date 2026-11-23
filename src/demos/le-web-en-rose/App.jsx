@@ -363,7 +363,7 @@ export default function App() {
         <strong>
           Le Web en <span>Rose</span>
         </strong>
-        <span>Étude indépendante · JD</span>
+        <span>Étude indépendante</span>
       </header>
       <main>
         <div className="rose-heading">

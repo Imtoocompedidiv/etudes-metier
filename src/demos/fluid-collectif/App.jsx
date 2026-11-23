@@ -233,7 +233,7 @@ export default function App() {
     <div className="fluid-app">
       <header className="fluid-brand">
         <strong>fluid collectif</strong>
-        <span>Étude indépendante · JD</span>
+        <span>Étude indépendante</span>
       </header>
       <main className="fluid-shell">
         <div className="fluid-heading">

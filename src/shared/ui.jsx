@@ -22,7 +22,7 @@ export function DemoFooter() {
         Exemple fourni avec données fictives · Traitement local · Sans compte
       </span>
       <a href="https://imtoocompedidiv.github.io/portfolio/">
-        Conception et développement par JD
+        Conception et développement par Imtoocompedidiv
       </a>
     </footer>
   );

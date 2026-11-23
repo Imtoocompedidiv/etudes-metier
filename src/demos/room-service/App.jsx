@@ -503,7 +503,7 @@ export default function App() {
       <header className="rs-header">
         <span className="rs-brand">Room Service</span>
         <span>Carnet de montage</span>
-        <a href="https://imtoocompedidiv.github.io/portfolio/">JD</a>
+        <a href="https://imtoocompedidiv.github.io/portfolio/">Portfolio</a>
       </header>
       <section className="rs-intro">
         <h1>La bonne instruction pour chaque pendentif</h1>

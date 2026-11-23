@@ -19,4 +19,4 @@ Les interfaces sont chargées séparément avec React et Vite. Chaque module con
 
 Les contrôles présents sont des outils de préparation. Ils ne remplacent pas la validation des données, des règles métier et des intégrations dans un environnement de production.
 
-Conception et développement par JD.
+Conception et développement par Imtoocompedidiv.

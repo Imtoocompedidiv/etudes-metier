@@ -870,7 +870,7 @@ export default function Optedif() {
               Exemple fictif · Calculs dans votre navigateur · Sans compte
             </span>
             <a href="https://imtoocompedidiv.github.io/portfolio/">
-              Conception et développement par JD
+              Conception et développement par Imtoocompedidiv
             </a>
           </footer>
         </main>

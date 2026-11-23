@@ -992,7 +992,7 @@ export default function App() {
               className="dfk-portfolio"
               href="https://imtoocompedidiv.github.io/portfolio/"
             >
-              JD · Portfolio
+              Portfolio
             </a>
           </div>
           <details className="dfk-help">

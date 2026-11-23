@@ -744,7 +744,7 @@ export default function App() {
     <main className="saucisse-demo">
       <header className="sp-header">
         <strong>Saucisse Purée</strong>
-        <span>Étude indépendante · JD</span>
+        <span>Étude indépendante</span>
       </header>
       <div className="sp-page">
         <h1>La recette d’une vidéo verticale</h1>
